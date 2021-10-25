@@ -20,7 +20,7 @@ namespace PlayerController {
 	public class Keyboard {
 
 		public void getSettings() {
-			Debug.Log("Keyboard settings");
+			Debug.Log("Keyboard setttings");
 		}
 
 	}

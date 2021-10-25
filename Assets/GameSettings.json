@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "keyboardBinds": {
+      "forward": "W",
+      "back": "S",
+      "left": "A",
+      "right": "D"
+    }
+  },
+  "save": {
+    "save1": {},
+    "save2": {},
+    "save3": {}
+  }
+}
