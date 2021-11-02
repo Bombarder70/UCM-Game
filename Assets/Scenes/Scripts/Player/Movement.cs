@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour  {
 
 	private float speed = 2f;
 	private float turnSpeed = 150f;
+	private float playerSpeed = 2f;
 	private Animator animator;
 
 	public PlayerController.Keyboard xxx; 
@@ -20,7 +21,7 @@ public class Movement : MonoBehaviour  {
 	void Update() {  
 		
 		var velocity = Vector3.forward * Input.GetAxis("Vertical") * this.speed;
-		transform.Translate(velocity * Time.deltaTime);
+		transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
 		transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
 		animator.SetFloat("Speed", velocity.z);
 
