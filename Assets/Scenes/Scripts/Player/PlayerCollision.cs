@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour {
 
   void OnCollisionEnter(Collision collision) {
-    if (collision.gameObject.name != "terrain") {
+    if (collision.gameObject.name != "Terrain") {
       Debug.Log(collision.gameObject.name);
     }
   }
