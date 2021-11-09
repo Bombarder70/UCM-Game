@@ -9,6 +9,10 @@ public class Movement : MonoBehaviour  {
 	private float playerSpeed = 2f;
 	private Animator animator;
 
+	// PLAYER JUMP
+	private float jump = 100f;
+	private bool isGrounded;
+
 	public PlayerController.Keyboard xxx; 
 
 	void Start() {  
@@ -16,7 +20,15 @@ public class Movement : MonoBehaviour  {
 		xxx.getSettings();
 
 		animator = GetComponent<Animator>();
-	}  
+	}
+
+	void OnCollisionStay() {
+		isGrounded = true;
+	}
+
+	void OnCollisionExit(){
+		isGrounded = false;
+	}
   
 	void Update() {  
 		
@@ -24,6 +36,10 @@ public class Movement : MonoBehaviour  {
 		transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
 		transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
 		animator.SetFloat("Speed", velocity.z);
+
+		if(isGrounded) {
+			transform.Translate(0,this.jump*Input.GetAxis("Jump")*Time.deltaTime,0);
+		}
 
 		/*if (Input.GetKey(KeyCode.D)) {  
 			transform.Translate(0.01f, 0f, 0f);  
