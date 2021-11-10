@@ -53,19 +53,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a0ecaf900bb882f4cb612995fffe1eab, type: 3}
       propertyPath: m_Name
-      value: rocks1
+      value: rocks1_coll
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: a0ecaf900bb882f4cb612995fffe1eab, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.7349834
+      value: 0.5019025
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: a0ecaf900bb882f4cb612995fffe1eab, type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.52145
+      value: 0.22535045
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: a0ecaf900bb882f4cb612995fffe1eab, type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.3102466
+      value: 0.0888923
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ecaf900bb882f4cb612995fffe1eab, type: 3}
