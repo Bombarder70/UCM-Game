@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Gravity : MonoBehaviour {
-  public float gravity = 5f;
+  private float gravity = 3f;
 
   Rigidbody rb;
 

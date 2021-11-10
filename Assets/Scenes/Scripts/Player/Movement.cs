@@ -10,8 +10,10 @@ public class Movement : MonoBehaviour  {
 	private Animator animator;
 
 	// PLAYER JUMP
-	private float jump = 100f;
+	private float jump = 1.5f;
 	private bool isGrounded;
+
+	public Rigidbody rb;
 
 	public PlayerController.Keyboard xxx; 
 
@@ -20,6 +22,7 @@ public class Movement : MonoBehaviour  {
 		xxx.getSettings();
 
 		animator = GetComponent<Animator>();
+		rb = GetComponent<Rigidbody>();
 	}
 
 	void OnCollisionStay() {
@@ -31,15 +34,38 @@ public class Movement : MonoBehaviour  {
 	}
   
 	void Update() {  
-		
+		var isRunning = animator.GetBool("isRunning");
+
+		if (Input.GetKey("w")) {
+			animator.SetBool("isRunning", true);
+		} else {
+			animator.SetBool("isRunning", false);
+		}
+
+		// Pohyb a otacanie
 		var velocity = Vector3.forward * Input.GetAxis("Vertical") * this.speed;
 		transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
 		transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
 		animator.SetFloat("Speed", velocity.z);
 
-		if(isGrounded) {
-			transform.Translate(0,this.jump*Input.GetAxis("Jump")*Time.deltaTime,0);
+		if (isGrounded && !isRunning) {
+			if (Input.GetButtonDown("Jump")) {
+				animator.SetBool("isJumping", true);
+				rb.AddForce(new Vector3(0,100 * this.jump,0), ForceMode.Impulse);
+				animator.Play("Idle_jump");
+			}
+		} else {
+			animator.SetBool("isJumping", false);
 		}
+
+		/*if (Input.GetKeyDown("space")) {
+			if (isRunning) {
+				rb.AddForce(Vector3.up * Time.deltaTime * 9999, ForceMode.Impulse);
+				transform.Translate(velocity * Time.deltaTime * 2);
+				animator.Play("Run_jump");
+			}
+		}*/
+
 
 		/*if (Input.GetKey(KeyCode.D)) {  
 			transform.Translate(0.01f, 0f, 0f);  
@@ -56,5 +82,13 @@ public class Movement : MonoBehaviour  {
 		if (Input.GetKey(KeyCode.W)) {  
 			transform.Translate(0.0f, 0f, 0.01f);  
 		}*/
+
+		// Poznamky
+
+		// Moze sa vyuzit pri objektoch ktore hned vyletia 
+		// transform.Translate(0,this.jump*Input.GetAxis("Jump")*Time.deltaTime,0);
+
+		// Vypise sa iba raz ked sa stlaci
+		// Input.GetKeyDown("w")
 	}  
 } 

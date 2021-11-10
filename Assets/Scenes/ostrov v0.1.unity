@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efbeefc12667ab4ca0857f795b29331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!114 &168703470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d0b7684e35cbd4c9d2fb16670f2055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 20
 --- !u!114 &168703471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,8 +349,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168703467}
   serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 25
+  m_Mass: 15
+  m_Drag: 1
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -855,7 +855,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651814011}
-  m_LocalRotation: {x: 0.053607438, y: -0.46080837, z: 0.027898854, w: 0.88543975}
+  m_LocalRotation: {x: 0.05366094, y: -0.4591067, z: 0.027795838, w: 0.8863233}
   m_LocalPosition: {x: 727.7338, y: 38.04, z: 384.91107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2101,7 +2101,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861405487}
-  m_LocalRotation: {x: 0.053607438, y: -0.46080837, z: 0.027898854, w: 0.88543975}
+  m_LocalRotation: {x: 0.05366094, y: -0.4591067, z: 0.027795838, w: 0.8863233}
   m_LocalPosition: {x: 727.7338, y: 38.04, z: 384.91107}
   m_LocalScale: {x: 1.7659836, y: 1.7659836, z: 5.5731564}
   m_Children: []
