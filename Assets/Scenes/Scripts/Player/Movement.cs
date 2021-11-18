@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour  {
 	private float jump = 1.5f;
 	private bool isGrounded;
 
-	public Rigidbody rb;
+	Rigidbody rb;
 
 	public PlayerController.Keyboard xxx; 
 
@@ -58,13 +58,13 @@ public class Movement : MonoBehaviour  {
 			animator.SetBool("isJumping", false);
 		}
 
-		/*if (Input.GetKeyDown("space")) {
-			if (isRunning) {
+		if (Input.GetKeyDown("space")) {
+			if (isRunning && isGrounded) {
 				rb.AddForce(Vector3.up * Time.deltaTime * 9999, ForceMode.Impulse);
-				transform.Translate(velocity * Time.deltaTime * 2);
-				animator.Play("Run_jump");
+				transform.Translate(velocity * Time.deltaTime * 10);
+				//animator.Play("Run_jump");
 			}
-		}*/
+		}
 
 
 		/*if (Input.GetKey(KeyCode.D)) {  
