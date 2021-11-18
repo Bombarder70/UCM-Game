@@ -20,14 +20,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _AmbientStrength: 0.456
-    - _BladeCurve: 3.04
+    - _AmbientStrength: 0.474
+    - _BladeCurve: 2.92
     - _BladeForward: 0.38
     - _GrassHeight: 1
     - _GrassWidth: 0.06
     - _MaxDist: 60
     - _MinDist: 40
-    - _Rad: 0.53
+    - _Rad: 0.474
     - _Radius: 0.3
     - _RandomHeight: 0.4
     - _Strength: 8
