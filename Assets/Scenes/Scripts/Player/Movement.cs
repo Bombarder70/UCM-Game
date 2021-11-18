@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour  {
 	private float jump = 1.5f;
 	private bool isGrounded;
 
-	public Rigidbody rb;
+	Rigidbody rb;
 
 	public PlayerController.Keyboard xxx; 
 
