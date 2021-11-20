@@ -27,6 +27,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.007
     second: {fileID: 2100000, guid: d65e7cbc9c5ac4a43a669e37a24e89a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paleta
+    second: {fileID: 2100000, guid: d65e7cbc9c5ac4a43a669e37a24e89a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paleta-Kov
+    second: {fileID: 2100000, guid: 1ba6d5ff5e22af440a68d759b570745e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,26 +48,11 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Avatar creation failed:\n\tTransform 'root' for human bone
+      'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'idle_jump' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'spine2' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\nClip 'Run' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'spine2' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Run_Jump'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'spine2'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperLeg.L'
-      has scale animation that will be discarded.\n\t'lowerLeg.L' has scale animation
-      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'upperLeg.R'
-      has scale animation that will be discarded.\n\t'lowerLeg.R' has scale animation
-      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\nClip
-      'idle_jump.001' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'spine2'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
