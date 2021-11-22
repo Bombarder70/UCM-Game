@@ -23,6 +23,12 @@ namespace PlayerController {
 			Debug.Log("Keyboard setttings");
 		}
 
+		public void checkEscapePress() {
+			Debug.Log("Escape");
+			if (Input.GetKeyDown ("escape")) {
+				Cursor.lockState = CursorLockMode.None;
+			}
+		}
 	}
 
 }
