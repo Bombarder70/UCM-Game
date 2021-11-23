@@ -39,11 +39,20 @@ namespace Player {
       //playerControllerKeyboard.checkEscapePress();
 
       var isRunning = animator.GetBool("isRunning");
+      var isReverse = animator.GetBool("isReverse");
 
       if (Input.GetKey("w")) {
         animator.SetBool("isRunning", true);
       } else {
         animator.SetBool("isRunning", false);
+      }
+
+      if (Input.GetKey("s")) {
+        animator.SetBool("isReverse", true);
+        this.speed = 1.5f;
+      } else {
+        animator.SetBool("isReverse", false);
+        this.speed = 2.2f;
       }
 
       // Pohyb a otacanie
@@ -55,6 +64,7 @@ namespace Player {
       if (isGrounded && !isRunning) {
         if (Input.GetButtonDown("Jump")) {
           animator.SetBool("isJumping", true);
+          rb.AddForce(new Vector3(0, 80, 0), ForceMode.Impulse);
         }
       } else {
         animator.SetBool("isJumping", false);
@@ -63,11 +73,7 @@ namespace Player {
       if (Input.GetKeyDown("space")) {
         if (isRunning && isGrounded) {
           Debug.Log("run_jump");
-          //rb.AddForce(Vector3.up * Time.deltaTime * 9999, ForceMode.Impulse);
-        //	transform.Translate(velocity * Time.deltaTime * 10);
-          //animator.Play("Run_jump");
-            Vector3 atas = new Vector3 (0,100,0);
-            rb.AddForce(atas * 1000);
+            rb.AddForce(new Vector3(30, 120, 0), ForceMode.Impulse);
         }
       }
 
