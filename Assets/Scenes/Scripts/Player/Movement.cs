@@ -49,7 +49,7 @@ namespace Player {
 
       // Pohyb a otacanie
       var velocity = Vector3.forward * Input.GetAxis("Vertical") * this.speed;
-      if (isGrounded) {
+      if (!this.getAnimationName("Idle_jump")) {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
       transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
@@ -70,7 +70,7 @@ namespace Player {
       if (Input.GetKeyDown("space")) {
         if (isRunning && isGrounded) {
           Debug.Log("run_jump");
-            rb.AddForce(new Vector3(30, 120, 0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, 85, 0), ForceMode.Impulse);
         }
       }
 
