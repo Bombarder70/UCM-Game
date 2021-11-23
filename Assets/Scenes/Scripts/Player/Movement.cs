@@ -77,6 +77,11 @@ namespace Player {
         }
       }
 
+      if (!isRunning) {
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 10) {
+          animator.SetBool("isHappy", true);
+        }
+      }
 
       /*if (Input.GetKey(KeyCode.D)) {  
         transform.Translate(0.01f, 0f, 0f);  
@@ -101,7 +106,20 @@ namespace Player {
 
       // Vypise sa iba raz ked sa stlaci
       // Input.GetKeyDown("w")
+       //if (Animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !Animator.IsInTransition(0))
     }  
+
+    void FixedUpdate() {
+      this.setIsHappyToFalse();
+    }
+
+    void setIsHappyToFalse() {
+      animator.SetBool("isHappy", false);
+    }
+
+    bool getIsHappy() {
+      return animator.GetBool("isHappy");
+    }
   }
 
 }
