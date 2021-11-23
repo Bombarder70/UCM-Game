@@ -26,14 +26,6 @@ namespace Player {
       animator = GetComponent<Animator>();
       rb = GetComponent<Rigidbody>();
     }
-
-    void OnCollisionStay() {
-      isGrounded = true;
-    }
-
-    void OnCollisionExit(){
-      isGrounded = false;
-    }
     
     void Update() {  
       //playerControllerKeyboard.checkEscapePress();
@@ -57,11 +49,16 @@ namespace Player {
 
       // Pohyb a otacanie
       var velocity = Vector3.forward * Input.GetAxis("Vertical") * this.speed;
-      transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
+      if (isGrounded) {
+        transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
+      }
       transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
       animator.SetFloat("Speed", velocity.z);
 
-      if (isGrounded && !isRunning) {
+      if (isGrounded 
+        && !isRunning
+        && this.getAnimationName("Idle")
+      ) {
         if (Input.GetButtonDown("Jump")) {
           animator.SetBool("isJumping", true);
           rb.AddForce(new Vector3(0, 80, 0), ForceMode.Impulse);
@@ -113,6 +110,18 @@ namespace Player {
       this.setIsHappyToFalse();
     }
 
+    void OnCollisionStay() {
+      this.isGrounded = true;
+      animator.SetBool("isGrounded", true);
+    }
+
+    void OnCollisionExit(){
+      this.isGrounded = false;
+      animator.SetBool("isGrounded", false);
+    }
+
+    // Custome methods
+
     void setIsHappyToFalse() {
       animator.SetBool("isHappy", false);
     }
@@ -120,6 +129,15 @@ namespace Player {
     bool getIsHappy() {
       return animator.GetBool("isHappy");
     }
+
+    double getAnimationTime() {
+      return animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+    }
+
+    bool getAnimationName(string name) {
+      return animator.GetCurrentAnimatorStateInfo(0).IsName(name);
+    }
+
   }
 
 }
