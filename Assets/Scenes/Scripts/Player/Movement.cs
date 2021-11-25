@@ -69,8 +69,9 @@ namespace Player {
 
       if (Input.GetKeyDown("space")) {
         if (isRunning && isGrounded) {
+          //animator.SetBool("isJumping", true);
           Debug.Log("run_jump");
-            rb.AddForce(new Vector3(0, 85, 0), ForceMode.Impulse);
+          rb.AddForce(new Vector3(0, 85, 0), ForceMode.Impulse);
         }
       }
 
