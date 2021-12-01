@@ -13,7 +13,11 @@ namespace Player {
 
     // PLAYER JUMP
     private float jump = 1.5f;
-    private bool isGrounded;
+    public bool isGrounded;
+    public bool isRunning;
+    public bool isReverse;
+    public bool isFalling;
+    public bool isDead;
 
     Rigidbody rb;
 
@@ -30,8 +34,8 @@ namespace Player {
     void Update() {  
       //playerControllerKeyboard.checkEscapePress();
 
-      var isRunning = animator.GetBool("isRunning");
-      var isReverse = animator.GetBool("isReverse");
+      this.isRunning = animator.GetBool("isRunning");
+      this.isReverse = animator.GetBool("isReverse");
 
       if (Input.GetKey("w")) {
         animator.SetBool("isRunning", true);
@@ -49,7 +53,11 @@ namespace Player {
 
       // Pohyb a otacanie
       var velocity = Vector3.forward * Input.GetAxis("Vertical") * this.speed;
-      if (!this.getAnimationName("Idle_jump")) {
+      if (
+        !this.getAnimationName("Idle_jump") 
+        && !isFalling 
+        && !this.getAnimationName("Landing")
+      ) {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
       transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
@@ -80,6 +88,8 @@ namespace Player {
           animator.SetBool("isHappy", true);
         }
       }
+
+      this.checkIfFalling();
 
       /*if (Input.GetKey(KeyCode.D)) {  
         transform.Translate(0.01f, 0f, 0f);  
@@ -137,6 +147,21 @@ namespace Player {
 
     bool getAnimationName(string name) {
       return animator.GetCurrentAnimatorStateInfo(0).IsName(name);
+    }
+
+    void checkIfFalling() {
+      if (!this.isGrounded && rb.velocity.y < -5) {
+        this.isFalling = true;
+        animator.SetBool("isFalling", true);
+        //Ked pada viac ako 2 sekundy prepni
+        if (getAnimationTime() > 4) {
+          this.isDead = true;
+          animator.SetBool("isDead", true);
+        }
+      } else {
+        this.isFalling = false;
+        animator.SetBool("isFalling", false);
+      }
     }
 
   }
