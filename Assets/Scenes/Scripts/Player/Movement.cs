@@ -16,10 +16,14 @@ namespace Player {
     public bool isGrounded;
     public bool isRunning;
     public bool isReverse;
+
     public bool isFalling;
     public bool isDead;
+    private bool healthStop;
 
     private int fallingCounter = 0;
+
+    private bool isRecovery = false;
 
     Rigidbody rb;
 
@@ -35,6 +39,10 @@ namespace Player {
     
     void Update() {  
       //playerControllerKeyboard.checkEscapePress();
+
+      // Sleduj ci hrac neumrel
+      checkIfDied();
+      checkForRecovery();
 
       this.isRunning = animator.GetBool("isRunning");
       this.isReverse = animator.GetBool("isReverse");
@@ -59,6 +67,7 @@ namespace Player {
         !this.getAnimationName("Idle_jump") 
         && !isFalling 
         && !this.getAnimationName("Landing")
+        && !this.getAnimationName("DeadLanding")
       ) {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
@@ -159,15 +168,67 @@ namespace Player {
         //Rataj updaty
         this.fallingCounter += 1;
 
-        if (getAnimationName("Falling") && this.fallingCounter > 100) {
-          this.isDead = true;
-          animator.SetBool("isDead", true);
-        }
+        checkLanding();
       } else {
         this.isFalling = false;
         animator.SetBool("isFalling", false);
         this.fallingCounter = 0;
       }
+    }
+
+    void checkLanding() {
+      if (getAnimationName("Falling") && this.fallingCounter > 100) {
+        setAsDead();
+      }
+    }
+
+    void checkIfDied() {
+      if (!this.healthStop && this.isDead && (deathType())) {
+        HealthMonitor.HealthValue += -1;
+        this.healthStop = true;
+      }
+    }
+
+    // Sem pojdu variacie smrti
+    bool deathType() {
+      if (
+        getAnimationName("DeadLanding")
+        // && sem ina smrt
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    void setAsDead() {
+      this.isDead = true;
+      animator.SetBool("isDead", true);
+    }
+
+    void checkForRecovery() {
+      // Ak sa prehrava animacia DeadLanding tak cakaj 5 sekund a daj recovery ak su este nejake srdiecka
+      if (HealthMonitor.HealthValue > 0) {
+        if (
+          getAnimationName("DeadLanding")
+          && getAnimationTime() > 5
+        ) {
+          setAsRecovery();
+        } else {
+          this.isRecovery = false;
+          animator.SetBool("isRecovery", false);
+        }
+      }
+    }
+
+    void setAsRecovery() {
+      this.isDead = false;
+      animator.SetBool("isDead", false);
+
+      this.isRecovery = true;
+      animator.SetBool("isRecovery", true);
+
+      this.healthStop = false;
     }
 
   }
