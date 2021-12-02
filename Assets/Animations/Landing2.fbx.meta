@@ -17,7 +17,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: pirat
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -42,17 +42,17 @@ ModelImporter:
       lastFrame: 47
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: -2.3
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
