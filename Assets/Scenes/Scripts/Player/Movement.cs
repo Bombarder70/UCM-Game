@@ -19,6 +19,8 @@ namespace Player {
     public bool isFalling;
     public bool isDead;
 
+    private int fallingCounter = 0;
+
     Rigidbody rb;
 
     public PlayerController.Keyboard playerControllerKeyboard; 
@@ -153,14 +155,18 @@ namespace Player {
       if (!this.isGrounded && rb.velocity.y < -5) {
         this.isFalling = true;
         animator.SetBool("isFalling", true);
-        //Ked pada viac ako 2 sekundy prepni
-        if (getAnimationTime() > 4) {
+
+        //Rataj updaty
+        this.fallingCounter += 1;
+
+        if (getAnimationName("Falling") && this.fallingCounter > 100) {
           this.isDead = true;
           animator.SetBool("isDead", true);
         }
       } else {
         this.isFalling = false;
         animator.SetBool("isFalling", false);
+        this.fallingCounter = 0;
       }
     }
 
