@@ -23,7 +23,7 @@ namespace Player {
 
     private int fallingCounter = 0;
 
-    private bool isRecovery = false;
+    //private bool isRecovery = false;
 
     Rigidbody rb;
 
@@ -216,15 +216,15 @@ namespace Player {
     }
 
     void checkForRecovery() {
-      // Ak sa prehrava animacia DeadLanding tak cakaj 5 sekund a daj recovery ak su este nejake srdiecka
+      // Ak sa prehrava animacia DeadLanding tak cakaj 3 sekundy a daj recovery ak su este nejake srdiecka
       if (HealthMonitor.HealthValue > 0) {
         if (
           getAnimationName("DeadLanding")
-          && getAnimationTime() > 5
+          && getAnimationTime() > 3
         ) {
           setAsRecovery();
         } else {
-          this.isRecovery = false;
+          //this.isRecovery = false;
           animator.SetBool("isRecovery", false);
         }
       }
@@ -234,7 +234,7 @@ namespace Player {
       this.isDead = false;
       animator.SetBool("isDead", false);
 
-      this.isRecovery = true;
+      //this.isRecovery = true;
       animator.SetBool("isRecovery", true);
 
       this.healthStop = false;
