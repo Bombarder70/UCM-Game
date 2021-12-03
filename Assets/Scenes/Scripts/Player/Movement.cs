@@ -68,10 +68,19 @@ namespace Player {
         && !isFalling 
         && !this.getAnimationName("Landing")
         && !this.getAnimationName("DeadLanding")
+        && !this.getAnimationName("getup1")
       ) {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
-      transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
+
+       if (
+        !this.getAnimationName("Landing")
+        && !this.getAnimationName("DeadLanding")
+        && !this.getAnimationName("getup1")
+      ) {
+        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
+      }
+     
       animator.SetFloat("Speed", velocity.z);
 
       if (isGrounded 
