@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class AnswerCheck : MonoBehaviour
 {
@@ -10,18 +11,27 @@ public class AnswerCheck : MonoBehaviour
     public GameObject quest;
 
     public IEnumerator UpdateScore() {
+
         WWWForm form = new WWWForm();
 
-        //form.AddField("nickname", "Pirat2");
         form.AddField("score", Score.score);
 
-        WWW www = new WWW(
-            "http://localhost/holes/UcmGameWeb/index.php?action=update_score.php",
-            form
-        );
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:80/holes/UcmGameWeb/web/index.php?action=update_score", form))
+        {
+            yield return www.SendWebRequest();
 
-        yield return www;
-        print(www.text);
+            www.chunkedTransfer = false;
+            Debug.Log(www);
+            
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
+        }
     }
 
     public void OnClick ()
@@ -30,7 +40,7 @@ public class AnswerCheck : MonoBehaviour
         {
             if (HealthMonitor.HealthValue < 3) HealthMonitor.HealthValue += 1;
             Score.score += 100;
-
+    
             this.UpdateScore();
         }
         else
