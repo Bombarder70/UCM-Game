@@ -47,11 +47,11 @@ namespace Player {
       this.isRunning = animator.GetBool("isRunning");
       this.isReverse = animator.GetBool("isReverse");
 
-      if (Input.GetMouseButtonDown(0)) {
+      /*if (Input.GetMouseButtonDown(0)) {
         animator.SetBool("isAttacking", true);
       } else if (this.getAnimationName("Attack")) {
         animator.SetBool("isAttacking", false);
-      }
+      }*/
 
       if (Input.GetKey("w")) {
         animator.SetBool("isRunning", true);

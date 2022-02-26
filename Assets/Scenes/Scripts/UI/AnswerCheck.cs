@@ -16,21 +16,8 @@ public class AnswerCheck : MonoBehaviour
 
         form.AddField("score", Score.score);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:80/holes/UcmGameWeb/web/index.php?action=update_score", form))
-        {
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/UcmGameWeb/web/index.php?action=update_score", form)) {
             yield return www.SendWebRequest();
-
-            www.chunkedTransfer = false;
-            Debug.Log(www);
-            
-            if (www.result != UnityWebRequest.Result.Success)
-            {
-                Debug.Log(www.error);
-            }
-            else
-            {
-                Debug.Log("Form upload complete!");
-            }
         }
     }
 
@@ -41,7 +28,7 @@ public class AnswerCheck : MonoBehaviour
             if (HealthMonitor.HealthValue < 3) HealthMonitor.HealthValue += 1;
             Score.score += 100;
     
-            this.UpdateScore();
+            StartCoroutine(this.UpdateScore());
         }
         else
         {
