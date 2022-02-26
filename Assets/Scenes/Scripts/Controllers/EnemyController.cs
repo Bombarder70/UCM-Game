@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
             if (this.getAnimationName("Attack")) {
                 if (this.getAnimationTime() > 0.5 * this.damageIteration) {
                     this.damageIteration++;
-                    Debug.Log("Damage");
+                    //Score.changeScore(-10);
                 }
             }
         } else if (distance <= enemyLook) {
