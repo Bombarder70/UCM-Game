@@ -47,6 +47,12 @@ namespace Player {
       this.isRunning = animator.GetBool("isRunning");
       this.isReverse = animator.GetBool("isReverse");
 
+      /*if (Input.GetMouseButtonDown(0)) {
+        animator.SetBool("isAttacking", true);
+      } else if (this.getAnimationName("Attack")) {
+        animator.SetBool("isAttacking", false);
+      }*/
+
       if (Input.GetKey("w")) {
         animator.SetBool("isRunning", true);
       } else {
@@ -111,30 +117,6 @@ namespace Player {
 
       this.checkIfFalling();
 
-      /*if (Input.GetKey(KeyCode.D)) {  
-        transform.Translate(0.01f, 0f, 0f);  
-      }  
-
-      if (Input.GetKey(KeyCode.A)) {  
-        transform.Translate(-0.01f, 0f, 0f);  
-      }
-
-      if (Input.GetKey(KeyCode.S)) {  
-        transform.Translate(0.0f, 0f, -0.01f);  
-      } 
-  
-      if (Input.GetKey(KeyCode.W)) {  
-        transform.Translate(0.0f, 0f, 0.01f);  
-      }*/
-
-      // Poznamky
-
-      // Moze sa vyuzit pri objektoch ktore hned vyletia 
-      // transform.Translate(0,this.jump*Input.GetAxis("Jump")*Time.deltaTime,0);
-
-      // Vypise sa iba raz ked sa stlaci
-      // Input.GetKeyDown("w")
-       //if (Animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !Animator.IsInTransition(0))
     }  
 
     void FixedUpdate() {
