@@ -62,24 +62,24 @@ Material:
     - Vector1_E76F4BD3: 0
     - Vector1_F278FEE0: 1
     - Vector1_FA7C3821: -0.27
-    - _Amount: 0.6
+    - _Amount: 0
     - _Brightness: 1.2
     - _DepthOffset: 0
     - _EdgeWidth: 0.4
     - _Foam: 2.35
     - _Height: 0.1
-    - _HorSpeed: 0.14
-    - _NoiseScale: 0.04
+    - _HorSpeed: 0
+    - _NoiseScale: 0
     - _Reflectivity: 0.6
     - _RimPower: 18
     - _Shininess: 10
     - _Softness: 0.1
     - _SpeedV: 0.5
     - _Stretch: 2
-    - _TopScale: 0.4
+    - _TopScale: 0
     - _TopSpread: 0.05
     - _VERTEX: 0
-    - _VertSpeed: 6.8
+    - _VertSpeed: 0
     - _isInnerAlphaBlendOrColor: 0
     m_Colors:
     - Color_1DEAAAEB: {r: 1, g: 1, b: 1, a: 0}
