@@ -1,12 +1,19 @@
 fileFormatVersion: 2
-guid: 8c68225162f9ca0458e54a50df6981aa
+guid: 1c3e436592412e34a8d3462afd982473
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 517a78a00172f814782e2effb0bef775, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes
+    second: {fileID: 2100000, guid: 2113a65629eca2942ac102e83f5175ff, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

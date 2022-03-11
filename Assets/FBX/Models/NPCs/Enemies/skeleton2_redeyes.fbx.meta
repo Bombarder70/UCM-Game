@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e2a46c1750a4868408cf39e83f4c1210
+guid: e9c1f3d70efac3f46919bb9225c560a2
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -33,7 +33,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -232,13 +232,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: skeleton2(Clone)
+    - name: skeleton2_redeyes(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Armature
-      parentName: skeleton2(Clone)
+      parentName: skeleton2_redeyes(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
@@ -438,7 +438,7 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: skeleton
-      parentName: skeleton2(Clone)
+      parentName: skeleton2_redeyes(Clone)
       position: {x: -0, y: 1.5706979, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.14829536, y: 0.14829536, z: 0.14829536}
