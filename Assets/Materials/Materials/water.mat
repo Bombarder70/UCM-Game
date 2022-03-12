@@ -58,10 +58,10 @@ Material:
     - _ReflectionTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 0, y: 0}
-        m_Offset: {x: 3000, y: 0}
+        m_Offset: {x: 0, y: 0}
     - _SideNoiseTex:
         m_Texture: {fileID: 2800000, guid: 811a9d5dad2af03419ed2d577aab6fbe, type: 3}
-        m_Scale: {x: 20, y: 20}
+        m_Scale: {x: 75.19, y: 20}
         m_Offset: {x: 0, y: 0}
     - _TopNoiseTex:
         m_Texture: {fileID: 2800000, guid: ef0d11124cb6bee40a1068d3f6dcb585, type: 3}
