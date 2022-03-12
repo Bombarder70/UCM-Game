@@ -69,14 +69,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Amount: 5.31
-    - _Brightness: 1.806
+    - _Brightness: 1.716
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DepthOffset: 8.3
+    - _DepthOffset: -2.18
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EdgeWidth: 0.37
-    - _Foam: 3.3
+    - _Foam: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -88,13 +88,13 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Reflectivity: 0.021
-    - _RimPower: 10.2
+    - _RimPower: 9.26
     - _SmoothnessTextureChannel: 0
     - _Softness: 0.094
     - _SpecularHighlights: 1
     - _SpeedV: 0.79
     - _SrcBlend: 1
-    - _Stretch: 0.1
+    - _Stretch: 0.13
     - _TopScale: 0.4
     - _TopSpread: -0.2
     - _UVSec: 0
@@ -106,6 +106,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
     - _RimColor: {r: 0.118592024, g: 0.5094601, b: 0.6132076, a: 1}
-    - _TColor: {r: 0, g: 0.3301887, b: 0.3301887, a: 1}
-    - _WaterColor: {r: 0, g: 0.7597966, b: 1, a: 1}
+    - _TColor: {r: 0, g: 0.6415094, b: 0.47386688, a: 1}
+    - _WaterColor: {r: 0, g: 0.4665189, b: 0.6132076, a: 1}
   m_BuildTextureStacks: []
