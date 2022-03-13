@@ -11481,7 +11481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75.70703, y: 7.3489227}
+  m_AnchoredPosition: {x: 75.70703, y: 7.81}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1038184734 stripped
@@ -25678,6 +25678,10 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 1638fac2059dd404c91d1b2ff02d6c57, type: 3}
+    - target: {fileID: 1069555673, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ee5564f671df9ff48bf6127eca84bbbd, type: 2}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
       value: 4
