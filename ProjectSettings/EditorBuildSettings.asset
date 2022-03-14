@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 174461de269026542adf86f246a27df8
+  - enabled: 1
+    path: Assets/Scenes/ostrov v0.1.unity
+    guid: 74518adf8bb10fd4f90970e7acc13595
   m_configObjects: {}
