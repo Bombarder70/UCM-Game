@@ -5,31 +5,41 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -8403696099140132659
-    second: 0T-Pose
+    second: metarig|0T-Pose
+  - first:
+      74: -7100147957451510901
+    second: circle fly
   - first:
       74: 4571148006934947305
-    second: circling_glide
+    second: metarig|circling_glide
   - first:
       74: 6013319956342758007
-    second: fly
+    second: metarig|fly
   - first:
       74: 5626408362618512660
-    second: gliding
+    second: metarig|gliding
   - first:
       74: -4772287688889430092
-    second: Standing
+    second: metarig|Standing
   - first:
       74: -6574799325632135298
     second: takeoff
   - first:
-      74: -8403696099140132659
+      74: 789090713271912140
     second: 0T-Pose
-  externalObjects:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 517a78a00172f814782e2effb0bef775, type: 2}
+      74: -8723555829309670327
+    second: circling_glide
+  - first:
+      74: -2481596286897056705
+    second: fly
+  - first:
+      74: -3200376126853473359
+    second: gliding
+  - first:
+      74: 983752502110940508
+    second: Standing
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -87,6 +97,35 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
+      name: circle fly
+      takeName: metarig|circle fly
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 124
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
       name: circling_glide
       takeName: metarig|circling_glide
       internalID: 0
@@ -98,7 +137,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -127,7 +166,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -156,7 +195,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -178,7 +217,7 @@ ModelImporter:
       takeName: metarig|Standing
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -234,7 +273,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 3
+    globalScale: 2.49
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -285,7 +324,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3
+    globalScale: 2.49
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
