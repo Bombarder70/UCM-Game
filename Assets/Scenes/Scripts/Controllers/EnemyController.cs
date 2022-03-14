@@ -28,6 +28,8 @@ public class EnemyController : MonoBehaviour
             enemyAnimator.SetBool("isRunning", false);
             enemyAnimator.SetBool("isAttacking", true);
 
+            enemyAnimator.Play("Attack");
+
             if (this.getAnimationName("Attack")) {
                 if (this.getAnimationTime() > 0.5 * this.damageIteration) {
                     this.damageIteration++;

@@ -31720,7 +31720,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1069555672, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_Speed
-      value: 5.5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069555672, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
+      propertyPath: m_Radius
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069555672, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1069555673, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_Avatar
@@ -31787,6 +31795,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 768999743, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
+      propertyPath: m_Radius
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 768999743, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3941728919288593773, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_Name
       value: skeleton2_redeyes
