@@ -31,5 +31,9 @@ public class Score : MonoBehaviour
         text.text = score.ToString() + "x";
     }
 
+    /*public static void changeScore(int value) {
+        Score.text.text = "50";
+    }*/
+
 
 }

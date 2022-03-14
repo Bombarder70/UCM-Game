@@ -21,18 +21,18 @@ Material:
     m_TexEnvs:
     - _ShoreTex:
         m_Texture: {fileID: 2800000, guid: 5fbcffe9c2077f04186883cb39275fcc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 324.11, y: 100}
+        m_Offset: {x: 104.04, y: 2.91}
     m_Floats:
-    - _Shininess: 10
+    - _Shininess: 1.83
     - _isInnerAlphaBlendOrColor: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.76597136, b: 0.8396226, a: 0.5}
-    - _BumpDirection: {r: 1, g: 1, b: -1, a: 1}
-    - _BumpTiling: {r: 1, g: 1, b: -2, a: 3}
+    - _BaseColor: {r: 0, g: 0.6267755, b: 0.6886792, a: 0.5}
+    - _BumpDirection: {r: 3.19, g: 1, b: -1, a: 1}
+    - _BumpTiling: {r: 37.81, g: 36.8, b: -25.79, a: 3}
     - _Foam: {r: 0.1, g: 0.375, b: 0, a: 0}
     - _InvFadeParemeter: {r: 0.2, g: 0.39, b: 0.5, a: 1}
-    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.8207547, g: 0.7937291, b: 0.35230508, a: 1}
   m_BuildTextureStacks: []
 --- !u!1002 &2100001
 EditorExtensionImpl:
