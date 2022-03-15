@@ -23,6 +23,8 @@ public class JsonParser : MonoBehaviour {
     public string otazka;
     public int typ;
     public Odpoved[] odpovede;
+    public bool zobrazena;
+    public bool odpoved;
   }
 
   
