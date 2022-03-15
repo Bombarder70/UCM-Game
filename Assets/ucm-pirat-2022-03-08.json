@@ -1,0 +1,16 @@
+{
+  "quests": [
+    {
+      "id":1,
+      "otazka":"Testovacia otazka cislo 1",
+      "typ":1,
+      "odpovede":[{"id":1,"odpoved":"Ostrov"},{"id":2,"odpoved":"Lod"}]
+    },
+    {
+      "id":2,
+      "otazka":"Testovacia otazka cislo 2",
+      "typ":1,
+      "odpovede":[{"id":1,"odpoved":"Ostrov"},{"id":2,"odpoved":"Lod"}]
+    }
+  ]
+}

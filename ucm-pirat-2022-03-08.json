@@ -1,1 +1,0 @@
-[{"id":1,"otazka":"Testovacia otazka cislo 1","typ":1,"odpovede":[{"id":1,"odpoved":"Ostrov"},{"id":2,"odpoved":"Lod"}]},{"id":2,"otazka":"10 + 10 = ?","typ":1,"odpovede":[{"id":1,"odpoved":"20"}]},{"id":3,"otazka":"Testovacia otazka cislo 2","typ":2,"odpovede":[{"id":1,"odpoved":"Odpoved 1","typ":true},{"id":2,"odpoved":"Odpoved 2","typ":false}]}]
