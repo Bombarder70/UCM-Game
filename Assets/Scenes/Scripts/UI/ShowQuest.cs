@@ -40,11 +40,10 @@ public class ShowQuest : MonoBehaviour {
 			if (quest.zobrazena == false) {
 				otazkaText.text = quest.otazka;
 
+				// Nahraj vsetky mozne spravne odpovede
 				foreach (Odpoved odpoved in quest.odpovede) {
 					ShowQuest.questAnswers.Add(odpoved.odpoved);
 				}
-
-				//ShowQuest.questAnswers = quest.odpovede;
 
 				break;
 			}

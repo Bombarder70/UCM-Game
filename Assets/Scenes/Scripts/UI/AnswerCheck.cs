@@ -45,8 +45,8 @@ public class AnswerCheck : MonoBehaviour {
 					Debug.Log("Spravna odpoved");
 				} 
 			} else {
-					HealthMonitor.HealthValue -= 1; 
-					Debug.Log("Nespravna odpoved");
+				HealthMonitor.HealthValue -= 1; 
+				Debug.Log("Nespravna odpoved");
 			}
 
 			quest.SetActive(false);
