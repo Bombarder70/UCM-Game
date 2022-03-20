@@ -26,20 +26,27 @@ public class AnswerCheck : MonoBehaviour {
     }
 
     public void OnClick () {
+			bool odpovedBolaSpravna = false;
 
 			// Prejdi odpovede ak sa tam nachadza tak true
 			foreach (string odpoved in ShowQuest.questAnswers) {
 				if (input.text == odpoved) {
-					if (HealthMonitor.HealthValue < 3) HealthMonitor.HealthValue += 1;
+					odpovedBolaSpravna = true;
+					break;
+				}
+			}
+
+			if (odpovedBolaSpravna) {
+				if (HealthMonitor.HealthValue < 3) {
+					HealthMonitor.HealthValue += 1;
 					Score.score += 100;
 
 					StartCoroutine(this.UpdateScore());
 					Debug.Log("Spravna odpoved");
-					break;
-				} else {
+				} 
+			} else {
 					HealthMonitor.HealthValue -= 1; 
 					Debug.Log("Nespravna odpoved");
-				}
 			}
 
 			quest.SetActive(false);
