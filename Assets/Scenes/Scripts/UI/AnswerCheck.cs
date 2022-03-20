@@ -13,12 +13,11 @@ public class AnswerCheck : MonoBehaviour {
 			WWWForm form = new WWWForm();
 
 			form.AddField("score", Score.score);
-			//form.AddField("questId", ShowQuest.questId);
-			//form.AddField("spravnost", spravnaOdpoved);
+			form.AddField("questId", ShowQuest.questId);
+			form.AddField("spravnost", spravnaOdpoved);
 
 			using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/UcmGameWeb/web/index.php?action=update_score", form)) {
 				yield return www.SendWebRequest();
-				Debug.Log(www.isNetworkError);
 			}
     }
 
