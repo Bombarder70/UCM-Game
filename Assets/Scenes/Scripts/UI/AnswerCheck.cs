@@ -8,17 +8,13 @@ public class AnswerCheck : MonoBehaviour {
     public InputField input;
     public GameObject quest;
 
-		public class Odpoved {
-			public int id;
-			public string odpoved;
-			public int typ;
-		}
-
-    public IEnumerator UpdateScore() {
+    public IEnumerator UpdateScore(int spravnaOdpoved) {
 
 			WWWForm form = new WWWForm();
 
 			form.AddField("score", Score.score);
+			form.AddField("questId", ShowQuest.questId);
+			form.AddField("spravnost", spravnaOdpoved);
 
 			using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/UcmGameWeb/web/index.php?action=update_score", form)) {
 				yield return www.SendWebRequest();
@@ -41,11 +37,12 @@ public class AnswerCheck : MonoBehaviour {
 					HealthMonitor.HealthValue += 1;
 					Score.score += 100;
 
-					StartCoroutine(this.UpdateScore());
+					StartCoroutine(this.UpdateScore(1));
 					Debug.Log("Spravna odpoved");
 				} 
 			} else {
 				HealthMonitor.HealthValue -= 1; 
+				StartCoroutine(this.UpdateScore(0));
 				Debug.Log("Nespravna odpoved");
 			}
 

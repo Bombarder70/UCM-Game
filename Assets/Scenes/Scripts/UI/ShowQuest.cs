@@ -11,6 +11,7 @@ public class ShowQuest : MonoBehaviour {
 	public TextAsset jsonFile;
 
 	public static List<string> questAnswers = new List<string>(); 
+	public static int questId;
 
 	public static string jsonFromDB;
 
@@ -36,10 +37,6 @@ public class ShowQuest : MonoBehaviour {
 		public bool odpoved;
 	}
 
-	/*string parseJsonFile(string text) {
-		this.jsonFr
-	}*/
-
 	public IEnumerator loadJsonFromDB() {
 		using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/holes/UcmGameWeb/web/index.php?action=get_quests")) {
 			yield return www.SendWebRequest();
@@ -60,6 +57,7 @@ public class ShowQuest : MonoBehaviour {
 		foreach (Quest quest in questsInJson.quests) {
 			if (quest.zobrazena == false) {
 				otazkaText.text = quest.otazka;
+				ShowQuest.questId = quest.id;
 
 				// Nahraj vsetky mozne spravne odpovede
 				foreach (Odpoved odpoved in quest.odpovede) {
