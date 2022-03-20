@@ -13,17 +13,18 @@ public class AnswerCheck : MonoBehaviour {
 			WWWForm form = new WWWForm();
 
 			form.AddField("score", Score.score);
-			form.AddField("questId", ShowQuest.questId);
-			form.AddField("spravnost", spravnaOdpoved);
+			//form.AddField("questId", ShowQuest.questId);
+			//form.AddField("spravnost", spravnaOdpoved);
 
 			using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/UcmGameWeb/web/index.php?action=update_score", form)) {
 				yield return www.SendWebRequest();
+				Debug.Log(www.isNetworkError);
 			}
     }
 
     public void OnClick () {
 			bool odpovedBolaSpravna = false;
-
+				Debug.Log(input.text);
 			// Prejdi odpovede ak sa tam nachadza tak true
 			foreach (string odpoved in ShowQuest.questAnswers) {
 				if (input.text == odpoved) {
@@ -33,12 +34,12 @@ public class AnswerCheck : MonoBehaviour {
 			}
 
 			if (odpovedBolaSpravna) {
+				Score.score += 100;
+				StartCoroutine(this.UpdateScore(1));
+				Debug.Log("Spravna odpoved");
+
 				if (HealthMonitor.HealthValue < 3) {
 					HealthMonitor.HealthValue += 1;
-					Score.score += 100;
-
-					StartCoroutine(this.UpdateScore(1));
-					Debug.Log("Spravna odpoved");
 				} 
 			} else {
 				HealthMonitor.HealthValue -= 1; 
