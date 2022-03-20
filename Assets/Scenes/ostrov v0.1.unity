@@ -21758,7 +21758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37de2819a1049dc4dab13aa911542577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
 --- !u!1001 &1572980278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30825,23 +30824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cde70e11a768a4292e9dee6d6c17b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CorrectAnswer: 700
   input: {fileID: 67833468}
   quest: {fileID: 2128252695}
---- !u!114 &2128252700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128252695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a6b2e9d37b6aa46a6cfc5d516e906a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otazkaText: {fileID: 1943690721}
-  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
 --- !u!1001 &2131602433
 PrefabInstance:
   m_ObjectHideFlags: 0
