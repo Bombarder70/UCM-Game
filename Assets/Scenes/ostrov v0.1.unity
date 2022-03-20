@@ -20346,6 +20346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 2128252695}
+  otazkaText: {fileID: 1943690721}
+  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
 --- !u!65 &1453426057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23743,6 +23745,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 2128252695}
+  otazkaText: {fileID: 1175280801}
+  jsonFile: {fileID: 0}
 --- !u!65 &1680363713
 BoxCollider:
   m_ObjectHideFlags: 0
