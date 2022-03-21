@@ -15,6 +15,7 @@ public class AnswerCheck : MonoBehaviour {
 			form.AddField("score", Score.score);
 			form.AddField("questId", ShowQuest.questId);
 			form.AddField("spravnost", spravnaOdpoved);
+			form.AddField("playerNickname", "Pirat2");
 
 			using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/UcmGameWeb/web/index.php?action=update_score", form)) {
 				yield return www.SendWebRequest();
