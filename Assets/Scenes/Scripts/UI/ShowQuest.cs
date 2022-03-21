@@ -8,6 +8,7 @@ public class ShowQuest : MonoBehaviour {
 	public GameObject quest;
 
 	public Text otazkaText;
+	public InputField odpovedText;
 	public TextAsset jsonFile;
 
 	public static List<string> questAnswers = new List<string>(); 
@@ -72,6 +73,7 @@ public class ShowQuest : MonoBehaviour {
 	}
 
 	void loadQuestFromJson() {
+		odpovedText.text = ""; //Vyresetuj odpoved
 		StartCoroutine(this.loadJsonFromDB());
 	}
 

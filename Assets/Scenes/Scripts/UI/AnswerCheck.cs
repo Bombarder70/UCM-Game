@@ -24,7 +24,7 @@ public class AnswerCheck : MonoBehaviour {
 
     public void OnClick () {
 			bool odpovedBolaSpravna = false;
-				Debug.Log(input.text);
+
 			// Prejdi odpovede ak sa tam nachadza tak true
 			foreach (string odpoved in ShowQuest.questAnswers) {
 				if (input.text == odpoved) {
