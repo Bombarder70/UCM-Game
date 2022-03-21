@@ -53,11 +53,11 @@ namespace Player {
         animator.SetBool("isAttacking", false);
       }*/
 
-      if (Input.GetMouseButtonDown(0)) {
+      /*if (Input.GetMouseButtonDown(0)) {
         animator.SetBool("attackReady", true);
       } else if (this.getAnimationName("AttackReady")) {
         animator.SetBool("attackReady", false);
-      }
+      }*/
 
       if (Input.GetKey("w")) {
         animator.SetBool("isRunning", true);
