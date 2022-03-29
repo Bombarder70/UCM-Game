@@ -8,7 +8,12 @@ public class Map : MonoBehaviour
     
     public GameObject mapa;
     private bool isActive = false;
-    public GameObject cross;
+    private GameObject cross;
+    public GameObject cross1;
+    public GameObject cross2;
+    public GameObject cross3;
+    public GameObject cross4;
+    public GameObject cross5;
     List<GameObject> Crosses = new List<GameObject>();
     public Sprite tick;
 
@@ -16,7 +21,11 @@ public class Map : MonoBehaviour
 
     void Start()
     {
-        Crosses.Add(cross);
+        Crosses.Add(cross1);
+        Crosses.Add(cross2);
+        Crosses.Add(cross3);
+        Crosses.Add(cross4);
+        Crosses.Add(cross5);
     }
     void Update()
     {
@@ -57,6 +66,7 @@ public class Map : MonoBehaviour
         cross.GetComponent<Image>().color = Color.green;
         cross.GetComponent<Image>().sprite = tick;
 //        cross.transform.LeanMoveLocal(new Vector2 (-0.1f, -2.94f), 1).setEaseOutQuart();
-        
+         yield return new WaitForSeconds(1.2f);
+         Open();
     }
 }
