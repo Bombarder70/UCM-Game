@@ -29,6 +29,8 @@ namespace Player {
 
     public PlayerController.Keyboard playerControllerKeyboard; 
 
+    private bool stopMoving = false;
+
     void Start() {  
       playerControllerKeyboard = new PlayerController.Keyboard();
       playerControllerKeyboard.getSettings();
@@ -47,30 +49,56 @@ namespace Player {
       this.isRunning = animator.GetBool("isRunning");
       this.isReverse = animator.GetBool("isReverse");
 
-      /*if (Input.GetMouseButtonDown(0)) {
-        animator.SetBool("isAttacking", true);
-      } else if (this.getAnimationName("Attack")) {
-        animator.SetBool("isAttacking", false);
-      }*/
+      /*
+        PLAYER ATTACK
+      */
+      var isAttacking = animator.GetBool("isAttacking");
+      var readyForAttack = animator.GetBool("readyForAttack");
 
-      /*if (Input.GetMouseButtonDown(0)) {
-        animator.SetBool("attackReady", true);
-      } else if (this.getAnimationName("AttackReady")) {
-        animator.SetBool("attackReady", false);
-      }*/
-
-      if (Input.GetKey("w")) {
-        animator.SetBool("isRunning", true);
-      } else {
-        animator.SetBool("isRunning", false);
+      if (readyForAttack != true) {
+        if (Input.GetMouseButtonDown(0)) {
+          this.stopMoving = true;
+          animator.SetBool("PullOutTheSword", true);
+        } else {
+          animator.SetBool("PullOutTheSword", false);
+        }
       }
 
-      if (Input.GetKey("s")) {
-        animator.SetBool("isReverse", true);
-        this.speed = 1.5f;
-      } else {
-        animator.SetBool("isReverse", false);
-        this.speed = 2.2f;
+      if (getAnimationName("ReadyForAttack")) {
+        this.stopMoving = false;
+      }
+
+      if (getAnimationName("ReadyForAttack") && getAnimationTime() > 5) {
+        animator.SetBool("goToIdle", true);
+      }
+
+      // Ak je pripraveny na utok moze sekat
+      if (getAnimationName("ReadyForAttack")) {
+        if (Input.GetMouseButtonDown(0)) {
+          animator.SetBool("isAttacking", true);
+        } else if (this.getAnimationName("Attack")) {
+          animator.SetBool("isAttacking", false);
+        }
+      }
+
+      /*
+        PLAYER ATTACK END
+      */
+
+      if (this.stopMoving == false) {
+        if (Input.GetKey("w")) {
+          animator.SetBool("isRunning", true);
+        } else {
+          animator.SetBool("isRunning", false);
+        }
+
+        if (Input.GetKey("s")) {
+          animator.SetBool("isReverse", true);
+          this.speed = 1.5f;
+        } else {
+          animator.SetBool("isReverse", false);
+          this.speed = 2.2f;
+        }
       }
 
       // Pohyb a otacanie
@@ -85,14 +113,14 @@ namespace Player {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
 
-       if (
+      if (
         !this.getAnimationName("Landing")
         && !this.getAnimationName("DeadLanding")
         && !this.getAnimationName("getup1")
       ) {
         transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
       }
-     
+    
       animator.SetFloat("Speed", velocity.z);
 
       if (isGrounded 
@@ -122,7 +150,6 @@ namespace Player {
       }
 
       this.checkIfFalling();
-
     }  
 
     void FixedUpdate() {
