@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 public class AnswerCheck : MonoBehaviour {
     public InputField input;
     public GameObject quest;
+	public GameObject mapa;
 
     public IEnumerator UpdateScore(int spravnaOdpoved) {
 
@@ -37,6 +38,8 @@ public class AnswerCheck : MonoBehaviour {
 				Score.score += 100;
 				StartCoroutine(this.UpdateScore(1));
 				Debug.Log("Spravna odpoved");
+				mapa.GetComponent<Map>().Open();
+				mapa.GetComponent<Map>().ChangeCross(ShowQuest.questId);
 
 				if (HealthMonitor.HealthValue < 3) {
 					HealthMonitor.HealthValue += 1;
