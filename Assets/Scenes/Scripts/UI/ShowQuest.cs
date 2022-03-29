@@ -16,6 +16,9 @@ public class ShowQuest : MonoBehaviour {
 
 	public static string jsonFromDB;
 
+	// Momentalny objekt napr. flasa_quest pre drestroy po zobrazeni
+	public static GameObject questObject;
+
 	[System.Serializable]
 	public class Quests {
 		public Quest[] quests;
@@ -80,6 +83,7 @@ public class ShowQuest : MonoBehaviour {
 	void OnTriggerEnter () {
 		quest.SetActive (true);
 
+		ShowQuest.questObject = gameObject;
 		this.loadQuestFromJson();
 	}
 }

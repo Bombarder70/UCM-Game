@@ -47,6 +47,7 @@ public class AnswerCheck : MonoBehaviour {
 				Debug.Log("Nespravna odpoved");
 			}
 
+			Destroy(ShowQuest.questObject); // Destroy flasa_quest
 			quest.SetActive(false);
     }
 }
