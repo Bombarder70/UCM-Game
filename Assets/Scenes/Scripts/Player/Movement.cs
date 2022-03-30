@@ -91,7 +91,7 @@ namespace Player {
         }
       }
 
-      if (this.getAnimationName("Attack") && (this.getAnimationTime() > 1)) {
+      if (this.getAnimationName("Attack")) {
         animator.SetBool("isAttacking", false);
       }
 
