@@ -23,6 +23,10 @@ namespace Player {
 
     private int fallingCounter = 0;
 
+    private bool readyForAttack = false;
+    private bool readyForAttackRun = false;
+    private int attackModeTime = 0;
+
     //private bool isRecovery = false;
 
     Rigidbody rb;
@@ -53,9 +57,12 @@ namespace Player {
         PLAYER ATTACK
       */
       var isAttacking = animator.GetBool("isAttacking");
-      var readyForAttack = animator.GetBool("readyForAttack");
+      
+      this.readyForAttack = this.getAnimationName("ReadyForAttack"); // Attack mode idle
+      this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
 
-      if (readyForAttack != true) {
+      // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
+      if (!this.readyForAttack && !this.readyForAttackRun) {
         if (Input.GetMouseButtonDown(0)) {
           this.stopMoving = true;
           animator.SetBool("PullOutTheSword", true);
@@ -64,12 +71,14 @@ namespace Player {
         }
       }
 
-      if (getAnimationName("ReadyForAttack")) {
-        this.stopMoving = false;
-      }
+      // Ak je v mode attack moze sa hrac hybat
+      if (this.readyForAttack) this.stopMoving = false; 
 
-      if (getAnimationName("ReadyForAttack") && getAnimationTime() > 5) {
+      // Ak je v mode attack rataj cas, po sekundach do modu IDLE
+      if (this.readyForAttack || this.readyForAttackRun) this.attackModeTime += 1;
+      if (this.attackModeTime > 300) {
         animator.SetBool("goToIdle", true);
+        this.attackModeTime = 0;
       }
 
       // Ak je pripraveny na utok moze sekat
