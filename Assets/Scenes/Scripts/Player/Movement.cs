@@ -74,9 +74,12 @@ namespace Player {
 
       // Ak je v mode attack rataj cas, po sekundach do modu IDLE
       if (this.readyForAttack || this.readyForAttackRun) this.attackModeTime += 1;
-      if (this.attackModeTime > 300) {
+      if (this.attackModeTime > 500) {
         animator.SetBool("goToIdle", true);
         this.attackModeTime = 0;
+      }
+      if (this.readyForAttack && (this.getAnimationTime() > 3)) {
+        animator.SetBool("readyForAttackIdle1", true);
       }
 
       // Ak je pripraveny na utok moze sekat
