@@ -42,7 +42,7 @@ namespace Player {
       animator = GetComponent<Animator>();
       rb = GetComponent<Rigidbody>();
     }
-    
+ 
     void Update() {  
       //playerControllerKeyboard.checkEscapePress();
 
@@ -56,8 +56,6 @@ namespace Player {
       /*
         PLAYER ATTACK
       */
-      var isAttacking = animator.GetBool("isAttacking");
-      
       this.readyForAttack = this.getAnimationName("ReadyForAttack"); // Attack mode idle
       this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
 
@@ -82,12 +80,16 @@ namespace Player {
       }
 
       // Ak je pripraveny na utok moze sekat
-      if (getAnimationName("ReadyForAttack")) {
+      if (this.readyForAttack || this.readyForAttackRun) {
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
         } else if (this.getAnimationName("Attack")) {
           animator.SetBool("isAttacking", false);
         }
+      }
+
+      if (this.getAnimationName("Attack") && (this.getAnimationTime() > 1)) {
+        animator.SetBool("isAttacking", false);
       }
 
       /*
