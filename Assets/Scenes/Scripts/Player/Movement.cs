@@ -157,17 +157,16 @@ namespace Player {
         }
       }
 
-      if (!isRunning) {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 10) {
-          animator.SetBool("isHappy", true);
-        }
+      if (this.getAnimationName("Idle") && (getAnimationTime() > 15)) {
+        animator.SetBool("isIdle", true);
+      } else {
+        animator.SetBool("isIdle", false);
       }
 
       this.checkIfFalling();
     }  
 
     void FixedUpdate() {
-      this.setIsHappyToFalse();
     }
 
     void OnCollisionStay() {
@@ -180,16 +179,7 @@ namespace Player {
       animator.SetBool("isGrounded", false);
     }
 
-    // Custome methods
-
-    void setIsHappyToFalse() {
-      animator.SetBool("isHappy", false);
-    }
-
-    bool getIsHappy() {
-      return animator.GetBool("isHappy");
-    }
-
+    // Custom methods
     double getAnimationTime() {
       return animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
