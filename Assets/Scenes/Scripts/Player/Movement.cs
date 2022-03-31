@@ -26,10 +26,7 @@ namespace Player {
     private bool readyForAttack = false;
     private bool readyForAttackRun = false;
     private int attackModeTime = 0;
-<<<<<<< HEAD
-=======
     private bool pullOutTheSword = false;
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
 
     //private bool isRecovery = false;
 
@@ -62,20 +59,12 @@ namespace Player {
       */
       this.readyForAttack = this.getAnimationName("ReadyForAttack"); // Attack mode idle
       this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
-<<<<<<< HEAD
-
-      // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
-      if (!this.readyForAttack && !this.readyForAttackRun) {
-        if (Input.GetMouseButtonDown(0)) {
-          this.stopMoving = true;
-=======
       this.pullOutTheSword = this.getAnimationName("PullOutTheSword"); // PullOutTheSword
 
       // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
       if (!this.readyForAttack && !this.readyForAttackRun && !this.pullOutTheSword) {
         if (Input.GetMouseButtonDown(0)) {
           this.stopMoving = true; 
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
           animator.SetBool("PullOutTheSword", true);
         } else {
           animator.SetBool("PullOutTheSword", false);
@@ -99,10 +88,7 @@ namespace Player {
       if (this.readyForAttack || this.readyForAttackRun) {
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
-<<<<<<< HEAD
-=======
           this.attackModeTime = 0;
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
         } else if (this.getAnimationName("Attack")) {
           animator.SetBool("isAttacking", false);
         }

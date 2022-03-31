@@ -604,11 +604,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: isIdle
     m_Type: 4
     m_DefaultFloat: 0
@@ -644,71 +640,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: PullOutTheSword
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: goToIdle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: HideTheSword
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: readyForAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: readyForAttackIdle1
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: readyForAttackIdle2
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -757,8 +725,6 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IdleAnimation
-<<<<<<< HEAD
-=======
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -809,7 +775,6 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ReadyForAttack
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1436,15 +1401,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-<<<<<<< HEAD
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-=======
   m_TransitionDuration: 0.24863946
   m_TransitionOffset: 0
   m_ExitTime: 0.64515305
->>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
