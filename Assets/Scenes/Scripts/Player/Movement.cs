@@ -86,6 +86,7 @@ namespace Player {
       if (this.readyForAttack || this.readyForAttackRun) {
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
+          this.attackModeTime = 0;
         } else if (this.getAnimationName("Attack")) {
           animator.SetBool("isAttacking", false);
         }
