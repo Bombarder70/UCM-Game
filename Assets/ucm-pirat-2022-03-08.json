@@ -1,0 +1,810 @@
+{
+  "quests": [
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }, {
+      "id": 1,
+      "otazka": "Ako sa vola velky objekt ktory dokaze plavat na vode?",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved":"Lod"},
+        {"id":2,"odpoved":"Pltka"},
+        {"id":3,"odpoved":"Cln"},
+        {"id":4,"odpoved":"Jachta"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 2,
+      "otazka": "Napis aspon jeden stat ktory hranici so Slovenskom",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":"Ukrajina"},
+        {"id":2,"odpoved":"Cesko"},
+        {"id":3,"odpoved":"Rakusko"},
+        {"id":4,"odpoved":"Madarsko"},
+        {"id":5,"odpoved":"Polsko"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 3,
+      "otazka": "10 + 10 = ?",
+      "typ": 1,
+      "odpovede": [
+        {"id":1,"odpoved":20}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    }
+  ]
+}

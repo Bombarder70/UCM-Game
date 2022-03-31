@@ -23,11 +23,17 @@ namespace Player {
 
     private int fallingCounter = 0;
 
+    private bool readyForAttack = false;
+    private bool readyForAttackRun = false;
+    private int attackModeTime = 0;
+
     //private bool isRecovery = false;
 
     Rigidbody rb;
 
     public PlayerController.Keyboard playerControllerKeyboard; 
+
+    private bool stopMoving = false;
 
     void Start() {  
       playerControllerKeyboard = new PlayerController.Keyboard();
@@ -36,7 +42,7 @@ namespace Player {
       animator = GetComponent<Animator>();
       rb = GetComponent<Rigidbody>();
     }
-    
+ 
     void Update() {  
       //playerControllerKeyboard.checkEscapePress();
 
@@ -47,24 +53,66 @@ namespace Player {
       this.isRunning = animator.GetBool("isRunning");
       this.isReverse = animator.GetBool("isReverse");
 
-      /*if (Input.GetMouseButtonDown(0)) {
-        animator.SetBool("isAttacking", true);
-      } else if (this.getAnimationName("Attack")) {
-        animator.SetBool("isAttacking", false);
-      }*/
+      /*
+        PLAYER ATTACK
+      */
+      this.readyForAttack = this.getAnimationName("ReadyForAttack"); // Attack mode idle
+      this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
 
-      if (Input.GetKey("w")) {
-        animator.SetBool("isRunning", true);
-      } else {
-        animator.SetBool("isRunning", false);
+      // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
+      if (!this.readyForAttack && !this.readyForAttackRun) {
+        if (Input.GetMouseButtonDown(0)) {
+          this.stopMoving = true;
+          animator.SetBool("PullOutTheSword", true);
+        } else {
+          animator.SetBool("PullOutTheSword", false);
+        }
       }
 
-      if (Input.GetKey("s")) {
-        animator.SetBool("isReverse", true);
-        this.speed = 1.5f;
-      } else {
-        animator.SetBool("isReverse", false);
-        this.speed = 2.2f;
+      // Ak je v mode attack moze sa hrac hybat
+      if (this.readyForAttack) this.stopMoving = false; 
+
+      // Ak je v mode attack rataj cas, po sekundach do modu IDLE
+      if (this.readyForAttack || this.readyForAttackRun) this.attackModeTime += 1;
+      if (this.attackModeTime > 500) {
+        animator.SetBool("goToIdle", true);
+        this.attackModeTime = 0;
+      }
+      if (this.readyForAttack && (this.getAnimationTime() > 3)) {
+        animator.SetBool("readyForAttackIdle1", true);
+      }
+
+      // Ak je pripraveny na utok moze sekat
+      if (this.readyForAttack || this.readyForAttackRun) {
+        if (Input.GetMouseButtonDown(0)) {
+          animator.SetBool("isAttacking", true);
+        } else if (this.getAnimationName("Attack")) {
+          animator.SetBool("isAttacking", false);
+        }
+      }
+
+      if (this.getAnimationName("Attack")) {
+        animator.SetBool("isAttacking", false);
+      }
+
+      /*
+        PLAYER ATTACK END
+      */
+
+      if (this.stopMoving == false) {
+        if (Input.GetKey("w")) {
+          animator.SetBool("isRunning", true);
+        } else {
+          animator.SetBool("isRunning", false);
+        }
+
+        if (Input.GetKey("s")) {
+          animator.SetBool("isReverse", true);
+          this.speed = 1.5f;
+        } else {
+          animator.SetBool("isReverse", false);
+          this.speed = 2.2f;
+        }
       }
 
       // Pohyb a otacanie
@@ -79,14 +127,14 @@ namespace Player {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
 
-       if (
+      if (
         !this.getAnimationName("Landing")
         && !this.getAnimationName("DeadLanding")
         && !this.getAnimationName("getup1")
       ) {
         transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
       }
-     
+    
       animator.SetFloat("Speed", velocity.z);
 
       if (isGrounded 
@@ -109,18 +157,16 @@ namespace Player {
         }
       }
 
-      if (!isRunning) {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 10) {
-          animator.SetBool("isHappy", true);
-        }
+      if (this.getAnimationName("Idle") && (getAnimationTime() > 15)) {
+        animator.SetBool("isIdle", true);
+      } else {
+        animator.SetBool("isIdle", false);
       }
 
       this.checkIfFalling();
-
     }  
 
     void FixedUpdate() {
-      this.setIsHappyToFalse();
     }
 
     void OnCollisionStay() {
@@ -133,16 +179,7 @@ namespace Player {
       animator.SetBool("isGrounded", false);
     }
 
-    // Custome methods
-
-    void setIsHappyToFalse() {
-      animator.SetBool("isHappy", false);
-    }
-
-    bool getIsHappy() {
-      return animator.GetBool("isHappy");
-    }
-
+    // Custom methods
     double getAnimationTime() {
       return animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
