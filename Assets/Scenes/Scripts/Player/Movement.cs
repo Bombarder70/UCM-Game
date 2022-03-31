@@ -26,6 +26,7 @@ namespace Player {
     private bool readyForAttack = false;
     private bool readyForAttackRun = false;
     private int attackModeTime = 0;
+    private bool pullOutTheSword = false;
 
     //private bool isRecovery = false;
 
@@ -58,9 +59,10 @@ namespace Player {
       */
       this.readyForAttack = this.getAnimationName("ReadyForAttack"); // Attack mode idle
       this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
+      this.pullOutTheSword = this.getAnimationName("PullOutTheSword"); // PullOutTheSword
 
       // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
-      if (!this.readyForAttack && !this.readyForAttackRun) {
+      if (!this.readyForAttack && !this.readyForAttackRun && !this.pullOutTheSword) {
         if (Input.GetMouseButtonDown(0)) {
           this.stopMoving = true; 
           animator.SetBool("PullOutTheSword", true);
