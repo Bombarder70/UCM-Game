@@ -62,7 +62,7 @@ namespace Player {
       // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
       if (!this.readyForAttack && !this.readyForAttackRun) {
         if (Input.GetMouseButtonDown(0)) {
-          this.stopMoving = true;
+          this.stopMoving = true; 
           animator.SetBool("PullOutTheSword", true);
         } else {
           animator.SetBool("PullOutTheSword", false);
@@ -123,6 +123,7 @@ namespace Player {
         && !this.getAnimationName("Landing")
         && !this.getAnimationName("DeadLanding")
         && !this.getAnimationName("getup1")
+        && this.stopMoving == false
       ) {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
