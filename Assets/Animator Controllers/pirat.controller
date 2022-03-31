@@ -586,97 +586,129 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isJumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isRunning
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isReverse
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: isIdle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isGrounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isFalling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isDead
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isRecovery
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isAttacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: PullOutTheSword
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: goToIdle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: HideTheSword
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: readyForAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: readyForAttackIdle1
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   - m_Name: readyForAttackIdle2
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -725,6 +757,8 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IdleAnimation
+<<<<<<< HEAD
+=======
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -762,6 +796,59 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.7058253
   m_TransitionOffset: 0
   m_ExitTime: 0.67190593
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1102 &727944242822107773
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ReadyForAttack
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -2982049062747255359}
+  - {fileID: -326734642065098084}
+  - {fileID: -6124778482628378291}
+  - {fileID: 6599177931998538790}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -7512871879049407541, guid: 92c63a5f189892343804b0a7f9294252, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1101 &799050868465929837
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 727944242822107773}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.96681416
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1349,9 +1436,15 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
+<<<<<<< HEAD
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.75
+=======
+  m_TransitionDuration: 0.24863946
+  m_TransitionOffset: 0
+  m_ExitTime: 0.64515305
+>>>>>>> 9086b340c2d12592e9597971e9f83ef4da074298
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
