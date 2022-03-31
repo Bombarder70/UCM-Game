@@ -41145,7 +41145,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1069555672, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 1069555672, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_Radius
@@ -41169,6 +41169,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069555674, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069555675, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069555675, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069555675, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 682092460368767781, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
@@ -41238,7 +41250,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 768999743, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_Speed
-      value: 3.8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 768999743, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_Radius
@@ -41255,6 +41267,18 @@ PrefabInstance:
     - target: {fileID: 768999745, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_Center.y
       value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 768999746, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 768999746, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 768999746, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3941728919288593773, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_Name
