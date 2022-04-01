@@ -16,6 +16,7 @@ namespace Player {
     public bool isGrounded;
     public bool isRunning;
     public bool isReverse;
+    public bool isJumping;
 
     public bool isFalling;
     public bool isDead;
@@ -53,6 +54,7 @@ namespace Player {
 
       this.isRunning = animator.GetBool("isRunning");
       this.isReverse = animator.GetBool("isReverse");
+      this.isJumping = animator.GetBool("isJumping");
 
       /*
         PLAYER ATTACK
@@ -81,14 +83,17 @@ namespace Player {
       }
 
       // Ak je v mode attack rataj cas, po sekundach do modu IDLE
-      if (this.readyForAttack || this.readyForAttackRun) this.attackModeTime += 1;
+      /*if (this.readyForAttack || this.readyForAttackRun) this.attackModeTime += 1;
       if (this.attackModeTime > 500) {
         animator.SetBool("goToIdle", true);
         this.attackModeTime = 0;
-      }
+      }*/
+      // Mod idle animation
       if (this.readyForAttack && (this.getAnimationTime() > 3)) {
         animator.SetBool("readyForAttackIdle1", true);
       }
+      // Ak zacne utekat alebo skakat prerus animaciu
+      if (this.isRunning || this.isJumping || this.isReverse) animator.SetBool("readyForAttackIdle1", false);
 
       // Ak je pripraveny na utok moze sekat
       if (this.readyForAttack || this.readyForAttackRun) {
@@ -133,6 +138,7 @@ namespace Player {
         && !this.getAnimationName("DeadLanding")
         && !this.getAnimationName("getup1")
         && this.stopMoving == false
+        && !this.getAnimationName("ReadyForAttackJump") 
       ) {
         transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
@@ -149,7 +155,7 @@ namespace Player {
 
       if (isGrounded 
         && !isRunning
-        && this.getAnimationName("Idle")
+        && (this.getAnimationName("Idle") || this.getAnimationName("ReadyForAttack"))
       ) {
         if (Input.GetButtonDown("Jump")) {
           animator.SetBool("isJumping", true);
