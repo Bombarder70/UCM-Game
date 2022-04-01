@@ -63,7 +63,7 @@ namespace Player {
 
       // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
       if (!this.readyForAttack && !this.readyForAttackRun && !this.pullOutTheSword) {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetKey("h")) {
           this.stopMoving = true; 
           animator.SetBool("PullOutTheSword", true);
         } else {
@@ -72,7 +72,13 @@ namespace Player {
       }
 
       // Ak je v mode attack moze sa hrac hybat
-      if (this.readyForAttack) this.stopMoving = false; 
+      if (this.readyForAttack) {
+        this.stopMoving = false; 
+
+        if (Input.GetKey("h")) {
+          animator.SetBool("goToIdle", true);
+        }
+      }
 
       // Ak je v mode attack rataj cas, po sekundach do modu IDLE
       if (this.readyForAttack || this.readyForAttackRun) this.attackModeTime += 1;
@@ -171,6 +177,7 @@ namespace Player {
     }  
 
     void FixedUpdate() {
+      if (animator.GetBool("goToIdle"))  animator.SetBool("goToIdle", false);
     }
 
     void OnCollisionStay() {
