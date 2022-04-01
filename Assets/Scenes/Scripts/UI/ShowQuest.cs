@@ -24,6 +24,14 @@ public class ShowQuest : MonoBehaviour {
 		public Quest[] quests;
 	}
 
+	// Drag and drop typ
+	[System.Serializable]
+	public class Presun {
+		public int id;
+		public string text;
+		public int odpoved_id; // id spravnej odpovede
+	}
+
 	[System.Serializable]
 	public class Odpoved {
 		public int id;
@@ -36,6 +44,7 @@ public class ShowQuest : MonoBehaviour {
 		public int id;
 		public string otazka;
 		public int typ;
+		public Presun[]? presuny;
 		public Odpoved[] odpovede;
 		public bool zobrazena;
 		public bool odpoved;
