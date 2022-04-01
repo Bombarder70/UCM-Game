@@ -44,7 +44,6 @@ public class ShowQuest : MonoBehaviour {
 		public int id;
 		public string otazka;
 		public int typ;
-		public Presun[]? presuny;
 		public Odpoved[] odpovede;
 		public bool zobrazena;
 		public bool odpoved;
@@ -61,6 +60,7 @@ public class ShowQuest : MonoBehaviour {
 				Quests questsInJson = JsonUtility.FromJson<Quests>(jsonFile.text);
 				this.parseTextFromDB(questsInJson);
 			} else {
+				Debug.Log("Otazky nacitane z databazy");
 				Quests questsInJson = JsonUtility.FromJson<Quests>(www.downloadHandler.text);
 				this.parseTextFromDB(questsInJson);
 			}

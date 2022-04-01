@@ -2,17 +2,10 @@
   "quests": [
     {
       "id": 1,
-      "otazka": "Správny pirát musí vedieť dobre počítať. Lup si predsa treba nejako rozdeliť, no nie? Občas sa teda pirát nevyhne ani desatinných číslam. Zvládneš tieto výrazy zapísať desatinným číslom?",
-      "typ": 3,
-      "presun": [
-        {"id":1, "text":"205 celých 4 desaťtisíciny", "odpoved_id": 2},
-        {"id":2, "text":"6 celých 45 stotín", "odpoved_id": 3},
-        {"id":3, "text":"46 celých 5 desatín", "odpoved_id": 1}
-      ],
+      "otazka": "Správny pirát musí vedieť dobre počítať. Lup si predsa treba nejako rozdeliť, no nie? Občas sa teda pirát nevyhne ani desatinných číslam. Zvládneš tieto výrazy zapísať desatinným číslom? Vzor: 3 celé 23 tisícin = 3,023. 205 celých 4 desaťtisíciny ?",
+      "typ": 1,
       "odpovede":[
-        {"id":1, "odpoved":"46.5"},
-        {"id":2, "odpoved":"205.0004"},
-        {"id":3, "odpoved":"6.45"}
+        {"id":1, "odpoved":"205.0004"}
       ],
       "zobrazena": false,
       "odpoved": false
