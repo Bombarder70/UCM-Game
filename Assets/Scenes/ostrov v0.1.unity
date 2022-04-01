@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.26
   m_CustomReflection: {fileID: 8900000, guid: beb1457d375110e468b8d8e1f29fccea, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.052455824, g: 0.12043323, b: 0.27147785, a: 0.26}
+  m_IndirectSpecularColor: {r: 0.060459573, g: 0.12528923, b: 0.27112472, a: 0.26}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1527,7 +1527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 512037adc287121458b4d6f0d58a687a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.32257
+      value: 47.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 512037adc287121458b4d6f0d58a687a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12679,7 +12679,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651814011}
-  m_LocalRotation: {x: 0.05398459, y: -0.33438364, z: 0.01918962, w: 0.940694}
+  m_LocalRotation: {x: 0.053988177, y: -0.33420777, z: 0.019179532, w: 0.9407564}
   m_LocalPosition: {x: 84.99646, y: 9.345003, z: 0.7297058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -28024,7 +28024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170553cdc6e8ba449837d4c90495542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest: {fileID: 1525669282}
+  quest: {fileID: 2128252695}
   otazkaText: {fileID: 1943690721}
   odpovedText: {fileID: 67833468}
   jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
@@ -35794,7 +35794,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861405487}
-  m_LocalRotation: {x: 0.05398459, y: -0.33438364, z: 0.01918962, w: 0.940694}
+  m_LocalRotation: {x: 0.053988177, y: -0.33420777, z: 0.019179532, w: 0.9407564}
   m_LocalPosition: {x: 84.99646, y: 9.345003, z: 0.7297058}
   m_LocalScale: {x: 1.7659836, y: 1.7659836, z: 5.5731564}
   m_Children: []
