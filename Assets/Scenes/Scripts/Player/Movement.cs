@@ -28,6 +28,7 @@ namespace Player {
     private bool readyForAttackRun = false;
     private int attackModeTime = 0;
     private bool pullOutTheSword = false;
+    private float slowDown = 0f;
 
     //private bool isRecovery = false;
 
@@ -97,12 +98,15 @@ namespace Player {
 
       // Ak je pripraveny na utok moze sekat
       if (this.readyForAttack || this.readyForAttackRun) {
+        this.slowDown = 0.5f;
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
           this.attackModeTime = 0;
         } else if (this.getAnimationName("Attack")) {
           animator.SetBool("isAttacking", false);
         }
+      } else {
+        this.slowDown = 0;
       }
 
       if (this.getAnimationName("Attack")) {
@@ -130,7 +134,7 @@ namespace Player {
       }
 
       // Pohyb a otacanie
-      var velocity = Vector3.forward * Input.GetAxis("Vertical") * this.speed;
+      var velocity = Vector3.forward * Input.GetAxis("Vertical") * (this.speed - this.slowDown);
       if (
         !this.getAnimationName("Idle_jump") 
         && !isFalling 
