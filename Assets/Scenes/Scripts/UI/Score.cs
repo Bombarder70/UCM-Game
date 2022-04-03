@@ -11,13 +11,15 @@ public class Score : MonoBehaviour
     public Text text;
 
     public IEnumerator getPlayerScore() {
-        using (UnityWebRequest www = UnityWebRequest.Get("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_score")) {
+        using (UnityWebRequest www = UnityWebRequest.Get("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_nickname")) {
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError) {
                 Score.score = 10;
             } else {
-                Score.score = int.Parse(www.downloadHandler.text);
+                //Score.score = int.Parse(www.downloadHandler.text);
+                Score.score = 50; // 50 coinov zo zaciatku
+                PlayerManager.nickname = www.downloadHandler.text; // Ziskaj nickname
             }
             
         }

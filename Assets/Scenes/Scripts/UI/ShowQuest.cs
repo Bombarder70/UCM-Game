@@ -50,7 +50,7 @@ public class ShowQuest : MonoBehaviour {
 	}
 
 	public IEnumerator loadJsonFromDB() {
-		string playerNickname = "Pirat2"; // TODO: TOTO SPRAVIT Z NASTAVENI USERA
+		string playerNickname = PlayerManager.nickname;
 
 		using (UnityWebRequest www = UnityWebRequest.Get("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname)) {
 			yield return www.SendWebRequest();
