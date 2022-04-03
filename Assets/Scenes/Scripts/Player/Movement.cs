@@ -30,6 +30,9 @@ namespace Player {
     private bool pullOutTheSword = false;
     private float slowDown = 0f;
 
+    private float transformX; 
+    private float transformZ; 
+
     //private bool isRecovery = false;
 
     Rigidbody rb;
@@ -172,10 +175,17 @@ namespace Player {
       if (Input.GetKeyDown("space")) {
         if (isRunning && isGrounded) {
           //animator.SetBool("isJumping", true);
-          Debug.Log("run_jump");
           rb.AddForce(new Vector3(0, 85, 0), ForceMode.Impulse);
+          this.transformX = transform.position.x;
+          this.transformZ = transform.position.z;
         }
       }
+
+      /*if (isGrounded && this.getAnimationName("Run_jump") && (this.getAnimationTime() > 0.5)) {
+        var x = (this.transformX - transform.position.x) * (-2);
+        var z = (this.transformZ - transform.position.z) * (-2);
+        rb.AddForce(new Vector3(x, 85, z), ForceMode.Impulse);
+      }*/
 
       if (this.getAnimationName("Idle") && (getAnimationTime() > 15)) {
         animator.SetBool("isIdle", true);
