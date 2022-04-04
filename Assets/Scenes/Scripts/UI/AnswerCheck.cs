@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class AnswerCheck : MonoBehaviour {
+	public Text otazka_text;
     public InputField input;
     public GameObject quest;
 	public GameObject mapa;
@@ -52,5 +53,6 @@ public class AnswerCheck : MonoBehaviour {
 
 			Destroy(ShowQuest.questObject); // Destroy flasa_quest
 			quest.SetActive(false);
+			otazka_text.text = "";
     }
 }

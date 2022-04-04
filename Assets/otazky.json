@@ -2,10 +2,11 @@
   "quests": [
     {
       "id": 1,
-      "otazka": "Správny pirát musí vedieť dobre počítať. Lup si predsa treba nejako rozdeliť, no nie? Občas sa teda pirát nevyhne ani desatinných číslam. Zvládneš tieto výrazy zapísať desatinným číslom? Vzor: 3 celé 23 tisícin = 3,023. 205 celých 4 desaťtisíciny ?",
+      "otazka": "Správny pirát musí vedieť dobre počítať. Lup si predsa treba nejako rozdeliť, no nie? Občas sa teda pirát nevyhne ani desatinným číslam. Zvládneš tieto výrazy zapísať desatinným číslom? Vzor: 3 celé 23 tisícin = 3,023. 205 celých 4 desaťtisíciny ?",
       "typ": 1,
       "odpovede":[
-        {"id":1, "odpoved":"205.0004"}
+        {"id":1, "odpoved":"205.0004"},
+        {"id":2, "odpoved":"205,0004"}
       ],
       "zobrazena": false,
       "odpoved": false
@@ -45,7 +46,8 @@
       "otazka": "Ako chceš nájsť poklad, keď nevieš vylúštiť jednoduchú hádanku? Alebo vieš? Ukáž čo je v tebe! Napíš desatinné číslo, ktoré má na mieste jednotiek 5, na mieste desatín 0, na mieste desiatok 3 a na mieste stotín 7. Potom toto číslo zväčši o 3.",
       "typ": 1,
       "odpovede":[
-        {"id":1,"odpoved": 38.07}
+        {"id":1,"odpoved": "38.07"},
+        {"id":2, "odpoved":"38,07"}
       ],
       "zobrazena": false,
       "odpoved": false

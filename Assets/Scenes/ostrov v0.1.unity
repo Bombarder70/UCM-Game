@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.26
   m_CustomReflection: {fileID: 8900000, guid: beb1457d375110e468b8d8e1f29fccea, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.060459573, g: 0.12528923, b: 0.27112472, a: 0.26}
+  m_IndirectSpecularColor: {r: 0.052455824, g: 0.12043323, b: 0.27147785, a: 0.26}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -761,7 +761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309311277904992418, guid: a6e994a199febca4daa396931db87b0e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4309311277904992418, guid: a6e994a199febca4daa396931db87b0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1558,7 +1558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4944,10 +4944,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170553cdc6e8ba449837d4c90495542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flasa_id: 5
   quest: {fileID: 2128252695}
   otazkaText: {fileID: 1943690721}
   odpovedText: {fileID: 67833468}
-  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
+  jsonFile: {fileID: 4900000, guid: 5cf7e34f27559194089b0c89c3e30820, type: 3}
 --- !u!65 &219909005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5377,7 +5378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6636,10 +6637,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170553cdc6e8ba449837d4c90495542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flasa_id: 4
   quest: {fileID: 2128252695}
   otazkaText: {fileID: 1943690721}
   odpovedText: {fileID: 67833468}
-  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
+  jsonFile: {fileID: 4900000, guid: 5cf7e34f27559194089b0c89c3e30820, type: 3}
 --- !u!65 &307297321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8618,7 +8620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9511,7 +9513,7 @@ Transform:
   - {fileID: 307297319}
   - {fileID: 219909003}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &496301446 stripped
 Transform:
@@ -12590,7 +12592,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 51028d012510627498e03b8bdd8c0c89, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51028d012510627498e03b8bdd8c0c89, type: 3}
       propertyPath: m_LocalScale.x
@@ -13160,7 +13162,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651814011}
-  m_LocalRotation: {x: 0.05401365, y: -0.33295575, z: 0.019107683, w: 0.94120026}
+  m_LocalRotation: {x: 0.053998224, y: -0.33371487, z: 0.019151248, w: 0.9409314}
   m_LocalPosition: {x: 84.99646, y: 9.345003, z: 0.7297058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13644,7 +13646,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8104020344411448626, guid: 90664bbcbcf4b51428cb70ea0ce1d4dd, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8104020344411448626, guid: 90664bbcbcf4b51428cb70ea0ce1d4dd, type: 3}
       propertyPath: m_LocalScale.x
@@ -24515,7 +24517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24787,7 +24789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27849,7 +27851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28829,10 +28831,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170553cdc6e8ba449837d4c90495542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flasa_id: 1
   quest: {fileID: 2128252695}
   otazkaText: {fileID: 1943690721}
   odpovedText: {fileID: 67833468}
-  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
+  jsonFile: {fileID: 4900000, guid: 5cf7e34f27559194089b0c89c3e30820, type: 3}
 --- !u!65 &1453426057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29043,7 +29046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30320,6 +30323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cde70e11a768a4292e9dee6d6c17b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otazka_text: {fileID: 0}
   input: {fileID: 996240265}
   quest: {fileID: 1525669282}
   mapa: {fileID: 1902046627}
@@ -34062,7 +34066,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8646087e3b4a16b49bdaad6f899e9b4d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8646087e3b4a16b49bdaad6f899e9b4d, type: 3}
       propertyPath: m_LocalScale.x
@@ -35463,7 +35467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465324794277324759, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4465324794277324759, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36926,7 +36930,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861405487}
-  m_LocalRotation: {x: 0.05401365, y: -0.33295575, z: 0.019107683, w: 0.94120026}
+  m_LocalRotation: {x: 0.053998224, y: -0.33371487, z: 0.019151248, w: 0.9409314}
   m_LocalPosition: {x: 84.99646, y: 9.345003, z: 0.7297058}
   m_LocalScale: {x: 1.7659836, y: 1.7659836, z: 5.5731564}
   m_Children: []
@@ -38672,10 +38676,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6992cc42bf1c580479214c716192bbe1, type: 3}
-    m_FontSize: 50
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -38683,9 +38687,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Kapit\xE1n Kidd\_\_b\xFDva od\_pr\xEDstavu, kde\_kotv\xED jeho pir\xE1tska
-    lo\u010F, 357 metrov. Jeho krok je dlh\xFD 0,51 m. Vypo\u010D\xEDtaj, ko\u013Eko
-    krokov mus\xED urobi\u0165, aby sa dostal ku svojej lodi.\r"
+  m_Text: 
 --- !u!222 &1943690722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39452,7 +39454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42411,10 +42413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170553cdc6e8ba449837d4c90495542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flasa_id: 3
   quest: {fileID: 2128252695}
   otazkaText: {fileID: 1943690721}
   odpovedText: {fileID: 67833468}
-  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
+  jsonFile: {fileID: 4900000, guid: 5cf7e34f27559194089b0c89c3e30820, type: 3}
 --- !u!65 &2102045973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42450,10 +42453,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170553cdc6e8ba449837d4c90495542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flasa_id: 2
   quest: {fileID: 2128252695}
   otazkaText: {fileID: 1943690721}
   odpovedText: {fileID: 67833468}
-  jsonFile: {fileID: 4900000, guid: 17b36575fdfc71c4c8a2e8f95d3bc991, type: 3}
+  jsonFile: {fileID: 4900000, guid: 5cf7e34f27559194089b0c89c3e30820, type: 3}
 --- !u!65 &2108603763
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42859,6 +42863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cde70e11a768a4292e9dee6d6c17b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otazka_text: {fileID: 1943690721}
   input: {fileID: 67833468}
   quest: {fileID: 2128252695}
   mapa: {fileID: 1902046627}
@@ -43492,7 +43497,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1633229832949626694, guid: 99f233db4cca411458b4cdf9d6f5fb82, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1633229832949626694, guid: 99f233db4cca411458b4cdf9d6f5fb82, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43967,7 +43972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8294103621407444498, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44060,7 +44065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465324794277324759, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4465324794277324759, guid: 3fd18d2db1b6da244beaa4d3fb20f306, type: 3}
       propertyPath: m_LocalPosition.x

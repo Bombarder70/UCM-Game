@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class ShowQuest : MonoBehaviour {
+	public int flasa_id;
 	public GameObject quest;
 
 	public Text otazkaText;
@@ -70,7 +71,7 @@ public class ShowQuest : MonoBehaviour {
 
 	public void parseTextFromDB(Quests questsInJson) {
 		foreach (Quest quest in questsInJson.quests) {
-			if (quest.zobrazena == false) {
+			if (quest.zobrazena == false && quest.id == flasa_id) {
 				otazkaText.text = quest.otazka;
 				ShowQuest.questId = quest.id;
 
