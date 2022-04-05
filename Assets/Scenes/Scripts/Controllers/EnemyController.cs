@@ -31,9 +31,13 @@ public class EnemyController : MonoBehaviour
             //enemyAnimator.Play("Attack");
 
             if (this.getAnimationName("Attack")) {
-                if (this.getAnimationTime() > 0.5 * this.damageIteration) {
+                if (this.getAnimationTime() > 0.7 * this.damageIteration) {
                     this.damageIteration++;
-                    //Score.changeScore(-10);
+                    if (Score.score > 0) {
+                        Score.score -= 10;
+                    } else {
+                        HealthMonitor.HealthValue -= 1;
+                    }
                 }
             }
         } else if (distance <= enemyLook) {
