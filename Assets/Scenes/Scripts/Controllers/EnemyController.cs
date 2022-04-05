@@ -13,50 +13,62 @@ public class EnemyController : MonoBehaviour
 
     public int damageIteration = 1;
 
+		private bool stopEnemyMoving = false;
+
     void Start() {
 			target = PlayerManager.instance.player.transform;
 			agent = GetComponent<NavMeshAgent>();
 
 			enemyAnimator = GetComponent<Animator>();
 
-			this.die();
+			setRigidbodyState(true);
+			setColliderState(false);
+			GetComponent<Animator>().enabled = true;
     }
 
     public void die() {
-			Destroy(gameObject, 15f);
 			GetComponent<Animator>().enabled = false;
-			GetComponent<Rigidbody>().isKinematic = false;
-			GetComponent<Collider>().enabled = false;
+			setRigidbodyState(false);
+			setColliderState(true);
+
+			agent.enabled = false;
+			this.stopEnemyMoving = true;
+
+			if (gameObject != null) {
+				Destroy(gameObject, 15f);
+			}
     }
 
 
     void Update() {
-			float distance = Vector3.Distance(target.position, transform.position);
+			if (this.stopEnemyMoving == false) {
+				float distance = Vector3.Distance(target.position, transform.position);
 
-			if (distance < 1.5) {
-				enemyAnimator.SetBool("isRunning", false);
-				enemyAnimator.SetBool("isAttacking", true);
+				if (distance < 1.5) {
+					enemyAnimator.SetBool("isRunning", false);
+					enemyAnimator.SetBool("isAttacking", true);
 
-				//enemyAnimator.Play("Attack");
+					//enemyAnimator.Play("Attack");
 
-				if (this.getAnimationName("Attack")) {
-					if (this.getAnimationTime() > 0.7 * this.damageIteration) {
-						this.damageIteration++;
-						if (Score.score > 0) {
-							Score.score -= 10;
-						} else {
-							HealthMonitor.HealthValue -= 1;
+					if (this.getAnimationName("Attack")) {
+						if (this.getAnimationTime() > 0.7 * this.damageIteration) {
+							this.damageIteration++;
+							if (Score.score > 0) {
+								Score.score -= 10;
+							} else {
+								HealthMonitor.HealthValue -= 1;
+							}
 						}
 					}
+				} else if (distance <= enemyLook) {
+					enemyAnimator.SetBool("isRunning", true);
+					enemyAnimator.SetBool("isAttacking", false);
+					agent.SetDestination(target.position);
+					this.damageIteration = 1;
+				} else {
+					enemyAnimator.SetBool("isRunning", false);
+					this.damageIteration = 1;
 				}
-			} else if (distance <= enemyLook) {
-				enemyAnimator.SetBool("isRunning", true);
-				enemyAnimator.SetBool("isAttacking", false);
-				agent.SetDestination(target.position);
-				this.damageIteration = 1;
-			} else {
-				enemyAnimator.SetBool("isRunning", false);
-				this.damageIteration = 1;
 			}
     }
 
@@ -71,5 +83,25 @@ public class EnemyController : MonoBehaviour
 
     bool getAnimationName(string name) {
       return enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName(name);
+    }
+
+		void setRigidbodyState(bool state) {
+			Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+
+			foreach (Rigidbody rigidbody in rigidbodies){
+				rigidbody.isKinematic = state;
+			}
+
+			GetComponent<Rigidbody>().isKinematic = !state;
+    }
+
+    void setColliderState(bool state) {
+			Collider[] colliders = GetComponentsInChildren<Collider>();
+
+			foreach (Collider collider in colliders) {
+				collider.enabled = state;
+			}
+
+			GetComponent<Collider>().enabled = !state;
     }
 }

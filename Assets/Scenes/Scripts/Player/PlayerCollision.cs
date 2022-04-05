@@ -8,6 +8,14 @@ public class PlayerCollision : MonoBehaviour {
     if (collision.gameObject.name != "Ostrov") {
       Debug.Log(collision.gameObject.name);
     }
+
+    if (collision.gameObject.name == "skeleton2_redeyes") {
+      EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+
+      if (enemy != null) {
+        enemy.die();
+      }
+    }
   }
 
   // Znicenie objektu
