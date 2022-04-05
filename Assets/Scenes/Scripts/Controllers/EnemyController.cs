@@ -14,46 +14,55 @@ public class EnemyController : MonoBehaviour
     public int damageIteration = 1;
 
     void Start() {
-        target = PlayerManager.instance.player.transform;
-        agent = GetComponent<NavMeshAgent>();
+			target = PlayerManager.instance.player.transform;
+			agent = GetComponent<NavMeshAgent>();
 
-        enemyAnimator = GetComponent<Animator>();
+			enemyAnimator = GetComponent<Animator>();
+
+			this.die();
+    }
+
+    public void die() {
+			Destroy(gameObject, 15f);
+			GetComponent<Animator>().enabled = false;
+			GetComponent<Rigidbody>().isKinematic = false;
+			GetComponent<Collider>().enabled = false;
     }
 
 
     void Update() {
-        float distance = Vector3.Distance(target.position, transform.position);
+			float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance < 1.5) {
-            enemyAnimator.SetBool("isRunning", false);
-            enemyAnimator.SetBool("isAttacking", true);
+			if (distance < 1.5) {
+				enemyAnimator.SetBool("isRunning", false);
+				enemyAnimator.SetBool("isAttacking", true);
 
-            //enemyAnimator.Play("Attack");
+				//enemyAnimator.Play("Attack");
 
-            if (this.getAnimationName("Attack")) {
-                if (this.getAnimationTime() > 0.7 * this.damageIteration) {
-                    this.damageIteration++;
-                    if (Score.score > 0) {
-                        Score.score -= 10;
-                    } else {
-                        HealthMonitor.HealthValue -= 1;
-                    }
-                }
-            }
-        } else if (distance <= enemyLook) {
-            enemyAnimator.SetBool("isRunning", true);
-            enemyAnimator.SetBool("isAttacking", false);
-            agent.SetDestination(target.position);
-            this.damageIteration = 1;
-        } else {
-            enemyAnimator.SetBool("isRunning", false);
-            this.damageIteration = 1;
-        }
+				if (this.getAnimationName("Attack")) {
+					if (this.getAnimationTime() > 0.7 * this.damageIteration) {
+						this.damageIteration++;
+						if (Score.score > 0) {
+							Score.score -= 10;
+						} else {
+							HealthMonitor.HealthValue -= 1;
+						}
+					}
+				}
+			} else if (distance <= enemyLook) {
+				enemyAnimator.SetBool("isRunning", true);
+				enemyAnimator.SetBool("isAttacking", false);
+				agent.SetDestination(target.position);
+				this.damageIteration = 1;
+			} else {
+				enemyAnimator.SetBool("isRunning", false);
+				this.damageIteration = 1;
+			}
     }
 
     void OnDrawGizmosSelected() {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, enemyLook);
+			Gizmos.color = Color.blue;
+			Gizmos.DrawWireSphere(transform.position, enemyLook);
     }
 
     double getAnimationTime() {
