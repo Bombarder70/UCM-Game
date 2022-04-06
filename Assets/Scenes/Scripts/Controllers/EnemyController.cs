@@ -63,15 +63,21 @@ public class EnemyController : MonoBehaviour
 				} else if (distance <= enemyLook) {
 					enemyAnimator.SetBool("isRunning", true);
 					enemyAnimator.SetBool("isAttacking", false);
+
 					agent.SetDestination(target.position);
+
 					this.damageIteration = 1;
 				} else {
 					enemyAnimator.SetBool("isRunning", false);
 					this.damageIteration = 1;
 				}
 			}
-    }
 
+			/*if (this.getAnimationName("Idle") && this.getAnimationTime() > 10) {
+				enemyAnimator.SetBool("scream", true);
+			}*/
+    }
+	
     void OnDrawGizmosSelected() {
 			Gizmos.color = Color.blue;
 			Gizmos.DrawWireSphere(transform.position, enemyLook);
