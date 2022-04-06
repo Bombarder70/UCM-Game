@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
 
 		form.AddField("uid", this.FetchMacId());
 
-		using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/UcmGameWeb/web/index.php?action=get_nickname", form)) {
+		using (UnityWebRequest www = UnityWebRequest.Post("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_nickname", form)) {
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError) {
