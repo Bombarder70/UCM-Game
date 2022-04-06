@@ -3,39 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using System.Net.NetworkInformation;
 
 public class Score : MonoBehaviour
 {
 
-    public static int score = 0;
-    public Text text;
+	public static int score = 0;
+	public Text text;
 
-    public IEnumerator getPlayerScore() {
-        using (UnityWebRequest www = UnityWebRequest.Get("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_nickname")) {
-            yield return www.SendWebRequest();
+	public IEnumerator getPlayerScore() {
+		WWWForm form = new WWWForm();
 
-            if (www.isNetworkError || www.isHttpError) {
-                Score.score = 10;
-            } else {
-                //Score.score = int.Parse(www.downloadHandler.text);
-                Score.score = 50; // 50 coinov zo zaciatku
-                PlayerManager.nickname = www.downloadHandler.text; // Ziskaj nickname
-            }
-            
-        }
-    }
+		form.AddField("uid", this.FetchMacId());
 
-    void Start() {
-        StartCoroutine(this.getPlayerScore());
-    }
-  
-    void Update () {
-        text.text = score.ToString() + "x";
-    }
+		using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/UcmGameWeb/web/index.php?action=get_nickname", form)) {
+			yield return www.SendWebRequest();
 
-    /*public static void changeScore(int value) {
-        Score.text.text = "50";
-    }*/
+			if (www.isNetworkError || www.isHttpError) {
+				Score.score = 50;
+			} else {
+				//Score.score = int.Parse(www.downloadHandler.text);
+				Score.score = 50; // 50 coinov zo zaciatku
+				PlayerManager.nickname = www.downloadHandler.text; // Ziskaj nickname
+		}
+				
+		}
+	}
 
+	void Start() {
+		StartCoroutine(this.getPlayerScore());
+	}
+
+	void Update () {
+		text.text = score.ToString() + "x";
+	}
+
+	public string FetchMacId() {
+		string macAddresses = "";
+
+		foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces()) {
+			if (nic.OperationalStatus == OperationalStatus.Up) {
+				return nic.GetPhysicalAddress().ToString();
+			}
+		}
+
+		return macAddresses;
+	}
 
 }
