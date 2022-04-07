@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: a45d2e2ba13dd9941b5de162be676fd4
+guid: f9c685303c4c6a5408a606bbe7472684
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: listy
-    second: {fileID: 2100000, guid: b0ef2cd1282a051458449dd053c62993, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: palm
-    second: {fileID: 2100000, guid: b0ef2cd1282a051458449dd053c62993, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -43,11 +33,7 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages:
-    - 0.25
-    - 0.125
-    - 0.0625
-    - 0.01
+    lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0

@@ -13,35 +13,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 718.4
+      value: 694.166
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.367725
+      value: 35.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 402.5
+      value: 350.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999989
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.0015087493
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -0.173
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -53,19 +53,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_Name
-      value: palm2_coll
+      value: palm2
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.6374324
+      value: 0.7087486
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.5007361
+      value: 0.47283423
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.27668768
+      value: 0.2664165
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
@@ -74,8 +74,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
   m_PrefabInstance: {fileID: 8263288182631968551}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &3706925597911677957
-CapsuleCollider:
+--- !u!1 &6594303800850857097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6255864318365068370, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
+  m_PrefabInstance: {fileID: 8263288182631968551}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1878514686
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594303800850857097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7145660350383471167, guid: a45d2e2ba13dd9941b5de162be676fd4, type: 3}
+--- !u!64 &1484998009
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -84,7 +103,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
