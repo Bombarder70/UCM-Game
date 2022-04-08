@@ -28,6 +28,10 @@ namespace Player {
     private bool readyForAttackRun = false;
     private int attackModeTime = 0;
     private bool pullOutTheSword = false;
+    public bool swordEquiped = false;
+    [SerializeField]
+    Transform sword;
+    public Transform sword_ueq_pos, sword_eq_pos;
     private float slowDown = 0f;
 
     private float transformX; 
@@ -67,15 +71,32 @@ namespace Player {
       this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
       this.pullOutTheSword = this.getAnimationName("PullOutTheSword"); // PullOutTheSword
 
+
+    
       // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
       if (!this.readyForAttack && !this.readyForAttackRun && !this.pullOutTheSword) {
         if (Input.GetKey("h")) {
           this.stopMoving = true; 
           animator.SetBool("PullOutTheSword", true);
+          
         } else {
           animator.SetBool("PullOutTheSword", false);
         }
       }
+
+
+      if (swordEquiped)
+      {
+        sword.position = sword_eq_pos.position;
+        sword.rotation = sword_eq_pos.rotation;
+      }
+      else
+      {
+        
+        sword.position = sword_ueq_pos.position;
+        sword.rotation = sword_ueq_pos.rotation;
+      }
+
 
       // Ak je v mode attack moze sa hrac hybat
       if (this.readyForAttack) {
@@ -290,6 +311,17 @@ namespace Player {
       this.healthStop = false;
     }
 
+    public void Sword_Equip()
+    {
+        swordEquiped = true;
+    }
+
+    public void Sword_Unequip()
+    {
+      swordEquiped = false;
+    }
+
   }
+
 
 }
