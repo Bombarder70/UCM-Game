@@ -57,15 +57,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: f9c685303c4c6a5408a606bbe7472684, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.45701447
+      value: 0.16307628
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: f9c685303c4c6a5408a606bbe7472684, type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.20332226
+      value: 0.041387547
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: f9c685303c4c6a5408a606bbe7472684, type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.20332226
+      value: 0.040384322
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c685303c4c6a5408a606bbe7472684, type: 3}
