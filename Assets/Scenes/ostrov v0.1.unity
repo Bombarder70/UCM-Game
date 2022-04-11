@@ -49977,6 +49977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pirat2
       objectReference: {fileID: 0}
+    - target: {fileID: 9038751383960996589, guid: 80a9944a7c9ad984cb5027605e52ac73, type: 3}
+      propertyPath: m_TagString
+      value: pirat
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 168703469, guid: 80a9944a7c9ad984cb5027605e52ac73, type: 3}
     - {fileID: 168703471, guid: 80a9944a7c9ad984cb5027605e52ac73, type: 3}
