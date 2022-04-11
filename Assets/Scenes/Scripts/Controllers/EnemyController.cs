@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     public float enemyLook = 10f;
     public Animator enemyAnimator;
+
+		public int health = 5;
     
     Transform target;
     NavMeshAgent agent;
@@ -38,7 +40,6 @@ public class EnemyController : MonoBehaviour
 				Destroy(gameObject, 15f);
 			}
     }
-
 
     void Update() {
 			if (this.stopEnemyMoving == false) {
