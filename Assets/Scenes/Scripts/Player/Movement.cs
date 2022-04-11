@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player {
+
 
 	public class Movement : MonoBehaviour  { 
 
@@ -51,6 +51,11 @@ namespace Player {
 
       animator = GetComponent<Animator>();
       rb = GetComponent<Rigidbody>();
+    }
+
+    public void die() {
+			GetComponent<Movement>().enabled = false;
+      animator.SetBool("isDead", false);
     }
  
     void Update() {  
@@ -267,6 +272,17 @@ namespace Player {
         HealthMonitor.HealthValue += -1;
         this.healthStop = true;
       }
+
+      // TODO na nulu
+      if (HealthMonitor.HealthValue == 1) {
+        setAsDead();
+        this.healthStop = true;
+        this.stopMoving = true;
+
+        if (getAnimationName("dead")) {
+          this.die();
+        }
+      }
     }
 
     // Sem pojdu variacie smrti
@@ -324,4 +340,4 @@ namespace Player {
   }
 
 
-}
+
