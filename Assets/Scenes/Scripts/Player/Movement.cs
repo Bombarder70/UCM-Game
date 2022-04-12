@@ -54,7 +54,8 @@ using UnityEngine;
     }
 
     public void die() {
-			GetComponent<Movement>().enabled = false;
+      animator.Play("dead");
+			gameObject.GetComponent<Movement>().enabled = false;
       animator.SetBool("isDead", false);
     }
  
@@ -279,7 +280,7 @@ using UnityEngine;
         this.healthStop = true;
         this.stopMoving = true;
 
-        if (getAnimationName("dead")) {
+        if (this.isDead) {
           this.die();
         }
       }

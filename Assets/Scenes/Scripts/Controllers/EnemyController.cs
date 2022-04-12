@@ -42,6 +42,13 @@ public class EnemyController : MonoBehaviour
     }
 
     void Update() {
+
+			if (this.getAnimationName("getHitAnimation")) {
+				agent.enabled = false;
+			} else {
+				agent.enabled = true;
+			}
+
 			if (this.stopEnemyMoving == false) {
 				float distance = Vector3.Distance(target.position, transform.position);
 
