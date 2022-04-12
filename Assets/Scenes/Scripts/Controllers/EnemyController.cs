@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public int damageIteration = 1;
 
 		private bool stopEnemyMoving = false;
+		private int randomPlayerDeadAnimation = 0;
 
     void Start() {
 			target = PlayerManager.instance.player.transform;
@@ -43,11 +44,12 @@ public class EnemyController : MonoBehaviour
 
     void Update() {
 
-			if (this.getAnimationName("getHitAnimation")) {
-				this.stopEnemyMoving = true;
-			} else {
-				this.stopEnemyMoving = false;
-			}
+			/**
+			  * Ak enemydostane hit tak za nemoze hybat
+				* Ak je hrac mrtvy tak sa enemy nehybe
+			 */
+			if (this.getAnimationName("getHitAnimation") || Movement.playerIsDead) this.stopEnemyMoving = true;
+			else this.stopEnemyMoving = false;
 
 			if (this.stopEnemyMoving == false) {
 				float distance = Vector3.Distance(target.position, transform.position);
@@ -82,11 +84,11 @@ public class EnemyController : MonoBehaviour
 					enemyAnimator.SetBool("isRunning", false);
 					this.damageIteration = 1;
 				}
-			}
+			} else {
+				enemyAnimator.SetBool("isAttacking", false);
 
-			/*if (this.getAnimationName("Idle") && this.getAnimationTime() > 10) {
-				enemyAnimator.SetBool("scream", true);
-			}*/
+				this.getRandomPlayerDeadAnimation();
+			}
     }
 	
     void OnDrawGizmosSelected() {
@@ -121,4 +123,21 @@ public class EnemyController : MonoBehaviour
 
 			GetComponent<Collider>().enabled = !state;
     }
+
+		void getRandomPlayerDeadAnimation() {
+			if (this.randomPlayerDeadAnimation < 1) {
+				this.randomPlayerDeadAnimation = Random.Range(0, 4);
+				if (this.randomPlayerDeadAnimation == 1) 	enemyAnimator.SetBool("scream", true);
+			}
+
+			if (this.animatorIsPlaying("Scream")) enemyAnimator.SetBool("scream", false);
+		}
+
+		bool animatorIsPlayingTime() {
+		  return enemyAnimator.GetCurrentAnimatorStateInfo(0).length > enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+	  }
+
+    bool animatorIsPlaying(string animationName) {
+      return animatorIsPlayingTime() && enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName(animationName);
+    }	
 }
