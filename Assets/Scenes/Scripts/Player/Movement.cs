@@ -28,7 +28,9 @@ using UnityEngine;
     private bool readyForAttackRun = false;
     private int attackModeTime = 0;
     private bool pullOutTheSword = false;
+    private bool pullOutTheSwordAvailable = true;
     public bool swordEquiped = false;
+
     [SerializeField]
     Transform sword;
     public Transform sword_ueq_pos, sword_eq_pos;
@@ -75,21 +77,24 @@ using UnityEngine;
       */
       this.readyForAttack = this.getAnimationName("ReadyForAttack"); // Attack mode idle
       this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
-      this.pullOutTheSword = this.getAnimationName("PullOutTheSword"); // PullOutTheSword
-
-
+      this.pullOutTheSword = this.animatorIsPlaying("PullOutTheSword"); // PullOutTheSword
     
-      // Ak hrac nie je v mode utoku idle ani v rune tak vyber mec
-      if (!this.readyForAttack && !this.readyForAttackRun && !this.pullOutTheSword) {
-        if (Input.GetKey("h")) {
+      /**
+        * Pirat vytiahnutie mecu
+        * Tlacidlo H
+        * Ak hrac nie je v stave ReadyForAttack, ReadyForAttackRun a prave sa neprehrava animacia vythiahnutia
+        */
+      if (Input.GetKey("h")) { 
+        if (!this.readyForAttack && !this.readyForAttackRun && !this.pullOutTheSword) {
           this.stopMoving = true; 
           animator.SetBool("PullOutTheSword", true);
-          
-        } else {
-          animator.SetBool("PullOutTheSword", false);
         }
       }
 
+      /**
+        * Vyresenie BUGU s nekonecnym vytahovanim meca
+       */
+      if (this.pullOutTheSword && this.getAnimationTime() > 0.5)  animator.SetBool("PullOutTheSword", false);
 
       if (swordEquiped)
       {
@@ -328,15 +333,21 @@ using UnityEngine;
       this.healthStop = false;
     }
 
-    public void Sword_Equip()
-    {
-        swordEquiped = true;
+    public void Sword_Equip() {
+      swordEquiped = true;
     }
 
-    public void Sword_Unequip()
-    {
+    public void Sword_Unequip() {
       swordEquiped = false;
     }
+
+    bool animatorIsPlayingTime() {
+		  return animator.GetCurrentAnimatorStateInfo(0).length > animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+	  }
+
+    bool animatorIsPlaying(string animationName) {
+      return animatorIsPlayingTime() && animator.GetCurrentAnimatorStateInfo(0).IsName(animationName);
+    }	
 
   }
 
