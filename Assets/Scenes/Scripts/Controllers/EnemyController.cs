@@ -61,10 +61,13 @@ public class EnemyController : MonoBehaviour
 					if (this.getAnimationName("Attack")) {
 						if (this.getAnimationTime() > 0.7 * this.damageIteration) {
 							this.damageIteration++;
+
 							if (Score.score > 0) {
 								Score.score -= 10;
 							} else {
-								HealthMonitor.HealthValue -= 1;
+								if (HealthMonitor.HealthValue > 0) {
+									HealthMonitor.HealthValue -= 1;
+								}
 							}
 						}
 					}

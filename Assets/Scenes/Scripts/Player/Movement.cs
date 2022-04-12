@@ -11,6 +11,8 @@ using UnityEngine;
     private float playerSpeed = 2f;
     private Animator animator;
 
+    public static bool playerIsDead = false;
+
     // PLAYER JUMP
     private float jump = 1.5f;
     public bool isGrounded;
@@ -20,7 +22,6 @@ using UnityEngine;
 
     public bool isFalling;
     public bool isDead;
-    private bool healthStop;
 
     private int fallingCounter = 0;
 
@@ -56,9 +57,8 @@ using UnityEngine;
     }
 
     public void die() {
-      animator.Play("dead");
-			gameObject.GetComponent<Movement>().enabled = false;
-      animator.SetBool("isDead", false);
+      animator.SetBool("isDead", true);
+      this.stopMoving = true;
     }
  
     void Update() {  
@@ -273,21 +273,21 @@ using UnityEngine;
       }
     }
 
+    /**
+      * Skontroluj ci je hrac mrtvy
+      * Ak ma hrac 0 sridiecok tak nastav ako mrtvy
+      * Ked sa prehrava animacia dead tak OFFICIALNE je hrac mrtvy
+      * ak je hrac mrtvy vypne sa Movement controller
+      */
     void checkIfDied() {
-      if (!this.healthStop && this.isDead && (deathType())) {
-        HealthMonitor.HealthValue += -1;
-        this.healthStop = true;
-      }
-
-      // TODO na nulu
-      if (HealthMonitor.HealthValue == 1) {
-        setAsDead();
-        this.healthStop = true;
-        this.stopMoving = true;
-
-        if (this.isDead) {
-          this.die();
+      if (Movement.playerIsDead == false) {
+        if (HealthMonitor.HealthValue == 0) {
+          if (this.animatorIsPlaying("dead")) Movement.playerIsDead = true;
+          else this.die();
         }
+      } else {
+        animator.SetBool("isDead", false);
+        gameObject.GetComponent<Movement>().enabled = false;
       }
     }
 
@@ -329,8 +329,6 @@ using UnityEngine;
 
       //this.isRecovery = true;
       animator.SetBool("isRecovery", true);
-
-      this.healthStop = false;
     }
 
     public void Sword_Equip() {
