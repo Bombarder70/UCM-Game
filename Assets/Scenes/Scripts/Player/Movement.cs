@@ -22,6 +22,7 @@ using UnityEngine;
 
     public bool isFalling;
     public bool isDead;
+    private bool isDeadLanding;
 
     private int fallingCounter = 0;
 
@@ -268,8 +269,8 @@ using UnityEngine;
     }
 
     void checkLanding() {
-      if (getAnimationName("Falling") && this.fallingCounter > 100) {
-        setAsDead();
+      if (getAnimationName("Falling") && this.fallingCounter > 65) {
+        setAsDeadLanding();
       }
     }
 
@@ -303,9 +304,9 @@ using UnityEngine;
       }
     }
 
-    void setAsDead() {
-      this.isDead = true;
-      animator.SetBool("isDead", true);
+    void setAsDeadLanding() {
+      this.isDeadLanding = true;
+      animator.SetBool("isDeadLanding", true);
     }
 
     void checkForRecovery() {
