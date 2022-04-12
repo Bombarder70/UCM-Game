@@ -44,9 +44,9 @@ public class EnemyController : MonoBehaviour
     void Update() {
 
 			if (this.getAnimationName("getHitAnimation")) {
-				agent.enabled = false;
+				this.stopEnemyMoving = true;
 			} else {
-				agent.enabled = true;
+				this.stopEnemyMoving = false;
 			}
 
 			if (this.stopEnemyMoving == false) {
