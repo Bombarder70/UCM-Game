@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public float enemyLook = 10f;
     public Animator enemyAnimator;
 
-		public int health = 5;
+		public int health = 3;
     
     Transform target;
     NavMeshAgent agent;
@@ -109,6 +109,16 @@ public class EnemyController : MonoBehaviour
 
 			foreach (Rigidbody rigidbody in rigidbodies){
 				rigidbody.isKinematic = state;
+			}
+
+			if (state == false) {
+				CharacterJoint[] characterJoints = transform.GetComponentsInChildren<CharacterJoint>();
+
+				foreach (CharacterJoint characterJoint in characterJoints) {
+					int randomDestroy = Random.Range(0, 2);
+					Debug.Log(randomDestroy);
+					if (randomDestroy == 1) Destroy(characterJoint);
+				}
 			}
 
 			GetComponent<Rigidbody>().isKinematic = !state;
