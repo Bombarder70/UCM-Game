@@ -7,7 +7,6 @@ public class EnemyCollisionDetection : MonoBehaviour {
 	public Animator enemyAnimator;
 	private Animator playerAnimator;
 
-	private float attackTimeout = 1;
 	private bool stopEnemyDamage = false;
 
 	public int health;

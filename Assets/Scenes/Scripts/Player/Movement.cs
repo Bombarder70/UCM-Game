@@ -14,7 +14,6 @@ using UnityEngine;
     public static bool playerIsDead = false;
 
     // PLAYER JUMP
-    private float jump = 1.5f;
     public bool isGrounded;
     public bool isRunning;
     public bool isReverse;
@@ -22,15 +21,12 @@ using UnityEngine;
 
     public bool isFalling;
     public bool isDead;
-    private bool isDeadLanding;
 
     private int fallingCounter = 0;
 
     private bool readyForAttack = false;
     private bool readyForAttackRun = false;
-    private int attackModeTime = 0;
     private bool pullOutTheSword = false;
-    private bool pullOutTheSwordAvailable = true;
     public bool swordEquiped = false;
 
     [SerializeField]
@@ -128,7 +124,6 @@ using UnityEngine;
         this.slowDown = 0.5f;
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
-          this.attackModeTime = 0;
         } else if (this.getAnimationName("Attack")) {
           animator.SetBool("isAttacking", false);
         }
@@ -296,7 +291,6 @@ using UnityEngine;
     }
 
     void setAsDeadLanding() {
-      this.isDeadLanding = true;
       animator.SetBool("isDeadLanding", true);
     }
 
