@@ -55629,6 +55629,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 168703472, guid: 80a9944a7c9ad984cb5027605e52ac73, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 15900349136100178, guid: 80a9944a7c9ad984cb5027605e52ac73, type: 3}
       propertyPath: m_CastShadows
       value: 2
