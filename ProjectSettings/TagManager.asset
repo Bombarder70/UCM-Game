@@ -6,6 +6,9 @@ TagManager:
   tags:
   - sword
   - pirat
+  - green_eyes_skeleton
+  - red_eyes_skeleton
+  - normal_skeleton
   layers:
   - Default
   - TransparentFX

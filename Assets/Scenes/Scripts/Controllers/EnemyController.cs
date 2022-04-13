@@ -7,8 +7,6 @@ public class EnemyController : MonoBehaviour
 {
     public float enemyLook = 10f;
     public Animator enemyAnimator;
-
-		public int health = 3;
     
     Transform target;
     NavMeshAgent agent;

@@ -9,11 +9,22 @@ public class EnemyCollisionDetection : MonoBehaviour {
 
 	private bool stopEnemyDamage = false;
 
-	public int health;
+	private int health;
 
 	void Start() {
 		GameObject pirat = GameObject.FindWithTag("pirat");
-		this.health = gameObject.GetComponent<EnemyController>().health;
+		
+		switch (gameObject.tag) {
+			case "normal_skeleton":
+				this.health = 2;
+			break;
+			case "green_eyes_skeleton":
+				this.health = 4;
+			break;
+				case "red_eyes_skeleton":
+				this.health = 6;
+			break;
+		}
  
 		if (pirat != null) {
 			this.playerAnimator = pirat.GetComponent<Animator>();
