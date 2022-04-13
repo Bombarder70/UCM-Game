@@ -8,6 +8,7 @@ public class EnemyCollisionDetection : MonoBehaviour {
 	private Animator playerAnimator;
 
 	private bool stopEnemyDamage = false;
+	private bool repeatAttack = false;
 
 	private int health;
 
@@ -48,6 +49,11 @@ public class EnemyCollisionDetection : MonoBehaviour {
 			gameObject.GetComponent<EnemyController>().die();
 		}
 
+		/*if (this.animatorIsPlaying("getHitAnimation")) {
+			if (this.playerAnimator.GetBool("isAttacking")) {
+				enemyAnimator.SetBool("getHit", true);
+			}
+		}*/
 	}
 
   // Sword hit

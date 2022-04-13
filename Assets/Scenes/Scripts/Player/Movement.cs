@@ -154,7 +154,7 @@ using UnityEngine;
       /*
         PLAYER ATTACK END
       */
-
+      
       if (this.stopMoving == false) {
         if (Input.GetKey("w")) {
           animator.SetBool("isRunning", true);
@@ -182,7 +182,7 @@ using UnityEngine;
         && this.stopMoving == false
         && !this.getAnimationName("ReadyForAttackJump") 
       ) {
-        transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
+        if (Input.GetKey("w") || Input.GetKey("s")) transform.Translate(velocity * Time.deltaTime * this.playerSpeed);
       }
 
       if (
@@ -190,7 +190,7 @@ using UnityEngine;
         && !this.getAnimationName("DeadLanding")
         && !this.getAnimationName("getup1")
       ) {
-        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
+        if (Input.GetKey("a") || Input.GetKey("d")) transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * this.turnSpeed);
       }
     
       animator.SetFloat("Speed", velocity.z);
