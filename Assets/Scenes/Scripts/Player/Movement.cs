@@ -90,12 +90,18 @@ using UnityEngine;
           this.stopMoving = true; 
           animator.SetBool("PullOutTheSword", true);
         }
-      }
+      } else animator.SetBool("PullOutTheSword", false);
 
       /**
-        * Vyresenie BUGU s nekonecnym vytahovanim meca
+        * Ak ma hrac vytiahnuty mec tak ho schovaj
        */
-      if (this.pullOutTheSword && this.getAnimationTime() > 0.5)  animator.SetBool("PullOutTheSword", false);
+      if (this.readyForAttack || this.readyForAttackRun) {
+        this.stopMoving = false; 
+
+        if (Input.GetKey("h")) {
+          animator.SetBool("goToIdle", true);
+        }
+      }
 
       if (swordEquiped)
       {
@@ -110,21 +116,6 @@ using UnityEngine;
       }
 
 
-      // Ak je v mode attack moze sa hrac hybat
-      if (this.readyForAttack) {
-        this.stopMoving = false; 
-
-        if (Input.GetKey("h")) {
-          animator.SetBool("goToIdle", true);
-        }
-      }
-
-      // Ak je v mode attack rataj cas, po sekundach do modu IDLE
-      /*if (this.readyForAttack || this.readyForAttackRun) this.attackModeTime += 1;
-      if (this.attackModeTime > 500) {
-        animator.SetBool("goToIdle", true);
-        this.attackModeTime = 0;
-      }*/
       // Mod idle animation
       if (this.readyForAttack && (this.getAnimationTime() > 3)) {
         animator.SetBool("readyForAttackIdle1", true);
