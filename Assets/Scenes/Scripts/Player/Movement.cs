@@ -138,18 +138,17 @@ using UnityEngine;
        
       if (this.getCurrentAnimationName() == "Sword And Shield Slash") {
         if (!this.repeatAttack) animator.SetBool("isAttacking", false);
-      }
 
+        if (this.repeatAttack) this.clickCounter += 1;
+        if (this.clickCounter > 50) {
+          this.clickCounter = 0;
+          this.repeatAttack = false;
+        }
 
-      if (this.repeatAttack) this.clickCounter += 1;
-      if (this.clickCounter > 50) {
-        this.clickCounter = 0;
-        this.repeatAttack = false;
-      }
-
-      if (Input.GetMouseButtonDown(0)) {
-        if (this.clickCounter > 0) this.clickCounter = 0;
-        this.repeatAttack = true;
+        if (Input.GetMouseButtonDown(0)) {
+          if (this.clickCounter > 0) this.clickCounter = 0;
+          this.repeatAttack = true;
+        }
       }
 
       /*
