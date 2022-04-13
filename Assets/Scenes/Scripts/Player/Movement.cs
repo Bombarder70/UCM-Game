@@ -32,6 +32,8 @@ using UnityEngine;
     private bool repeatAttack = false;
     private int clickCounter = 0;
 
+    private int currentReadyForAttackIdleAnimation = 0;
+
     [SerializeField]
     Transform sword;
     public Transform sword_ueq_pos, sword_eq_pos;
@@ -120,9 +122,14 @@ using UnityEngine;
 
 
       // Mod idle animation
-      if (this.readyForAttack && (this.getAnimationTime() > 3)) {
+      if (this.readyForAttack && (this.getAnimationTime() > 3) && !this.animatorIsPlaying("ReadyForAttackIdle1")) {
         animator.SetBool("readyForAttackIdle1", true);
       }
+
+      if (this.animatorIsPlaying("ReadyForAttackIdle1") && this.getAnimationTime() > 0.7) {
+        animator.SetBool("readyForAttackIdle1", false);
+      }
+
       // Ak zacne utekat alebo skakat prerus animaciu
       if (this.isRunning || this.isJumping || this.isReverse) animator.SetBool("readyForAttackIdle1", false);
 
