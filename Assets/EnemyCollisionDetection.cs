@@ -32,6 +32,8 @@ public class EnemyCollisionDetection : MonoBehaviour {
 	}
 
 	void Update() {
+		if (this.animatorIsPlaying("getHitAnimation")) 	enemyAnimator.SetBool("getHit", false);
+
 		if (this.animatorIsPlaying("getHitAnimation")) {
 			if (this.stopEnemyDamage == false) {
 				this.stopEnemyDamage = true;
@@ -51,8 +53,10 @@ public class EnemyCollisionDetection : MonoBehaviour {
   // Sword hit
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "sword") {
-			if (this.playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
-				enemyAnimator.Play("getHitAnimation");
+			if (this.playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !this.stopEnemyDamage) {
+				enemyAnimator.SetBool("getHit", true);
+
+				this.stopEnemyDamage = true;
 			}
 		}
 	}
