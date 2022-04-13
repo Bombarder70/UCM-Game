@@ -29,6 +29,9 @@ using UnityEngine;
     private bool pullOutTheSword = false;
     public bool swordEquiped = false;
 
+    private bool repeatAttack = false;
+    private int clickCounter = 0;
+
     [SerializeField]
     Transform sword;
     public Transform sword_ueq_pos, sword_eq_pos;
@@ -37,7 +40,7 @@ using UnityEngine;
     private float transformX; 
     private float transformZ; 
 
-    //private bool isRecovery = false;
+    AnimatorClipInfo[] currentAnimationInfo;
 
     Rigidbody rb;
 
@@ -56,6 +59,10 @@ using UnityEngine;
     public void die() {
       animator.SetBool("isDead", true);
       this.stopMoving = true;
+    }
+
+    void StopAttack() {
+      // TODO: After Attack
     }
  
     void Update() {  
@@ -124,15 +131,25 @@ using UnityEngine;
         this.slowDown = 0.5f;
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
-        } else if (this.getAnimationName("Attack")) {
-          animator.SetBool("isAttacking", false);
         }
       } else {
         this.slowDown = 0;
       }
+       
+      if (this.getCurrentAnimationName() == "Sword And Shield Slash") {
+        if (!this.repeatAttack) animator.SetBool("isAttacking", false);
+      }
 
-      if (this.getAnimationName("Attack")) {
-        animator.SetBool("isAttacking", false);
+
+      if (this.repeatAttack) this.clickCounter += 1;
+      if (this.clickCounter > 50) {
+        this.clickCounter = 0;
+        this.repeatAttack = false;
+      }
+
+      if (Input.GetMouseButtonDown(0)) {
+        if (this.clickCounter > 0) this.clickCounter = 0;
+        this.repeatAttack = true;
       }
 
       /*
@@ -332,6 +349,15 @@ using UnityEngine;
     bool animatorIsPlaying(string animationName) {
       return animatorIsPlayingTime() && animator.GetCurrentAnimatorStateInfo(0).IsName(animationName);
     }	
+
+    /**
+      * Current Animation name
+      * @return string
+    */
+    string getCurrentAnimationName() {
+      currentAnimationInfo = this.animator.GetCurrentAnimatorClipInfo(0);
+      return currentAnimationInfo[0].clip.name;
+    }
 
   }
 
