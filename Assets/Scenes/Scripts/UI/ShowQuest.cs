@@ -57,7 +57,7 @@ public class ShowQuest : MonoBehaviour {
 	[System.Serializable]
 	public class DbResponse {
 		public int idPlayerGenerator;
-		public Quests quests;
+		public string structure;
 	}
 
 	void Start() {
@@ -71,9 +71,13 @@ public class ShowQuest : MonoBehaviour {
 	}
 
 	public IEnumerator loadJsonFromDB() {
-		string playerNickname = PlayerManager.nickname;
+		string playerNickname = (PlayerManager.nickname != "" ? PlayerManager.nickname : "Pirat"); // Pozn. DEV MOD ak nieje nsatavene meno nacitaj Pirat
+		int idGenerator = 1; // TODO: Na toto spravit menu
 
-		using (UnityWebRequest www = UnityWebRequest.Get("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname)) {
+		using (UnityWebRequest www = UnityWebRequest.Get(
+			"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
+			+ "&idGenerator=" + 1
+		)) {
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError) {
@@ -83,9 +87,9 @@ public class ShowQuest : MonoBehaviour {
 			} else {
 				Debug.Log("Otazky nacitane z databazy");
 				DbResponse response = JsonUtility.FromJson<DbResponse>(www.downloadHandler.text);
-				Debug.Log(response);
-				Quests questsInJson = response.quests;
-				this.parseTextFromDB(questsInJson);
+				Quests questsInJson = JsonUtility.FromJson<Quests>(response.structure);
+Debug.Log(questsInJson);
+				//this.parseTextFromDB(questsInJson.quests);
 			}
 
 		}
