@@ -22,10 +22,17 @@ public class NameMenuController : MonoBehaviour {
 	public GameObject playButtonObject;
 
 	public GameObject playerNicknameIsEmpty;
+	public Text playerNicknameIsEmptyText;
 
 	public static string playerNickname = "";
 
 	public bool startGame = true;
+
+	[System.Serializable]
+	public class SetNicknameResponse {
+		public string status;
+		public string message;
+	}
 
 	void Start() {
 		this.playerNicknameTextObject.SetActive(false);
@@ -101,29 +108,38 @@ public class NameMenuController : MonoBehaviour {
 			if (www.isNetworkError || www.isHttpError) {
 				Debug.Log("Chyba servera");
 			} else {
-				Debug.Log(www.downloadHandler.text);
+				SetNicknameResponse res = JsonUtility.FromJson<SetNicknameResponse>(www.downloadHandler.text);
+
+				if (res.status == "success") {
+					NameMenuController.playerNickname = finalNameToPlay;
+				} else if(res.status == "fail") {
+					this.playerNicknameIsEmptyText.text = "This player nickname already exists";
+					this.playerNicknameIsEmpty.SetActive(true);
+				}
+
+				if (this.startGame != false) {
+					Application.LoadLevel("MainMenu");
+				}
 			}
 
 		}
 	}
 
 	void PlayButtonOnClick() {
+		this.playerNicknameIsEmpty.SetActive(false);
+		this.startGame = true;
+		this.playerNicknameIsEmptyText.text = "Player nickname cannot be empty";
 		string finalNameToPlay = "";
 
-		//TODO: VYLADIT
 		if (this.playerNicknameInput.text != NameMenuController.playerNickname) {
 			if (this.playerNicknameInput.text == "") {
 				this.playerNicknameIsEmpty.SetActive(true);
 				this.startGame = false;
 			} else {
-				Debug.Log(StartCoroutine(this.setPlayerNickname(this.playerNicknameInput.text)));
+				StartCoroutine(this.setPlayerNickname(this.playerNicknameInput.text));
 			}
 		} else {
-			Debug.Log(NameMenuController.playerNickname);
-		}
-
-		if (this.startGame != false) {
-			Application.LoadLevel("MainMenu");
+			StartCoroutine(this.setPlayerNickname(NameMenuController.playerNickname));
 		}
 		
 	}
