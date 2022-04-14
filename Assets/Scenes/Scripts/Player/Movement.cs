@@ -34,6 +34,8 @@ using UnityEngine;
 
     private int currentReadyForAttackIdleAnimation = 0;
 
+    private bool takeDamageFalling = false;
+
     [SerializeField]
     Transform sword;
     public Transform sword_ueq_pos, sword_eq_pos;

@@ -20,6 +20,10 @@ public class ShowQuest : MonoBehaviour {
 	// Momentalny objekt napr. flasa_quest pre drestroy po zobrazeni
 	public static GameObject questObject;
 
+	private Movement playerMovement;
+	private Animator playerAnimator;
+	private PlayerSettings playerSettings;
+
 	[System.Serializable]
 	public class Quests {
 		public Quest[] quests;
@@ -48,6 +52,16 @@ public class ShowQuest : MonoBehaviour {
 		public Odpoved[] odpovede;
 		public bool zobrazena;
 		public bool odpoved;
+	}
+
+	void Start() {
+		GameObject pirat = GameObject.FindWithTag("pirat");
+
+		if (pirat != null) {
+			this.playerMovement = pirat.GetComponent<Movement>();
+			this.playerAnimator = pirat.GetComponent<Animator>();
+			this.playerSettings = pirat.GetComponent<PlayerSettings>();
+		}
 	}
 
 	public IEnumerator loadJsonFromDB() {
@@ -92,6 +106,10 @@ public class ShowQuest : MonoBehaviour {
 
 	void OnTriggerEnter () {
 		quest.SetActive (true);
+
+		this.playerMovement.enabled = false;
+		this.playerAnimator.enabled = false;
+		this.playerSettings.getHitScreen.SetActive(false);
 
 		ShowQuest.questObject = gameObject;
 		this.loadQuestFromJson();

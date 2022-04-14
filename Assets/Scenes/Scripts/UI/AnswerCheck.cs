@@ -25,6 +25,14 @@ public class AnswerCheck : MonoBehaviour {
     }
 
     public void OnClick () {
+			GameObject pirat = GameObject.FindWithTag("pirat");
+
+			if (pirat != null) {
+				pirat.GetComponent<Movement>().enabled = true;
+				pirat.GetComponent<Animator>().enabled = true;
+				pirat.GetComponent<PlayerSettings>().getHitScreen.SetActive(true);
+			}
+
 			bool odpovedBolaSpravna = false;
 
 			// Prejdi odpovede ak sa tam nachadza tak true
@@ -46,6 +54,7 @@ public class AnswerCheck : MonoBehaviour {
 					HealthMonitor.HealthValue += 1;
 				} 
 			} else {
+				pirat.GetComponent<PlayerSettings>().getHit();
 				HealthMonitor.HealthValue -= 1; 
 				StartCoroutine(this.UpdateScore(0));
 				Debug.Log("Nespravna odpoved");
