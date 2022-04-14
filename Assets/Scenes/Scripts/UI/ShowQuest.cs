@@ -54,6 +54,12 @@ public class ShowQuest : MonoBehaviour {
 		public bool odpoved;
 	}
 
+	[System.Serializable]
+	public class DbResponse {
+		public int idPlayerGenerator;
+		public Quests quests;
+	}
+
 	void Start() {
 		GameObject pirat = GameObject.FindWithTag("pirat");
 
@@ -76,7 +82,9 @@ public class ShowQuest : MonoBehaviour {
 				this.parseTextFromDB(questsInJson);
 			} else {
 				Debug.Log("Otazky nacitane z databazy");
-				Quests questsInJson = JsonUtility.FromJson<Quests>(www.downloadHandler.text);
+				DbResponse response = JsonUtility.FromJson<DbResponse>(www.downloadHandler.text);
+				Debug.Log(response);
+				Quests questsInJson = response.quests;
 				this.parseTextFromDB(questsInJson);
 			}
 
