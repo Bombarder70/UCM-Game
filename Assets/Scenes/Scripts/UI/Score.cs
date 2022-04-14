@@ -14,23 +14,22 @@ public class Score : MonoBehaviour
 	public IEnumerator getPlayerScore() {
 		WWWForm form = new WWWForm();
 
-		form.AddField("uid", this.FetchMacId());
+		form.AddField("playerNickname", NameMenuController.playerNickname);
 
-		using (UnityWebRequest www = UnityWebRequest.Post("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_nickname", form)) {
+		using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/pirate-game/web/index.php?action=get_score", form)) {
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError) {
 				Score.score = 50;
 			} else {
-				//Score.score = int.Parse(www.downloadHandler.text);
-				Score.score = 50; // 50 coinov zo zaciatku
-				PlayerManager.nickname = www.downloadHandler.text; // Ziskaj nickname
-		}
+				Score.score = int.Parse(www.downloadHandler.text);
+			}
 				
 		}
 	}
 
 	void Start() {
+		PlayerManager.nickname = NameMenuController.playerNickname;
 		StartCoroutine(this.getPlayerScore());
 	}
 
