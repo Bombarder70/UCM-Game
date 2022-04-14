@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
 
+		PlayerSettings playerSettings;
+
     public int damageIteration = 1;
 
 		private bool stopEnemyMoving = false;
@@ -25,6 +27,12 @@ public class EnemyController : MonoBehaviour
 			setRigidbodyState(true);
 			setColliderState(false);
 			GetComponent<Animator>().enabled = true;
+
+			GameObject pirat = GameObject.FindWithTag("pirat");
+
+			if (pirat != null) {
+				this.playerSettings = pirat.GetComponent<PlayerSettings>();
+			}
     }
 
     public void die() {
@@ -39,6 +47,10 @@ public class EnemyController : MonoBehaviour
 				Destroy(gameObject, 15f);
 			}
     }
+
+		void StopAttack() {
+			
+		}
 
     void Update() {
 
@@ -62,6 +74,7 @@ public class EnemyController : MonoBehaviour
 						if (this.getAnimationTime() > 0.7 * this.damageIteration) {
 							this.damageIteration++;
 
+							this.playerSettings.getHit();
 							if (Score.score > 0) {
 								Score.score -= 10;
 							} else {

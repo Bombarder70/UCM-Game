@@ -9,6 +9,7 @@ TagManager:
   - green_eyes_skeleton
   - red_eyes_skeleton
   - normal_skeleton
+  - getHitImage
   layers:
   - Default
   - TransparentFX

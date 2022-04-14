@@ -18,6 +18,7 @@ public class HealthMonitor : MonoBehaviour
 
     void Update(){
 			InternalHealth = HealthValue;
+      if (HealthValue == 0) Heart1.SetActive(false);
 			if (HealthValue == 1) {
 				Heart1.SetActive(true);
 				Heart2.SetActive(false);
