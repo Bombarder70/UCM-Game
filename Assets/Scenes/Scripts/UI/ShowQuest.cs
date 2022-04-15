@@ -80,7 +80,7 @@ public class ShowQuest : MonoBehaviour {
 		int idGenerator = 1; // TODO: Na toto spravit menu
 
 		using (UnityWebRequest www = UnityWebRequest.Get(
-			"http://localhost/holes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
+			"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
 			+ "&idGenerator=" + 1
 		)) {
 			yield return www.SendWebRequest();
