@@ -48,12 +48,6 @@ public class EnemyCollisionDetection : MonoBehaviour {
 		if (this.health == 0 && this.getAnimationTime() > 0.1) {
 			gameObject.GetComponent<EnemyController>().die();
 		}
-
-		/*if (this.animatorIsPlaying("getHitAnimation")) {
-			if (this.playerAnimator.GetBool("isAttacking")) {
-				enemyAnimator.SetBool("getHit", true);
-			}
-		}*/
 	}
 
   // Sword hit

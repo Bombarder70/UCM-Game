@@ -1300,6 +1300,7 @@ MonoBehaviour:
   changeNicknameButtonObject: {fileID: 2088693731}
   playButtonObject: {fileID: 796304702}
   playerNicknameIsEmpty: {fileID: 245766989}
+  playerNicknameIsEmptyText: {fileID: 245766991}
   startGame: 1
 --- !u!114 &1886877902
 MonoBehaviour:
