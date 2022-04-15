@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadAsynchronously()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(2);
 
         loadingScreen.SetActive(true);
 
