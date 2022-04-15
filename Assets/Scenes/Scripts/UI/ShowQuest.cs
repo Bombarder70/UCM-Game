@@ -55,6 +55,11 @@ public class ShowQuest : MonoBehaviour {
 	}
 
 	[System.Serializable]
+	public class Structure {
+		public Quests quests;
+	}
+
+	[System.Serializable]
 	public class DbResponse {
 		public int idPlayerGenerator;
 		public string structure;
@@ -75,7 +80,7 @@ public class ShowQuest : MonoBehaviour {
 		int idGenerator = 1; // TODO: Na toto spravit menu
 
 		using (UnityWebRequest www = UnityWebRequest.Get(
-			"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
+			"http://localhost/holes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
 			+ "&idGenerator=" + 1
 		)) {
 			yield return www.SendWebRequest();
@@ -86,10 +91,11 @@ public class ShowQuest : MonoBehaviour {
 				this.parseTextFromDB(questsInJson);
 			} else {
 				Debug.Log("Otazky nacitane z databazy");
+				
 				DbResponse response = JsonUtility.FromJson<DbResponse>(www.downloadHandler.text);
 				Quests questsInJson = JsonUtility.FromJson<Quests>(response.structure);
-Debug.Log(questsInJson);
-				//this.parseTextFromDB(questsInJson.quests);
+
+				this.parseTextFromDB(questsInJson);
 			}
 
 		}
