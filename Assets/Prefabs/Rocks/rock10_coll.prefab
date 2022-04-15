@@ -63,9 +63,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3cb23bea56a488f41ba36b10acc45f73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 517a78a00172f814782e2effb0bef775, type: 2}
     - target: {fileID: 919132149155446097, guid: 3cb23bea56a488f41ba36b10acc45f73, type: 3}
       propertyPath: m_Name
-      value: rock8
+      value: rock10_coll
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cb23bea56a488f41ba36b10acc45f73, type: 3}
