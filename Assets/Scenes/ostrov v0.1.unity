@@ -4085,7 +4085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLook: 10
-  enemyAnimator: {fileID: 0}
   damageIteration: 1
 --- !u!114 &118235970
 MonoBehaviour:
@@ -11555,7 +11554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLook: 10
-  enemyAnimator: {fileID: 0}
   damageIteration: 1
 --- !u!195 &421798213
 NavMeshAgent:
@@ -16684,7 +16682,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLook: 10
-  enemyAnimator: {fileID: 0}
   damageIteration: 1
 --- !u!114 &604442270
 MonoBehaviour:
@@ -19584,7 +19581,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLook: 10
-  enemyAnimator: {fileID: 0}
   damageIteration: 1
 --- !u!114 &705989377
 MonoBehaviour:
@@ -27781,7 +27777,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLook: 10
-  enemyAnimator: {fileID: 0}
   damageIteration: 1
 --- !u!114 &1008750159
 MonoBehaviour:
@@ -29641,6 +29636,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069555671, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
       propertyPath: gotHitScreen
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069555671, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
+      propertyPath: enemyAnimator
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1069555672, guid: 432c49dadfbd57e40a0c3b8425b027a7, type: 3}
@@ -54211,7 +54210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLook: 10
-  enemyAnimator: {fileID: 0}
   damageIteration: 1
 --- !u!136 &1985200399
 CapsuleCollider:
@@ -54553,7 +54551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLook: 10
-  enemyAnimator: {fileID: 0}
   damageIteration: 1
 --- !u!114 &2005137060
 MonoBehaviour:

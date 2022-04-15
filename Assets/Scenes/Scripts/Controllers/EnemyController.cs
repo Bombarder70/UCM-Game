@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float enemyLook = 10f;
-    public Animator enemyAnimator;
+    private Animator enemyAnimator;
     
     Transform target;
     NavMeshAgent agent;
@@ -49,7 +49,11 @@ public class EnemyController : MonoBehaviour
     }
 
 		void StopAttack() {
-			
+			Debug.Log(1);
+		}
+
+		void AttackHit() {
+			Debug.Log(1);
 		}
 
     void Update() {
