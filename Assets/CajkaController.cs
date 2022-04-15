@@ -7,6 +7,7 @@ public class CajkaController : MonoBehaviour {
 	Transform pirat;
 
 	public Animator cajkaAnimator;
+	private Rigidbody rb;
 
 	void OnDrawGizmosSelected() {
 		Gizmos.color = Color.blue;
@@ -14,6 +15,7 @@ public class CajkaController : MonoBehaviour {
 	}
 
 	void Start() {
+		this.rb = GetComponent<Rigidbody>();
 		pirat = PlayerManager.instance.player.transform;
 	}
 
@@ -22,6 +24,9 @@ public class CajkaController : MonoBehaviour {
 
 		if (distance < 3) {
 			cajkaAnimator.SetBool("flyAway", true);
+			this.rb.velocity = transform.up * 10;
+			this.rb.velocity = transform.forward * 5;
+			transform.LookAt(pirat);
 		}
 	}
 }
