@@ -48,12 +48,20 @@ public class EnemyController : MonoBehaviour
 			}
     }
 
-		void StopAttack() {
-			Debug.Log(1);
-		}
-
 		void AttackHit() {
-			Debug.Log(1);
+			float distance = Vector3.Distance(target.position, transform.position);
+
+			if (distance < 1.5) {
+				this.playerSettings.getHit();
+
+				if (Score.score > 0) {
+					Score.score -= 10;
+				} else {
+					if (HealthMonitor.HealthValue > 0) {
+						HealthMonitor.HealthValue -= 1;
+					}
+				}
+			}
 		}
 
     void Update() {
@@ -71,23 +79,6 @@ public class EnemyController : MonoBehaviour
 				if (distance < 1.5) {
 					enemyAnimator.SetBool("isRunning", false);
 					enemyAnimator.SetBool("isAttacking", true);
-
-					//enemyAnimator.Play("Attack");
-
-					if (this.getAnimationName("Attack")) {
-						if (this.getAnimationTime() > 0.7 * this.damageIteration) {
-							this.damageIteration++;
-
-							this.playerSettings.getHit();
-							if (Score.score > 0) {
-								Score.score -= 10;
-							} else {
-								if (HealthMonitor.HealthValue > 0) {
-									HealthMonitor.HealthValue -= 1;
-								}
-							}
-						}
-					}
 				} else if (distance <= enemyLook) {
 					enemyAnimator.SetBool("isRunning", true);
 					enemyAnimator.SetBool("isAttacking", false);
