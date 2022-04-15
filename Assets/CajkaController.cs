@@ -6,7 +6,7 @@ public class CajkaController : MonoBehaviour {
 
 	Transform pirat;
 
-	public Animator cajkaAnimator;
+	private Animator cajkaAnimator;
 	private Rigidbody rb;
 
 	private Transform cajkaLetiaciBod;
@@ -20,9 +20,11 @@ public class CajkaController : MonoBehaviour {
 
 	void Start() {
 		this.rb = GetComponent<Rigidbody>();
+		this.cajkaAnimator = GetComponent<Animator>();
 		pirat = PlayerManager.instance.player.transform;
 
-		this.cajkaLetiaciBod = GameObject.Find("CajkaLetiaciBod").transform;
+		var bod = Random.Range(1, 3); // RandomLetiaciBod
+		this.cajkaLetiaciBod = GameObject.Find("CajkaLetiaciBod" + bod).transform;
 	}
 
 	void Update() {
@@ -35,7 +37,7 @@ public class CajkaController : MonoBehaviour {
 				this.flyAway = true;
 			}
 		} else {
-			this.rb.velocity = transform.forward * 5;
+			this.rb.velocity = transform.forward * 7;
 		}
 	}
 }
