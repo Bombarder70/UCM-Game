@@ -63,5 +63,20 @@ public class AnswerCheck : MonoBehaviour {
 			Destroy(ShowQuest.questObject); // Destroy flasa_quest
 			quest.SetActive(false);
 			otazka_text.text = "";
+
+			UnpausedEnemies();
     }
+
+	void UnpausedEnemies()
+	{
+		List<GameObject> enemies = new List<GameObject> ();
+ 		enemies.AddRange(GameObject.FindGameObjectsWithTag("green_eyes_skeleton"));
+		enemies.AddRange(GameObject.FindGameObjectsWithTag("red_eyes_skeleton"));
+		enemies.AddRange(GameObject.FindGameObjectsWithTag("normal_skeleton"));
+
+		foreach (var skeleton in enemies)
+		{
+			skeleton.GetComponent<EnemyController>().paused = false;
+		}
+	}
 }

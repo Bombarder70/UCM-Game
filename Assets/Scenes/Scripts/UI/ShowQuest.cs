@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class ShowQuest : MonoBehaviour {
+	GameObject pirat;
 	public int flasa_id;
 	public GameObject quest;
 
@@ -66,7 +67,7 @@ public class ShowQuest : MonoBehaviour {
 	}
 
 	void Start() {
-		GameObject pirat = GameObject.FindWithTag("pirat");
+		pirat = GameObject.FindWithTag("pirat");
 
 		if (pirat != null) {
 			this.playerMovement = pirat.GetComponent<Movement>();
@@ -125,11 +126,35 @@ public class ShowQuest : MonoBehaviour {
 	void OnTriggerEnter () {
 		quest.SetActive (true);
 
+	//	pirat.GetComponent<Movement>().paused = true;
+		StopEnemies();
+
 		this.playerMovement.enabled = false;
 		this.playerAnimator.enabled = false;
 		this.playerSettings.getHitScreen.SetActive(false);
 
 		ShowQuest.questObject = gameObject;
 		this.loadQuestFromJson();
+	}
+
+
+
+	void StopEnemies()
+	{
+
+		List<GameObject> enemies = new List<GameObject> ();
+ 		enemies.AddRange(GameObject.FindGameObjectsWithTag("green_eyes_skeleton"));
+		enemies.AddRange(GameObject.FindGameObjectsWithTag("red_eyes_skeleton"));
+		enemies.AddRange(GameObject.FindGameObjectsWithTag("normal_skeleton"));
+
+		foreach (var skeleton in enemies)
+		{
+			skeleton.GetComponent<EnemyController>().paused = true;
+		}
+	/*	GameObject[] enemies ;
+             enemies = GameObject.FindGameObjectsWithTag("green_eyes_skeleton" || "a");
+             foreach(GameObject lightuser in objs) {
+                 lightuser.light.enabled=false;
+             }*/
 	}
 }

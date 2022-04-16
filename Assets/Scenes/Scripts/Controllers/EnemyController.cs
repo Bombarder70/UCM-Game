@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
 
 		private bool stopEnemyMoving = false;
 		private int randomPlayerDeadAnimation = 0;
+	public bool paused = false;
 
     void Start() {
 			target = PlayerManager.instance.player.transform;
@@ -65,6 +66,8 @@ public class EnemyController : MonoBehaviour
 		}
 
     void Update() {
+
+			if (paused) return;
 
 			/**
 			  * Ak enemydostane hit tak za nemoze hybat

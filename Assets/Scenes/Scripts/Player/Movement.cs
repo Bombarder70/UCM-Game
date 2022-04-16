@@ -51,6 +51,7 @@ using UnityEngine;
     public PlayerController.Keyboard playerControllerKeyboard; 
 
     private bool stopMoving = false;
+ 
 
     void Start() {  
       playerControllerKeyboard = new PlayerController.Keyboard();
@@ -69,7 +70,9 @@ using UnityEngine;
       // TODO: After Attack
     }
  
-    void Update() {  
+    void Update() {
+
+     
       //playerControllerKeyboard.checkEscapePress();
 
       // Sleduj ci hrac neumrel
