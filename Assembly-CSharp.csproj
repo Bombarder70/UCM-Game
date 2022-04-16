@@ -95,6 +95,8 @@
      <Compile Include="Assets\EnemyCollisionDetection.cs" />
      <Compile Include="Assets\PlayerSettings.cs" />
      <Compile Include="Assets\Scenes\Scripts\UI\PauseMenu.cs" />
+     <Compile Include="Assets\Scenes\Scripts\Common\GameManager.cs" />
+     <Compile Include="Assets\Scenes\Scripts\UI\GameOver.cs" />
      <None Include="Assets\Packages\Nature Sound FX\__Gift__\Weapons SFX\Weapons SFX Full Package.txt" />
      <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
      <None Include="Assets\LeanTween\ReadMe.txt" />

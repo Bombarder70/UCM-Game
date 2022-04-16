@@ -10,6 +10,7 @@ TagManager:
   - red_eyes_skeleton
   - normal_skeleton
   - getHitImage
+  - Lava
   layers:
   - Default
   - TransparentFX

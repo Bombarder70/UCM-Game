@@ -297,7 +297,11 @@ using UnityEngine;
     void checkIfDied() {
       if (Movement.playerIsDead == false) {
         if (HealthMonitor.HealthValue == 0) {
-          if (this.animatorIsPlaying("dead")) Movement.playerIsDead = true;
+          if (this.animatorIsPlaying("dead"))
+          {
+              Movement.playerIsDead = true;
+              GameManager.Instance.GameOver();
+          }
           else this.die();
         }
       } else {
