@@ -16555,7 +16555,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 836310535}
   m_PlaneDistance: 10
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -45669,7 +45669,6 @@ MonoBehaviour:
   sword: {fileID: 1558868947}
   sword_ueq_pos: {fileID: 1711943599}
   sword_eq_pos: {fileID: 1851410179}
-  paused: 0
 --- !u!114 &1344183486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56845,7 +56844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb4ee00b45564a479558913fd9b5e85, type: 3}
       propertyPath: m_LocalScale.x
-      value: 46.134556
+      value: 44.95305
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb4ee00b45564a479558913fd9b5e85, type: 3}
       propertyPath: m_LocalScale.y
@@ -56865,7 +56864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb4ee00b45564a479558913fd9b5e85, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.20939
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb4ee00b45564a479558913fd9b5e85, type: 3}
       propertyPath: m_LocalRotation.w
