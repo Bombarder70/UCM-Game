@@ -34,7 +34,7 @@ using UnityEngine;
 
     private int currentReadyForAttackIdleAnimation = 0;
 
-    private bool takeDamageFalling = false;
+    private bool takeDeadLandingHealth = false;
 
     private string deadAnimation = "isDead1";
 
@@ -64,11 +64,12 @@ using UnityEngine;
     }
 
     public void die() {
-      this.deadAnimation = "isDead" + Random.Range(1, 3);
+      if (animator.GetBool("isDeadLanding")) this.deadAnimation = "isDead";
+      else this.deadAnimation = "isDead" + Random.Range(1, 3);
+
       animator.SetBool(this.deadAnimation, true);
 
       this.stopMoving = true;
-
       Movement.playerIsDead = true;
       GameManager.Instance.GameOver();
     }
@@ -306,23 +307,10 @@ using UnityEngine;
         if (Movement.playerIsDead == false) {
           this.die();
         } else {
-          animator.SetBool("isDead", false);
           animator.SetBool(this.deadAnimation, false);
 
           gameObject.GetComponent<Movement>().enabled = false;
         }
-      }
-    }
-
-    // Sem pojdu variacie smrti
-    bool deathType() {
-      if (
-        getAnimationName("DeadLanding")
-        // && sem ina smrt
-      ) {
-        return true;
-      } else {
-        return false;
       }
     }
 
@@ -333,13 +321,20 @@ using UnityEngine;
     void checkForRecovery() {
       // Ak sa prehrava animacia DeadLanding tak cakaj 3 sekundy a daj recovery ak su este nejake srdiecka
       if (HealthMonitor.HealthValue > 0) {
+        if (this.takeDeadLandingHealth == false && getAnimationName("DeadLanding")) {
+          HealthMonitor.HealthValue -= 1;
+          gameObject.GetComponent<PlayerSettings>().getHit();
+          this.takeDeadLandingHealth = true;
+        }
+
+        if (this.animatorIsPlaying("getup1")) this.takeDeadLandingHealth = false;
+
         if (
           getAnimationName("DeadLanding")
           && getAnimationTime() > 3
         ) {
           setAsRecovery();
         } else {
-          //this.isRecovery = false;
           animator.SetBool("isRecovery", false);
         }
       }
@@ -349,7 +344,6 @@ using UnityEngine;
       this.isDead = false;
       animator.SetBool("isDead", false);
 
-      //this.isRecovery = true;
       animator.SetBool("isRecovery", true);
     }
 
