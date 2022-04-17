@@ -36,6 +36,8 @@ using UnityEngine;
 
     private bool takeDamageFalling = false;
 
+    private string deadAnimation = "isDead1";
+
     [SerializeField]
     Transform sword;
     public Transform sword_ueq_pos, sword_eq_pos;
@@ -62,8 +64,13 @@ using UnityEngine;
     }
 
     public void die() {
-      animator.SetBool("isDead", true);
+      this.deadAnimation = "isDead" + Random.Range(1, 3);
+      animator.SetBool(this.deadAnimation, true);
+
       this.stopMoving = true;
+
+      Movement.playerIsDead = true;
+      GameManager.Instance.GameOver();
     }
 
     void StopAttack() {
@@ -295,18 +302,15 @@ using UnityEngine;
       * ak je hrac mrtvy vypne sa Movement controller
       */
     void checkIfDied() {
-      if (Movement.playerIsDead == false) {
-        if (HealthMonitor.HealthValue == 0) {
-          if (this.animatorIsPlaying("dead"))
-          {
-              Movement.playerIsDead = true;
-              GameManager.Instance.GameOver();
-          }
-          else this.die();
+      if (HealthMonitor.HealthValue == 0) {
+        if (Movement.playerIsDead == false) {
+          this.die();
+        } else {
+          animator.SetBool("isDead", false);
+          animator.SetBool(this.deadAnimation, false);
+
+          gameObject.GetComponent<Movement>().enabled = false;
         }
-      } else {
-        animator.SetBool("isDead", false);
-        gameObject.GetComponent<Movement>().enabled = false;
       }
     }
 
