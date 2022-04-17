@@ -39,7 +39,6 @@ public class EnemyCollisionDetection : MonoBehaviour {
 			if (this.stopEnemyDamage == false) {
 				this.stopEnemyDamage = true;
 				this.health -= 1;
-				Debug.Log(this.health);
 			}
 		} else {
 			this.stopEnemyDamage = false;
