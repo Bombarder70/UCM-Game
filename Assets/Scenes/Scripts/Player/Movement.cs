@@ -27,6 +27,7 @@ using UnityEngine;
     private bool readyForAttack = false;
     private bool readyForAttackRun = false;
     private bool pullOutTheSword = false;
+    private bool readyForAttackReverse  = false;
     public bool swordEquiped = false;
 
     private bool repeatAttack = false;
@@ -97,6 +98,7 @@ using UnityEngine;
       this.readyForAttack = this.getAnimationName("ReadyForAttack"); // Attack mode idle
       this.readyForAttackRun = this.getAnimationName("ReadyForAttackRun"); // Attack mode running
       this.pullOutTheSword = this.animatorIsPlaying("PullOutTheSword"); // PullOutTheSword
+      this.readyForAttackReverse = this.getAnimationName("ReadyForAttackReverse"); 
     
       /**
         * Pirat vytiahnutie mecu
@@ -152,6 +154,8 @@ using UnityEngine;
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
         }
+      } else if (this.readyForAttackReverse) {
+        this.slowDown = 0.6f;
       } else {
         this.slowDown = 0;
       }
