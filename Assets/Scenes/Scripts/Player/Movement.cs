@@ -150,17 +150,17 @@ using UnityEngine;
 
       // Ak je pripraveny na utok moze sekat
       if (this.readyForAttack || this.readyForAttackRun) {
-        this.slowDown = 0.5f;
+        this.slowDown = 0.3f;
         if (Input.GetMouseButtonDown(0)) {
           animator.SetBool("isAttacking", true);
         }
       } else if (this.readyForAttackReverse) {
-        this.slowDown = 0.6f;
+        this.slowDown = 0.5f;
       } else {
         this.slowDown = 0;
       }
        
-      if (this.getCurrentAnimationName() == "Sword And Shield Slash") {
+      if (this.getCurrentAnimationName() == "Standing Melee Attack Downward") {
         if (!this.repeatAttack) animator.SetBool("isAttacking", false);
 
         if (this.repeatAttack) this.clickCounter += 1;
