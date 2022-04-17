@@ -13,7 +13,8 @@ public class PlayerSettings : MonoBehaviour {
 		color.a = 0.5f;
 
 		getHitScreen.GetComponent<Image>().color = color;
-		//gameObject.GetComponent<Animator>().Play("getHit");
+
+		//if (HealthMonitor.HealthValue > 1) gameObject.GetComponent<Animator>().Play("getHit");
 	}
 
   void Update() {
