@@ -113,7 +113,7 @@ public class NameMenuController : MonoBehaviour {
 				if (res.status == "success") {
 					NameMenuController.playerNickname = finalNameToPlay;
 				} else if(res.status == "fail") {
-					this.playerNicknameIsEmptyText.text = "This player nickname already exists";
+					this.playerNicknameIsEmptyText.text = "Tento nickname už existuje";
 					this.playerNicknameIsEmpty.SetActive(true);
 				}
 
@@ -128,7 +128,7 @@ public class NameMenuController : MonoBehaviour {
 	void PlayButtonOnClick() {
 		this.playerNicknameIsEmpty.SetActive(false);
 		this.startGame = true;
-		this.playerNicknameIsEmptyText.text = "Player nickname cannot be empty";
+		this.playerNicknameIsEmptyText.text = "Nickname nemôže byť prázdny";
 		string finalNameToPlay = "";
 
 		if (this.playerNicknameInput.text != NameMenuController.playerNickname) {

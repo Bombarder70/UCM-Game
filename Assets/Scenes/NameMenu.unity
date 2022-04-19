@@ -498,7 +498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player nickname cannot be empty
+  m_Text: "Nickname nem\xF4\u017Ee by\u0165 pr\xE1zdny"
 --- !u!222 &245766992
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Change nickname
+  m_Text: "Zmeni\u0165 nickname"
 --- !u!222 &355497352
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hra\u0165"
+  m_Text: "Pokra\u010Duj"
 --- !u!222 &801325615
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1089,7 +1089,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plas as
+  m_Text: "Hra\u0165 ako"
 --- !u!222 &1214754885
 CanvasRenderer:
   m_ObjectHideFlags: 0
