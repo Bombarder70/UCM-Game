@@ -48,7 +48,7 @@ public class AnswerCheck : MonoBehaviour {
 				StartCoroutine(this.UpdateScore(1));
 				Debug.Log("Spravna odpoved");
 				mapa.GetComponent<Map>().Open();
-				mapa.GetComponent<Map>().ChangeCross(ShowQuest.questId);
+				mapa.GetComponent<Map>().ChangeCross(ShowQuest.questId, true);
 
 				if (HealthMonitor.HealthValue < 3) {
 					HealthMonitor.HealthValue += 1;
@@ -58,6 +58,8 @@ public class AnswerCheck : MonoBehaviour {
 				HealthMonitor.HealthValue -= 1; 
 				StartCoroutine(this.UpdateScore(0));
 				Debug.Log("Nespravna odpoved");
+				mapa.GetComponent<Map>().Open();
+				mapa.GetComponent<Map>().ChangeCross(ShowQuest.questId, false);
 			}
 
 			Destroy(ShowQuest.questObject); // Destroy flasa_quest
