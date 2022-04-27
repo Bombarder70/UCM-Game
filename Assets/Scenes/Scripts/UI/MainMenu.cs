@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
 
 		[System.Serializable]
 		public class Generators {
+			public string status;
 			public Generator[] data;
 		}
 
@@ -53,9 +54,6 @@ public class MainMenu : MonoBehaviour
 				this.zmenaOtazokButtonStav = 2;
 			} else if(this.zmenaOtazokButtonStav == 2) {
 				StartCoroutine(this.getGenerators());
-				this.generatorDropdownObject.SetActive(true);
-				this.zmenaOtazokInputObject.SetActive(false);
-				this.zmenaOtazokButtonObject.GetComponentInChildren<Text>().text = "Použiť vybrané otázky";
 				this.zmenaOtazokButtonStav = 1;
 				PlayerManager.idGenerator = 1;
 			}
@@ -72,13 +70,24 @@ public class MainMenu : MonoBehaviour
 				} else {
 					generatorDropdown.ClearOptions();
 					Generators response = JsonUtility.FromJson<Generators>(www.downloadHandler.text);
-					List<string> dropdownOptions = new List<string>();
 
-					foreach (Generator generator in response.data) {
-						dropdownOptions.Add(generator.name);
+					if (response.status == "sucess") {
+						this.generatorDropdownObject.SetActive(true);
+						this.zmenaOtazokInputObject.SetActive(false);
+						this.zmenaOtazokButtonObject.GetComponentInChildren<Text>().text = "Použiť vybrané otázky";
+
+						List<string> dropdownOptions = new List<string>();
+						
+						foreach (Generator generator in response.data) {
+							dropdownOptions.Add(generator.name);
+						}
+
+						generatorDropdown.AddOptions(dropdownOptions);
+					} else if (response.status == "empty") {
+
+					} else if (response.status == "error") {
+
 					}
-
-					generatorDropdown.AddOptions(dropdownOptions);
 				}
 
 			}
