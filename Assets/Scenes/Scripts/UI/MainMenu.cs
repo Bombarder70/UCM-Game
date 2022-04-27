@@ -13,10 +13,12 @@ public class MainMenu : MonoBehaviour
 		private Button zmenaOtazokButton;
 		private InputField zmenaOtazokInput;
 		private Dropdown generatorDropdown;
+		private Text error;
 
 		private GameObject zmenaOtazokButtonObject;
 		private GameObject zmenaOtazokInputObject;
 		private GameObject generatorDropdownObject;
+		private GameObject errorObject;
 
 		private int zmenaOtazokButtonStav = 1;
 
@@ -36,13 +38,16 @@ public class MainMenu : MonoBehaviour
       this.zmenaOtazokButton = GameObject.Find("ZmenaOtazokButton").GetComponent<Button>();
 			this.zmenaOtazokInput = GameObject.Find("ZmenaOtazokInput").GetComponent<InputField>();
 			this.generatorDropdown = GameObject.Find("GeneratorDropdown").GetComponent<Dropdown>();
+			this.error = GameObject.Find("Error").GetComponent<Text>();
 
 			this.zmenaOtazokButtonObject = GameObject.Find("ZmenaOtazokButton");
 			this.zmenaOtazokInputObject = GameObject.Find("ZmenaOtazokInput");
 			this.generatorDropdownObject = GameObject.Find("GeneratorDropdown");
+			this.errorObject = GameObject.Find("Error");
 
 			this.zmenaOtazokInputObject.SetActive(false);
 			this.generatorDropdownObject.SetActive(false);
+			this.errorObject.SetActive(false);
 
 			this.zmenaOtazokButton.onClick.AddListener(ZmenaOtazokButtonOnClick);
     }
@@ -54,8 +59,8 @@ public class MainMenu : MonoBehaviour
 				this.zmenaOtazokButtonStav = 2;
 			} else if(this.zmenaOtazokButtonStav == 2) {
 				StartCoroutine(this.getGenerators());
-				this.zmenaOtazokButtonStav = 1;
-				PlayerManager.idGenerator = 1;
+			} else if(this.zmenaOtazokButtonStav == 3) {
+				StartCoroutine(this.setIdGenerator());
 			}
 		}
 
@@ -71,10 +76,13 @@ public class MainMenu : MonoBehaviour
 					generatorDropdown.ClearOptions();
 					Generators response = JsonUtility.FromJson<Generators>(www.downloadHandler.text);
 
-					if (response.status == "sucess") {
+					if (response.status == "success") {
 						this.generatorDropdownObject.SetActive(true);
 						this.zmenaOtazokInputObject.SetActive(false);
+						this.errorObject.SetActive(false);
 						this.zmenaOtazokButtonObject.GetComponentInChildren<Text>().text = "Použiť vybrané otázky";
+
+						this.zmenaOtazokButtonStav = 3;
 
 						List<string> dropdownOptions = new List<string>();
 						
@@ -84,10 +92,30 @@ public class MainMenu : MonoBehaviour
 
 						generatorDropdown.AddOptions(dropdownOptions);
 					} else if (response.status == "empty") {
-
+						this.error.text = "Nie sú dostupné žiadne úlohy pre tento kód";
+						this.errorObject.SetActive(true);
+						this.zmenaOtazokButtonStav = 1;
+						this.error.text = "Zadaný kód nie je platný";
 					} else if (response.status == "error") {
-
+						this.errorObject.SetActive(true);
+						this.zmenaOtazokButtonStav = 1;
 					}
+				}
+
+			}
+		}
+
+		public IEnumerator setIdGenerator() {
+			using (UnityWebRequest www = UnityWebRequest.Get(
+				"http://localhost/holes/pirate-game/web/index.php?action=get_generator_id&generatorName=" + this.generatorDropdown.options[this.generatorDropdown.value].text
+			)) {
+				yield return www.SendWebRequest();
+
+				if (www.isNetworkError || www.isHttpError) {
+					Debug.Log("Databazovy error");
+				} else {
+					Debug.Log(www.downloadHandler.text);
+					PlayerManager.idGenerator = int.Parse(www.downloadHandler.text);
 				}
 
 			}
