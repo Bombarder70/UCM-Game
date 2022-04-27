@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
 		private InputField zmenaOtazokInput;
 		private Dropdown generatorDropdown;
 		private Text error;
+		private Text selectedGenerator;
 
 		private GameObject zmenaOtazokButtonObject;
 		private GameObject zmenaOtazokInputObject;
@@ -39,6 +40,7 @@ public class MainMenu : MonoBehaviour
 			this.zmenaOtazokInput = GameObject.Find("ZmenaOtazokInput").GetComponent<InputField>();
 			this.generatorDropdown = GameObject.Find("GeneratorDropdown").GetComponent<Dropdown>();
 			this.error = GameObject.Find("Error").GetComponent<Text>();
+			this.selectedGenerator = GameObject.Find("SelectedGenerator").GetComponent<Text>();
 
 			this.zmenaOtazokButtonObject = GameObject.Find("ZmenaOtazokButton");
 			this.zmenaOtazokInputObject = GameObject.Find("ZmenaOtazokInput");
@@ -114,7 +116,7 @@ public class MainMenu : MonoBehaviour
 				if (www.isNetworkError || www.isHttpError) {
 					Debug.Log("Databazovy error");
 				} else {
-					Debug.Log(www.downloadHandler.text);
+					this.selectedGenerator.text = this.generatorDropdown.options[this.generatorDropdown.value].text;
 					PlayerManager.idGenerator = int.Parse(www.downloadHandler.text);
 				}
 
