@@ -15,11 +15,13 @@ public class MainMenu : MonoBehaviour
 		private Dropdown generatorDropdown;
 		private Text error;
 		private Text selectedGenerator;
+		private Button zrusitOtazkyButton;
 
 		private GameObject zmenaOtazokButtonObject;
 		private GameObject zmenaOtazokInputObject;
 		private GameObject generatorDropdownObject;
 		private GameObject errorObject;
+		private GameObject zrusitOtazkyButtonObject;
 
 		private int zmenaOtazokButtonStav = 1;
 
@@ -41,18 +43,35 @@ public class MainMenu : MonoBehaviour
 			this.generatorDropdown = GameObject.Find("GeneratorDropdown").GetComponent<Dropdown>();
 			this.error = GameObject.Find("Error").GetComponent<Text>();
 			this.selectedGenerator = GameObject.Find("SelectedGenerator").GetComponent<Text>();
+			this.zrusitOtazkyButton = GameObject.Find("ZrusitOtazkyButton").GetComponent<Button>();
 
 			this.zmenaOtazokButtonObject = GameObject.Find("ZmenaOtazokButton");
 			this.zmenaOtazokInputObject = GameObject.Find("ZmenaOtazokInput");
 			this.generatorDropdownObject = GameObject.Find("GeneratorDropdown");
 			this.errorObject = GameObject.Find("Error");
+			this.zrusitOtazkyButtonObject = GameObject.Find("ZrusitOtazkyButton");
 
 			this.zmenaOtazokInputObject.SetActive(false);
 			this.generatorDropdownObject.SetActive(false);
 			this.errorObject.SetActive(false);
+			this.zrusitOtazkyButtonObject.SetActive(false);
 
 			this.zmenaOtazokButton.onClick.AddListener(ZmenaOtazokButtonOnClick);
+			this.zrusitOtazkyButton.onClick.AddListener(ZrusitOtazkyButtonOnClick);
+
+			PlayerManager.idGenerator = 1; // Default hodnota pre nas generator(otazky)
     }
+
+		void ZrusitOtazkyButtonOnClick() {
+			PlayerManager.idGenerator = 1;
+			this.zmenaOtazokButtonStav = 1;
+			this.zmenaOtazokInputObject.SetActive(false);
+			this.generatorDropdownObject.SetActive(false);
+			this.errorObject.SetActive(false);
+			this.zrusitOtazkyButtonObject.SetActive(false);
+			this.zmenaOtazokButtonObject.GetComponentInChildren<Text>().text = "Zmeniť otázky v hre";
+			this.selectedGenerator.text = "naše otázky";
+		}
 
 		void ZmenaOtazokButtonOnClick() {
 			if (this.zmenaOtazokButtonStav == 1) {
@@ -96,11 +115,11 @@ public class MainMenu : MonoBehaviour
 					} else if (response.status == "empty") {
 						this.error.text = "Nie sú dostupné žiadne úlohy pre tento kód";
 						this.errorObject.SetActive(true);
-						this.zmenaOtazokButtonStav = 1;
+						this.zmenaOtazokButtonStav = 2;
 						this.error.text = "Zadaný kód nie je platný";
 					} else if (response.status == "error") {
 						this.errorObject.SetActive(true);
-						this.zmenaOtazokButtonStav = 1;
+						this.zmenaOtazokButtonStav = 2;
 					}
 				}
 
@@ -116,6 +135,7 @@ public class MainMenu : MonoBehaviour
 				if (www.isNetworkError || www.isHttpError) {
 					Debug.Log("Databazovy error");
 				} else {
+					this.zrusitOtazkyButtonObject.SetActive(true);
 					this.selectedGenerator.text = this.generatorDropdown.options[this.generatorDropdown.value].text;
 					PlayerManager.idGenerator = int.Parse(www.downloadHandler.text);
 				}
