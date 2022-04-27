@@ -14,10 +14,8 @@ public class AnswerCheck : MonoBehaviour {
 
 			WWWForm form = new WWWForm();
 
-			form.AddField("score", Score.score);
-			form.AddField("questId", ShowQuest.questId);
+			form.AddField("idPlayerGenerator", 1); //TODO: dynamicky
 			form.AddField("spravnost", spravnaOdpoved);
-			form.AddField("playerNickname", "Pirat2");
 
 			using (UnityWebRequest www = UnityWebRequest.Post("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=update_score", form)) {
 				yield return www.SendWebRequest();

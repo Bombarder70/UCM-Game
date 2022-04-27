@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
         GameOverScreen.SetActive(true);
       //  GameOverScreen.transform.LeanMoveLocalY(0,3.5f).setEaseOutExpo().delay = 4.2f;
         GameOverScreen.transform.LeanScale(mapVector, 0.8f);
+        HealthMonitor.HealthValue = 0;
+        
     }
+
+    
 
 }

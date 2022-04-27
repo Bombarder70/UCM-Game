@@ -78,11 +78,10 @@ public class ShowQuest : MonoBehaviour {
 
 	public IEnumerator loadJsonFromDB() {
 		string playerNickname = (PlayerManager.nickname != "" ? PlayerManager.nickname : "Pirat"); // Pozn. DEV MOD ak nieje nsatavene meno nacitaj Pirat
-		int idGenerator = 1; // TODO: Na toto spravit menu
 
 		using (UnityWebRequest www = UnityWebRequest.Get(
 			"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
-			+ "&idGenerator=" + 1
+			+ "&idGenerator=" + PlayerManager.idGenerator
 		)) {
 			yield return www.SendWebRequest();
 
