@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
 
 		[System.Serializable]
 		public class Generators {
-			public Generator[] generators;
+			public Generator[] data;
 		}
 
     public void Start() {
@@ -51,8 +51,8 @@ public class MainMenu : MonoBehaviour
 				this.zmenaOtazokInputObject.SetActive(true);
 				this.zmenaOtazokButtonObject.GetComponentInChildren<Text>().text = "Použiť kód";
 				this.zmenaOtazokButtonStav = 2;
-				StartCoroutine(this.getGenerators());
 			} else if(this.zmenaOtazokButtonStav == 2) {
+				StartCoroutine(this.getGenerators());
 				this.generatorDropdownObject.SetActive(true);
 				this.zmenaOtazokInputObject.SetActive(false);
 				this.zmenaOtazokButtonObject.GetComponentInChildren<Text>().text = "Použiť vybrané otázky";
@@ -63,18 +63,22 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator getGenerators() {
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_generators"
+				"http://localhost/holes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
 			)) {
 				yield return www.SendWebRequest();
 
 				if (www.isNetworkError || www.isHttpError) {
 					Debug.Log("Databazovy error");
 				} else {
+					generatorDropdown.ClearOptions();
 					Generators response = JsonUtility.FromJson<Generators>(www.downloadHandler.text);
+					List<string> dropdownOptions = new List<string>();
 
-					/*foreach (Generator generator in response) {
-						generatorDropdownObject.options.Add(generator.name);
-					}*/
+					foreach (Generator generator in response.data) {
+						dropdownOptions.Add(generator.name);
+					}
+
+					generatorDropdown.AddOptions(dropdownOptions);
 				}
 
 			}
