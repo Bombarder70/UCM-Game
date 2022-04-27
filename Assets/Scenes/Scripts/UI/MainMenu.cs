@@ -87,7 +87,7 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator getGenerators() {
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
 			)) {
 				yield return www.SendWebRequest();
 
@@ -128,7 +128,7 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator setIdGenerator() {
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_generator_id&generatorName=" + this.generatorDropdown.options[this.generatorDropdown.value].text
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generator_id&generatorName=" + this.generatorDropdown.options[this.generatorDropdown.value].text
 			)) {
 				yield return www.SendWebRequest();
 
