@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour {
     public static int idPlayerGenerator; // current player id generator
 
     void Awake () {
-        instance = this;
+			instance = this;
     }
 
     public GameObject player;
