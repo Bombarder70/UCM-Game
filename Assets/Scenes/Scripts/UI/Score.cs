@@ -31,6 +31,15 @@ public class Score : MonoBehaviour
 
 	void Start() {
 		PlayerManager.nickname = NameMenuController.playerNickname;
+
+		if (PlayerManager.lastPositionX != 0) {
+			PlayerManager.instance.player.transform.position = new Vector3(
+				PlayerManager.lastPositionX,
+				PlayerManager.lastPositionY,
+				PlayerManager.lastPositionZ
+			);
+		}
+
 		StartCoroutine(this.getPlayerScore());
 	}
 

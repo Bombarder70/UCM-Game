@@ -40,6 +40,7 @@ public class MainMenu : MonoBehaviour
 		[System.Serializable]
 		public class Generators {
 			public string status;
+			public int idRoom;
 			public Generator[] data;
 		}
 
@@ -52,6 +53,19 @@ public class MainMenu : MonoBehaviour
 			public int correct_answers;
 			public int uncorrect_answers;
 		}
+
+		[System.Serializable]
+		public class PlayerData {
+			public int idPlayer;
+			public int idGenerator;
+			public int idPlayerGenerator;
+			public int killedSkeletons;
+			public float lastPositionX;
+			public float lastPositionY;
+			public float lastPositionZ;
+		}
+
+		public int idRoom = 1;
 
     public void Start() {
       this.zmenaOtazokButton = GameObject.Find("ZmenaOtazokButton").GetComponent<Button>();
@@ -78,6 +92,7 @@ public class MainMenu : MonoBehaviour
 			PlayerManager.idGenerator = 1; // Default hodnota pre nas generator(otazky)
 
 			StartCoroutine(this.getPlayerStats());
+			StartCoroutine(this.setIdGenerator(true));
     }
 
 		void ZrusitOtazkyButtonOnClick() {
@@ -105,7 +120,7 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator getGenerators() {
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
 			)) {
 				yield return www.SendWebRequest();
 
@@ -114,6 +129,8 @@ public class MainMenu : MonoBehaviour
 				} else {
 					generatorDropdown.ClearOptions();
 					Generators response = JsonUtility.FromJson<Generators>(www.downloadHandler.text);
+
+					this.idRoom = response.idRoom;
 
 					if (response.status == "success") {
 						this.generatorDropdownObject.SetActive(true);
@@ -144,18 +161,38 @@ public class MainMenu : MonoBehaviour
 			}
 		}
 
-		public IEnumerator setIdGenerator() {
+		public IEnumerator setIdGenerator(bool init = false) {
+			var dropDownName = "";
+			if (init) dropDownName = "Matematika";
+			else dropDownName = this.generatorDropdown.options[this.generatorDropdown.value].text;
+
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generator_id&generatorName=" + this.generatorDropdown.options[this.generatorDropdown.value].text
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generator_id&generatorName=" 
+				+ dropDownName
+				+ "&playerName=" + NameMenuController.playerNickname
+				+ "&idRoom=" + this.idRoom
 			)) {
 				yield return www.SendWebRequest();
 
 				if (www.isNetworkError || www.isHttpError) {
 					Debug.Log("Databazovy error");
 				} else {
-					this.zrusitOtazkyButtonObject.SetActive(true);
-					this.selectedGenerator.text = this.generatorDropdown.options[this.generatorDropdown.value].text;
-					PlayerManager.idGenerator = int.Parse(www.downloadHandler.text);
+					Debug.Log(www.downloadHandler.text);
+					PlayerData response = JsonUtility.FromJson<PlayerData>(www.downloadHandler.text);
+
+					PlayerManager.idGenerator = response.idGenerator;
+					PlayerManager.idPlayer = response.idPlayer;
+					PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
+					PlayerManager.lastPositionX = response.lastPositionX;
+					PlayerManager.lastPositionY = response.lastPositionY;
+					PlayerManager.lastPositionZ = response.lastPositionZ;
+
+					PlayerManager.killedSkeletons = response.killedSkeletons;
+
+					if (!init) {
+						this.zrusitOtazkyButtonObject.SetActive(true);
+						this.selectedGenerator.text = dropDownName;
+					}
 				}
 
 			}
@@ -176,10 +213,11 @@ public class MainMenu : MonoBehaviour
 				if (www.isNetworkError || www.isHttpError) {
 					Debug.Log("Databazovy error");
 				} else {
+					Debug.Log(www.downloadHandler.text);
 					PlayerStats response = JsonUtility.FromJson<PlayerStats>(www.downloadHandler.text);
 
 					PlayerManager.idPlayer = response.id;
-					PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
+					//PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
 
 					this.playerScore.text = response.score.ToString();
 					this.deaths.text = response.deaths.ToString();

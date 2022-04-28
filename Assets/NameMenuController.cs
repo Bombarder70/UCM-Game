@@ -109,7 +109,7 @@ public class NameMenuController : MonoBehaviour {
 				Debug.Log("Chyba servera");
 			} else {
 				SetNicknameResponse res = JsonUtility.FromJson<SetNicknameResponse>(www.downloadHandler.text);
-
+			
 				if (res.status == "success") {
 					NameMenuController.playerNickname = finalNameToPlay;
 				} else if(res.status == "fail") {

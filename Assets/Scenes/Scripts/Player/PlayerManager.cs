@@ -15,6 +15,9 @@ public class PlayerManager : MonoBehaviour {
     public static float lastPositionY;
     public static float lastPositionZ;
 
+    public static int killedSkeletons;
+    public static int deaths;
+
     void Awake () {
 			instance = this;
     }

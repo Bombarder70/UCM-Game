@@ -31,7 +31,7 @@ public class GameOver : MonoBehaviour
 			form.AddField("position_z", PlayerManager.instance.player.transform.position.z.ToString());
 		
 			using (UnityWebRequest www = UnityWebRequest.Post(
-				"http://localhost/holes/pirate-game/web/index.php?action=update_player_data", form
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=update_player_data", form
 			)) {
 				yield return www.SendWebRequest();
 
