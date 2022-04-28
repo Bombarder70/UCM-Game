@@ -168,7 +168,7 @@ public class MainMenu : MonoBehaviour
 			this.correctAnswers = GameObject.Find("CorrectAnswers").GetComponent<Text>();
 
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + "Bombarder"//NameMenuController.playerNickname
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + NameMenuController.playerNickname
 			)) {
 				yield return www.SendWebRequest();
 
