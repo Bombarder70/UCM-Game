@@ -69,7 +69,7 @@ public class NameMenuController : MonoBehaviour {
 	public IEnumerator getSavedPlayer() {
 		string macAddress = this.FetchMacId();
 
-		using (UnityWebRequest www = UnityWebRequest.Get("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_saved_player&uid=" + macAddress)) {
+		using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/holes/pirate-game/web/index.php?action=get_saved_player&uid=" + macAddress)) {
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError) {
@@ -102,14 +102,14 @@ public class NameMenuController : MonoBehaviour {
 		form.AddField("uid", macAddress);
 		
 
-		using (UnityWebRequest www = UnityWebRequest.Post("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=set_nickname", form)) {
+		using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/pirate-game/web/index.php?action=set_nickname", form)) {
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError) {
 				Debug.Log("Chyba servera");
 			} else {
 				SetNicknameResponse res = JsonUtility.FromJson<SetNicknameResponse>(www.downloadHandler.text);
-
+			
 				if (res.status == "success") {
 					NameMenuController.playerNickname = finalNameToPlay;
 				} else if(res.status == "fail") {
