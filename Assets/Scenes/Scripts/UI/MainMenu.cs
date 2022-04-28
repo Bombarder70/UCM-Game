@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
 		private Button zrusitOtazkyButton;
 
 		// Player stats
-		private Text score;
+		private Text playerScore;
 		private Text deaths;
 		private Text correctAnswers;
 		private Text uncorrectAnswers;
@@ -162,13 +162,13 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator getPlayerStats() {
 			// Player stats init
-			this.score = GameObject.Find("Score").GetComponent<Text>();
+			this.playerScore = GameObject.Find("PlayerScore").GetComponent<Text>();
 			this.deaths = GameObject.Find("Deaths").GetComponent<Text>();
 			this.uncorrectAnswers = GameObject.Find("UncorrectAnswers").GetComponent<Text>();
 			this.correctAnswers = GameObject.Find("CorrectAnswers").GetComponent<Text>();
 
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + NameMenuController.playerNickname
+				"http://localhost/holes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + "Bombarder"//NameMenuController.playerNickname
 			)) {
 				yield return www.SendWebRequest();
 
@@ -177,7 +177,7 @@ public class MainMenu : MonoBehaviour
 				} else {
 					PlayerStats response = JsonUtility.FromJson<PlayerStats>(www.downloadHandler.text);
 
-					this.score.text = response.id.ToString();
+					this.playerScore.text = response.score.ToString();
 					this.deaths.text = response.deaths.ToString();
 					this.uncorrectAnswers.text = response.correct_answers.ToString();
 					this.correctAnswers.text = response.uncorrect_answers.ToString();
