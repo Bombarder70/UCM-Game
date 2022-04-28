@@ -45,6 +45,7 @@ public class EnemyController : MonoBehaviour
 			this.stopEnemyMoving = true;
 
 			if (gameObject != null) {
+				PlayerManager.killedSkeletons += 1;
 				Destroy(gameObject, 15f);
 			}
     }

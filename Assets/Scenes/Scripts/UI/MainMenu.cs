@@ -59,6 +59,7 @@ public class MainMenu : MonoBehaviour
 			public int idPlayer;
 			public int idGenerator;
 			public int idPlayerGenerator;
+			public int killedSkeletons;
 			public float lastPositionX;
 			public float lastPositionY;
 			public float lastPositionZ;
@@ -185,6 +186,8 @@ public class MainMenu : MonoBehaviour
 					PlayerManager.lastPositionX = response.lastPositionX;
 					PlayerManager.lastPositionY = response.lastPositionY;
 					PlayerManager.lastPositionZ = response.lastPositionZ;
+
+					PlayerManager.killedSkeletons = response.killedSkeletons;
 
 					if (!init) {
 						this.zrusitOtazkyButtonObject.SetActive(true);
