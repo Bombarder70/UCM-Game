@@ -46,6 +46,7 @@ public class MainMenu : MonoBehaviour
 		[System.Serializable]
 		public class PlayerStats {
 			public int id;
+			public int idPlayerGenerator;
 			public int score;
 			public int deaths;
 			public int correct_answers;
@@ -104,7 +105,7 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator getGenerators() {
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
+				"http://localhost/holes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
 			)) {
 				yield return www.SendWebRequest();
 
@@ -176,6 +177,9 @@ public class MainMenu : MonoBehaviour
 					Debug.Log("Databazovy error");
 				} else {
 					PlayerStats response = JsonUtility.FromJson<PlayerStats>(www.downloadHandler.text);
+
+					PlayerManager.idPlayer = response.id;
+					PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
 
 					this.playerScore.text = response.score.ToString();
 					this.deaths.text = response.deaths.ToString();
