@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
 
 		form.AddField("playerNickname", NameMenuController.playerNickname);
 
-		using (UnityWebRequest www = UnityWebRequest.Post("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_score", form)) {
+		using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/holes/pirate-game/web/index.php?action=get_score", form)) {
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError) {
@@ -32,12 +32,14 @@ public class Score : MonoBehaviour
 	void Start() {
 		PlayerManager.nickname = NameMenuController.playerNickname;
 
-		PlayerManager.instance.player.transform.position = new Vector3(
-			PlayerManager.lastPositionX,
-			PlayerManager.lastPositionY,
-			PlayerManager.lastPositionZ
-		);
-		
+		if (PlayerManager.lastPositionX != 0) {
+			PlayerManager.instance.player.transform.position = new Vector3(
+				PlayerManager.lastPositionX,
+				PlayerManager.lastPositionY,
+				PlayerManager.lastPositionZ
+			);
+		}
+
 		StartCoroutine(this.getPlayerScore());
 	}
 

@@ -80,7 +80,7 @@ public class ShowQuest : MonoBehaviour {
 		string playerNickname = (PlayerManager.nickname != "" ? PlayerManager.nickname : "Pirat"); // Pozn. DEV MOD ak nieje nsatavene meno nacitaj Pirat
 
 		using (UnityWebRequest www = UnityWebRequest.Get(
-			"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
+			"http://localhost/holes/pirate-game/web/index.php?action=get_quests&playerNickname=" + playerNickname
 			+ "&idGenerator=" + PlayerManager.idGenerator
 		)) {
 			yield return www.SendWebRequest();
