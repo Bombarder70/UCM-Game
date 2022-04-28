@@ -119,7 +119,7 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator getGenerators() {
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
 			)) {
 				yield return www.SendWebRequest();
 
@@ -166,7 +166,7 @@ public class MainMenu : MonoBehaviour
 			else dropDownName = this.generatorDropdown.options[this.generatorDropdown.value].text;
 
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_generator_id&generatorName=" 
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generator_id&generatorName=" 
 				+ dropDownName
 				+ "&playerName=" + NameMenuController.playerNickname
 				+ "&idRoom=" + this.idRoom
@@ -203,7 +203,7 @@ public class MainMenu : MonoBehaviour
 			this.correctAnswers = GameObject.Find("CorrectAnswers").GetComponent<Text>();
 
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + NameMenuController.playerNickname
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + NameMenuController.playerNickname
 			)) {
 				yield return www.SendWebRequest();
 
