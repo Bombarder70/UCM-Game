@@ -40,6 +40,7 @@ public class MainMenu : MonoBehaviour
 		[System.Serializable]
 		public class Generators {
 			public string status;
+			public int idRoom;
 			public Generator[] data;
 		}
 
@@ -62,6 +63,8 @@ public class MainMenu : MonoBehaviour
 			public float lastPositionY;
 			public float lastPositionZ;
 		}
+
+		public int idRoom = 1;
 
     public void Start() {
       this.zmenaOtazokButton = GameObject.Find("ZmenaOtazokButton").GetComponent<Button>();
@@ -126,6 +129,8 @@ public class MainMenu : MonoBehaviour
 					generatorDropdown.ClearOptions();
 					Generators response = JsonUtility.FromJson<Generators>(www.downloadHandler.text);
 
+					this.idRoom = response.idRoom;
+
 					if (response.status == "success") {
 						this.generatorDropdownObject.SetActive(true);
 						this.zmenaOtazokInputObject.SetActive(false);
@@ -163,7 +168,8 @@ public class MainMenu : MonoBehaviour
 			using (UnityWebRequest www = UnityWebRequest.Get(
 				"http://localhost/holes/pirate-game/web/index.php?action=get_generator_id&generatorName=" 
 				+ dropDownName
-				+ "&playerName=" + "Bombarder"//PlayerManager.nickname
+				+ "&playerName=" + NameMenuController.playerNickname
+				+ "&idRoom=" + this.idRoom
 			)) {
 				yield return www.SendWebRequest();
 
@@ -180,8 +186,10 @@ public class MainMenu : MonoBehaviour
 					PlayerManager.lastPositionY = response.lastPositionY;
 					PlayerManager.lastPositionZ = response.lastPositionZ;
 
-					this.zrusitOtazkyButtonObject.SetActive(true);
-					this.selectedGenerator.text = dropDownName;
+					if (!init) {
+						this.zrusitOtazkyButtonObject.SetActive(true);
+						this.selectedGenerator.text = dropDownName;
+					}
 				}
 
 			}
@@ -195,7 +203,7 @@ public class MainMenu : MonoBehaviour
 			this.correctAnswers = GameObject.Find("CorrectAnswers").GetComponent<Text>();
 
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"http://localhost/holes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + "Bombarder"//NameMenuController.playerNickname
+				"http://localhost/holes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + NameMenuController.playerNickname
 			)) {
 				yield return www.SendWebRequest();
 
