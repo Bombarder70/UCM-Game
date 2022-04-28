@@ -53,6 +53,16 @@ public class MainMenu : MonoBehaviour
 			public int uncorrect_answers;
 		}
 
+		[System.Serializable]
+		public class PlayerData {
+			public int idPlayer;
+			public int idGenerator;
+			public int idPlayerGenerator;
+			public float lastPositionX;
+			public float lastPositionY;
+			public float lastPositionZ;
+		}
+
     public void Start() {
       this.zmenaOtazokButton = GameObject.Find("ZmenaOtazokButton").GetComponent<Button>();
 			this.zmenaOtazokInput = GameObject.Find("ZmenaOtazokInput").GetComponent<InputField>();
@@ -78,6 +88,7 @@ public class MainMenu : MonoBehaviour
 			PlayerManager.idGenerator = 1; // Default hodnota pre nas generator(otazky)
 
 			StartCoroutine(this.getPlayerStats());
+			StartCoroutine(this.setIdGenerator(true));
     }
 
 		void ZrusitOtazkyButtonOnClick() {
@@ -144,18 +155,33 @@ public class MainMenu : MonoBehaviour
 			}
 		}
 
-		public IEnumerator setIdGenerator() {
+		public IEnumerator setIdGenerator(bool init = false) {
+			var dropDownName = "";
+			if (init) dropDownName = "Matematika";
+			else dropDownName = this.generatorDropdown.options[this.generatorDropdown.value].text;
+
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generator_id&generatorName=" + this.generatorDropdown.options[this.generatorDropdown.value].text
+				"http://localhost/holes/pirate-game/web/index.php?action=get_generator_id&generatorName=" 
+				+ dropDownName
+				+ "&playerName=" + "Bombarder"//PlayerManager.nickname
 			)) {
 				yield return www.SendWebRequest();
 
 				if (www.isNetworkError || www.isHttpError) {
 					Debug.Log("Databazovy error");
 				} else {
+					Debug.Log(www.downloadHandler.text);
+					PlayerData response = JsonUtility.FromJson<PlayerData>(www.downloadHandler.text);
+
+					PlayerManager.idGenerator = response.idGenerator;
+					PlayerManager.idPlayer = response.idPlayer;
+					PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
+					PlayerManager.lastPositionX = response.lastPositionX;
+					PlayerManager.lastPositionY = response.lastPositionY;
+					PlayerManager.lastPositionZ = response.lastPositionZ;
+
 					this.zrusitOtazkyButtonObject.SetActive(true);
-					this.selectedGenerator.text = this.generatorDropdown.options[this.generatorDropdown.value].text;
-					PlayerManager.idGenerator = int.Parse(www.downloadHandler.text);
+					this.selectedGenerator.text = dropDownName;
 				}
 
 			}
@@ -169,17 +195,18 @@ public class MainMenu : MonoBehaviour
 			this.correctAnswers = GameObject.Find("CorrectAnswers").GetComponent<Text>();
 
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + NameMenuController.playerNickname
+				"http://localhost/holes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + "Bombarder"//NameMenuController.playerNickname
 			)) {
 				yield return www.SendWebRequest();
 
 				if (www.isNetworkError || www.isHttpError) {
 					Debug.Log("Databazovy error");
 				} else {
+					Debug.Log(www.downloadHandler.text);
 					PlayerStats response = JsonUtility.FromJson<PlayerStats>(www.downloadHandler.text);
 
 					PlayerManager.idPlayer = response.id;
-					PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
+					//PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
 
 					this.playerScore.text = response.score.ToString();
 					this.deaths.text = response.deaths.ToString();
