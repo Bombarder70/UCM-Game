@@ -270,6 +270,11 @@ public class MainMenu : MonoBehaviour
 
     }
 
+	  public void Credits()
+    {
+
+    }
+
     public void Exit()
     {
         Application.Quit();
