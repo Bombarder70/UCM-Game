@@ -93,6 +93,7 @@ public class ShowQuest : MonoBehaviour {
 				Debug.Log("Otazky nacitane z databazy");
 				
 				DbResponse response = JsonUtility.FromJson<DbResponse>(www.downloadHandler.text);
+				PlayerManager.idPlayerGenerator = response.idPlayerGenerator; // Nastav idPlayerGenerator
 				Quests questsInJson = JsonUtility.FromJson<Quests>(response.structure);
 
 				this.parseTextFromDB(questsInJson);

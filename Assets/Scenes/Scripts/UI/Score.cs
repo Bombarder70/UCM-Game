@@ -20,6 +20,7 @@ public class Score : MonoBehaviour
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError) {
+				Debug.Log("Problem s nacitanim databazy");
 				Score.score = 50;
 			} else {
 				Score.score = int.Parse(www.downloadHandler.text);

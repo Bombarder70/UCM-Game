@@ -14,7 +14,7 @@ public class AnswerCheck : MonoBehaviour {
 
 			WWWForm form = new WWWForm();
 
-			form.AddField("idPlayerGenerator", 1); //TODO: dynamicky
+			form.AddField("idPlayerGenerator", PlayerManager.idPlayerGenerator); //TODO: dynamicky
 			form.AddField("spravnost", spravnaOdpoved);
 
 			using (UnityWebRequest www = UnityWebRequest.Post("https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=update_score", form)) {

@@ -17,6 +17,12 @@ public class MainMenu : MonoBehaviour
 		private Text selectedGenerator;
 		private Button zrusitOtazkyButton;
 
+		// Player stats
+		private Text playerScore;
+		private Text deaths;
+		private Text correctAnswers;
+		private Text uncorrectAnswers;
+
 		private GameObject zmenaOtazokButtonObject;
 		private GameObject zmenaOtazokInputObject;
 		private GameObject generatorDropdownObject;
@@ -35,6 +41,16 @@ public class MainMenu : MonoBehaviour
 		public class Generators {
 			public string status;
 			public Generator[] data;
+		}
+
+		[System.Serializable]
+		public class PlayerStats {
+			public int id;
+			public int idPlayerGenerator;
+			public int score;
+			public int deaths;
+			public int correct_answers;
+			public int uncorrect_answers;
 		}
 
     public void Start() {
@@ -60,6 +76,8 @@ public class MainMenu : MonoBehaviour
 			this.zrusitOtazkyButton.onClick.AddListener(ZrusitOtazkyButtonOnClick);
 
 			PlayerManager.idGenerator = 1; // Default hodnota pre nas generator(otazky)
+
+			StartCoroutine(this.getPlayerStats());
     }
 
 		void ZrusitOtazkyButtonOnClick() {
@@ -87,7 +105,7 @@ public class MainMenu : MonoBehaviour
 
 		public IEnumerator getGenerators() {
 			using (UnityWebRequest www = UnityWebRequest.Get(
-				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
+				"http://localhost/holes/pirate-game/web/index.php?action=get_generators&uid=" + zmenaOtazokInput.text 
 			)) {
 				yield return www.SendWebRequest();
 
@@ -138,6 +156,36 @@ public class MainMenu : MonoBehaviour
 					this.zrusitOtazkyButtonObject.SetActive(true);
 					this.selectedGenerator.text = this.generatorDropdown.options[this.generatorDropdown.value].text;
 					PlayerManager.idGenerator = int.Parse(www.downloadHandler.text);
+				}
+
+			}
+		}
+
+		public IEnumerator getPlayerStats() {
+			// Player stats init
+			this.playerScore = GameObject.Find("PlayerScore").GetComponent<Text>();
+			this.deaths = GameObject.Find("Deaths").GetComponent<Text>();
+			this.uncorrectAnswers = GameObject.Find("UncorrectAnswers").GetComponent<Text>();
+			this.correctAnswers = GameObject.Find("CorrectAnswers").GetComponent<Text>();
+
+			using (UnityWebRequest www = UnityWebRequest.Get(
+				"https://grid3.kaim.fpv.ucm.sk/~patrikholes/pirate-game/web/index.php?action=get_player_stats&playerNickname=" + NameMenuController.playerNickname
+			)) {
+				yield return www.SendWebRequest();
+
+				if (www.isNetworkError || www.isHttpError) {
+					Debug.Log("Databazovy error");
+				} else {
+					PlayerStats response = JsonUtility.FromJson<PlayerStats>(www.downloadHandler.text);
+
+					PlayerManager.idPlayer = response.id;
+					PlayerManager.idPlayerGenerator = response.idPlayerGenerator;
+
+					this.playerScore.text = response.score.ToString();
+					this.deaths.text = response.deaths.ToString();
+					this.uncorrectAnswers.text = response.correct_answers.ToString();
+					this.correctAnswers.text = response.uncorrect_answers.ToString();
+
 				}
 
 			}
