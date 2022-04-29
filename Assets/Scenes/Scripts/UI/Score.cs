@@ -7,6 +7,7 @@ using System.Net.NetworkInformation;
 
 public class Score : MonoBehaviour
 {
+//	public static float timer;
 
 	public static int score = 0;
 	public Text text;
@@ -58,5 +59,7 @@ public class Score : MonoBehaviour
 
 		return macAddresses;
 	}
+
+
 
 }

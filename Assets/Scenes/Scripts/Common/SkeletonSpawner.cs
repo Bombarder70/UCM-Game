@@ -34,6 +34,7 @@ public class SkeletonSpawner : MonoBehaviour
             delay = Random.Range(120,180);
             yield return new WaitForSeconds(delay);
             spawnPosition = new Vector3(player.transform.position.x + Random.Range(-12,12), player.transform.position.y, player.transform.position.z+Random.Range(-12,12));
+            if (GameManager.inQuest) continue;
             for(int i = 0; i < count; i++)
             {
                 Instantiate(skeleton, spawnPosition, Quaternion.identity);

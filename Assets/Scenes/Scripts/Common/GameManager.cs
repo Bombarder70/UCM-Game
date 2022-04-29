@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameObject GameOverScreen;
     Vector3 mapVector = new Vector3 (1,1,1);
+    public static bool inQuest = false;
+    public static float timer;
 
 
     void Awake()
@@ -32,6 +34,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    
+    public void Update()
+    {
+        if (inQuest) timer += Time.deltaTime;
+    }
 
 }
