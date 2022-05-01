@@ -1381,10 +1381,10 @@ AnimatorController:
       m_State: {fileID: 7765581827615494151}
       m_Motion: {fileID: -3100369314251171874, guid: 4b4cea61ed1e53c468a5c282c409165e, type: 3}
     m_Behaviours: []
-    m_BlendingMode: 1
+    m_BlendingMode: 0
     m_SyncedLayerIndex: 0
     m_DefaultWeight: 1
-    m_IKPass: 1
+    m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
 --- !u!1102 &23454496408265430
