@@ -1376,12 +1376,15 @@ AnimatorController:
     m_Motions:
     - serializedVersion: 2
       m_State: {fileID: 919169195415949778}
-      m_Motion: {fileID: -203655887218126122, guid: 76b666439e3d0fb4a910f58c802b9626, type: 3}
+      m_Motion: {fileID: 7917747251892844560, guid: 820928bf4c5d4d5459be08ff0cb4c3b7, type: 3}
+    - serializedVersion: 2
+      m_State: {fileID: 7765581827615494151}
+      m_Motion: {fileID: -3100369314251171874, guid: 4b4cea61ed1e53c468a5c282c409165e, type: 3}
     m_Behaviours: []
     m_BlendingMode: 1
     m_SyncedLayerIndex: 0
     m_DefaultWeight: 1
-    m_IKPass: 0
+    m_IKPass: 1
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
 --- !u!1102 &23454496408265430
@@ -1603,7 +1606,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: HideTheSword
   m_Speed: 1
-  m_CycleOffset: 0
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: 4788213340751007813}
   m_StateMachineBehaviours: []
