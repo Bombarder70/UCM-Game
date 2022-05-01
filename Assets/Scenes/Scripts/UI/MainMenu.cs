@@ -68,6 +68,9 @@ public class MainMenu : MonoBehaviour
 		public int idRoom = 1;
 
     public void Start() {
+			StartCoroutine(this.getPlayerStats());
+			StartCoroutine(this.setIdGenerator(true));
+			
       this.zmenaOtazokButton = GameObject.Find("ZmenaOtazokButton").GetComponent<Button>();
 			this.zmenaOtazokInput = GameObject.Find("ZmenaOtazokInput").GetComponent<InputField>();
 			this.generatorDropdown = GameObject.Find("GeneratorDropdown").GetComponent<Dropdown>();
@@ -90,9 +93,6 @@ public class MainMenu : MonoBehaviour
 			this.zrusitOtazkyButton.onClick.AddListener(ZrusitOtazkyButtonOnClick);
 
 			PlayerManager.idGenerator = 1; // Default hodnota pre nas generator(otazky)
-
-			StartCoroutine(this.getPlayerStats());
-			StartCoroutine(this.setIdGenerator(true));
     }
 
 		void ZrusitOtazkyButtonOnClick() {
