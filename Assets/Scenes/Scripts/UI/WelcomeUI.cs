@@ -20,14 +20,13 @@ public class WelcomeUI : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
-        /*controls.GetComponent<UnityEngine.UI.Text>().CrossFadeAlpha(0.0f, 0.01f, false);
+        controls.GetComponent<UnityEngine.UI.Text>().CrossFadeAlpha(0.0f, 0.01f, false);
         controlsText.GetComponent<UnityEngine.UI.Text>().CrossFadeAlpha(0.0f, 0.01f, false);
         papier.transform.localScale = Vector2.zero;
         papier.SetActive(true);
         papier.transform.LeanScale(papierVector, 1.4f);
         Debug.Log("qqqqqqq");
-        StartCoroutine(ChangeText());*/
+        StartCoroutine(ChangeText());
     }
 
     IEnumerator ChangeText()
