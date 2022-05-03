@@ -31,7 +31,7 @@ public class CajkaController : MonoBehaviour {
 		float distance = Vector3.Distance(pirat.position, transform.position);
 
 		if (this.flyAway == false) {
-			if (distance < 3) {
+			if (distance < 5) {
 				cajkaAnimator.SetBool("flyAway", true);
 				transform.LookAt(cajkaLetiaciBod);
 				this.flyAway = true;
