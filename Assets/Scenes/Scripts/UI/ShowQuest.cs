@@ -124,6 +124,9 @@ public class ShowQuest : MonoBehaviour {
 	}
 
 	void OnTriggerEnter () {
+		GameManager.timer = 0;
+		GameManager.inQuest = true;
+	//	GameManager.Instance.UpdateTime();
 		quest.SetActive (true);
 
 	//	pirat.GetComponent<Movement>().paused = true;

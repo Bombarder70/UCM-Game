@@ -24,6 +24,7 @@ public class AnswerCheck : MonoBehaviour {
 
     public void OnClick () {
 			GameObject pirat = GameObject.FindWithTag("pirat");
+			GameManager.inQuest = false;
 
 			if (pirat != null) {
 				pirat.GetComponent<Movement>().enabled = true;
@@ -43,6 +44,8 @@ public class AnswerCheck : MonoBehaviour {
 
 			if (odpovedBolaSpravna) {
 				Score.score += 100;
+				Debug.Log($"Time: {GameManager.timer}");
+				if (GameManager.timer < 180f) Score.score +=50;
 				StartCoroutine(this.UpdateScore(1));
 				Debug.Log("Spravna odpoved");
 				mapa.GetComponent<Map>().Open();
