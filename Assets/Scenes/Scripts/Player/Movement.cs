@@ -105,10 +105,12 @@ using UnityEngine;
         * Tlacidlo H
         * Ak hrac nie je v stave ReadyForAttack, ReadyForAttackRun a prave sa neprehrava animacia vythiahnutia
         */
-      if (Input.GetKey("h")) { 
-        if (!this.readyForAttack && !this.readyForAttackRun && !this.pullOutTheSword) {
-          this.stopMoving = true; 
-          animator.SetBool("PullOutTheSword", true);
+      if (!this.pullOutTheSword) {
+        if (Input.GetKey("h")) { 
+          if (!this.readyForAttack && !this.readyForAttackRun) {
+            this.stopMoving = true; 
+            animator.SetBool("PullOutTheSword", true);
+          }
         }
       } else animator.SetBool("PullOutTheSword", false);
 
@@ -122,6 +124,9 @@ using UnityEngine;
           animator.SetBool("goToIdle", true);
         }
       }
+
+      if (this.animatorIsPlaying("HideTheSword") || this.pullOutTheSword) this.stopMoving = true;
+      else this.stopMoving = false;
 
       if (swordEquiped)
       {
