@@ -36,7 +36,7 @@ public class WelcomeUI : MonoBehaviour
         yield return new WaitForSeconds(2.05f);
         controls.GetComponent<UnityEngine.UI.Text>().CrossFadeAlpha(1.0f, 2.05f, false);
         controlsText.GetComponent<UnityEngine.UI.Text>().CrossFadeAlpha(1.0f, 2.05f, false);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         papier.transform.LeanScale(Vector2.zero, 1.4f).setEaseInBack();
         gameObject.SetActive(false);
        // pozdrav.transform.LeanMoveLocalX(-Screen.height, 6.5f).setEaseInBack();
