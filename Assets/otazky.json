@@ -2,7 +2,7 @@
   "quests": [
     {
       "id": 1,
-      "otazka": "Správny pirát musí vedieť dobre počítať. Lup si predsa treba nejako rozdeliť, no nie? Občas sa teda pirát nevyhne ani desatinným číslam. Zvládneš tieto výrazy zapísať desatinným číslom? Vzor: 3 celé 23 tisícin = 3,023. 205 celých 4 desaťtisíciny ?",
+      "otazka": "Správny pirát musí vedieť dobre počítať. Lup si predsa treba nejako rozdeliť, no nie? Občas sa teda pirát nevyhne ani desatinným číslam. Zvládneš tento výraz zapísať desatinným číslom? 205 celých 4 desaťtisíciny ",
       "typ": 1,
       "odpovede":[
         {"id":1, "odpoved":"205.0004"},
@@ -48,6 +48,28 @@
       "odpovede":[
         {"id":1,"odpoved": "38.07"},
         {"id":2, "odpoved":"38,07"}
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 6,
+      "otazka": "Veselí piráti zašpinili palubu lode. Pred vyplávaním ju preto treba poumývať. Umytie 1m2 trvá 10 minút. Vypočítaj plochu paluby lode a potom ako dlho bude trvať umývanie.",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved": "315"}
+        
+      ],
+      "zobrazena": false,
+      "odpoved": false
+    },
+    {
+      "id": 7,
+      "otazka": "Tvoj kamarát papagáj dokáže letieť rýchlosťou približne 65 km za hodinu. Čajka dokáže letieť rýchlosťou 45 km za hodinu. Koľko hodín musí letieť čajka, aby preletela vzdialenosť 585km? ",
+      "typ": 1,
+      "odpovede":[
+        {"id":1,"odpoved": "13"}
+        
       ],
       "zobrazena": false,
       "odpoved": false

@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     Vector3 mapVector = new Vector3 (1,1,1);
     public static bool inQuest = false;
     public static float timer;
+    public static float questionTime;
+
+    
 
 
     void Awake()
