@@ -9,6 +9,7 @@ public class AnswerCheck : MonoBehaviour {
     public InputField input;
     public GameObject quest;
 		public GameObject mapa;
+		
 
     public IEnumerator UpdateScore(int spravnaOdpoved) {
 
@@ -45,7 +46,7 @@ public class AnswerCheck : MonoBehaviour {
 			if (odpovedBolaSpravna) {
 				Score.score += 100;
 				Debug.Log($"Time: {GameManager.timer}");
-				if (GameManager.timer < 180f) Score.score +=50;
+				if (GameManager.timer < GameManager.questionTime) Score.score +=50;
 				StartCoroutine(this.UpdateScore(1));
 				Debug.Log("Spravna odpoved");
 				mapa.GetComponent<Map>().Open();

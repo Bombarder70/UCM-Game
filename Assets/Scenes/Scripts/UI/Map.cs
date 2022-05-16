@@ -14,6 +14,8 @@ public class Map : MonoBehaviour
     public GameObject head3;
     public GameObject head4;
     public GameObject head5;
+    public GameObject head6;
+    public GameObject head7;
     List<GameObject> Heads = new List<GameObject>();
     public Sprite tick;
     public Sprite cross;
@@ -27,6 +29,8 @@ public class Map : MonoBehaviour
         Heads.Add(head3);
         Heads.Add(head4);
         Heads.Add(head5);
+        Heads.Add(head6);
+        Heads.Add(head7);
     }
     void Update()
     {

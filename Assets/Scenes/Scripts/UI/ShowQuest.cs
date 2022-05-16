@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class ShowQuest : MonoBehaviour {
+	public float timeForAnswer;
+	public GameObject image;
 	GameObject pirat;
 	public int flasa_id;
 	public GameObject quest;
@@ -105,6 +107,9 @@ public class ShowQuest : MonoBehaviour {
 	public void parseTextFromDB(Quests questsInJson) {
 		foreach (Quest quest in questsInJson.quests) {
 			if (quest.zobrazena == false && quest.id == flasa_id) {
+				if (flasa_id == 6) image.SetActive(true);
+				else image.SetActive(false);
+				GameManager.questionTime = timeForAnswer;
 				otazkaText.text = quest.otazka;
 				ShowQuest.questId = quest.id;
 
